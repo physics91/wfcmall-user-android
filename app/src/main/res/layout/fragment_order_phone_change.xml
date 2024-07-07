@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text="휴대폰 번호"
+            android:textColor="@color/phoneChangeTitleText"
+            android:textSize="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phoneEdit"
+            fontDifference="@{false}"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_address_edittext_selector"
+            android:enabled="false"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:letterSpacing="-0.04"
+            android:maxLength="11"
+            android:textColor="@color/mainTextColor"
+            android:paddingStart="11dp"
+            android:paddingTop="1dp"
+            android:singleLine="true"
+            android:textColorHint="@color/hintText"
+            android:textSize="16dp"
+            android:theme="@style/basicEditText"
+            app:layout_constraintEnd_toStartOf="@id/phoneChange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneTitle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/phoneChange"
+            style="@style/phoneChangeToggleButton"
+            android:layout_marginEnd="14dp"
+            android:paddingHorizontal="10.5dp"
+            android:paddingVertical="13dp"
+            android:text="변경"
+            app:layout_constraintBottom_toBottomOf="@id/phoneEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/phoneEdit" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/certificationGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="certButton, certNoEditText"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/certNoEditText"
+            fontDifference="@{false}"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/mainTextColor"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_address_edittext_selector"
+            android:fontFamily="@font/sult_bold"
+            android:hint="인증번호 입력"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:letterSpacing="-0.04"
+            android:maxLength="6"
+            android:paddingStart="11dp"
+            android:paddingTop="1dp"
+            android:singleLine="true"
+            android:textColorHint="@color/hintText"
+            android:textSize="16dp"
+            android:theme="@style/basicEditText"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/certButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneEdit"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/certButton"
+            style="@style/phoneChangeToggleButton"
+            android:layout_marginEnd="14dp"
+            android:enabled="false"
+            android:paddingHorizontal="10.5dp"
+            android:paddingVertical="13dp"
+            android:text="인증완료"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/certNoEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/certNoEditText"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/certStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="인증번호가 일치하지 않습니다."
+            android:layout_marginStart="11dp"
+            android:textColor="@color/phoneChangeErrorText"
+            android:textSize="12dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/certNoEditText"
+            app:layout_constraintTop_toBottomOf="@id/certNoEditText"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

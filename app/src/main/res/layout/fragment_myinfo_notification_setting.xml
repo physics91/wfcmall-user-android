@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thirdSettingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/sult_medium"
+            android:letterSpacing="-0.05"
+            android:text="알림 소리/진동"
+            android:textColor="@color/notificationText"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/alertToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginEnd="14dp"
+            android:padding="2dp"
+            app:kswAnimationDuration="0"
+            app:kswBackColor="@drawable/bg_switch_color_selector"
+            app:kswThumbColor="@color/white"
+            app:kswThumbWidth="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/thirdSettingTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/thirdSettingTitle" />
+
+        <CheckBox
+            android:id="@+id/soundCheckBox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/bg_checkbox_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thirdSettingFirstDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sult_semibold"
+            android:text="소리"
+            android:textColor="@color/notificationOptionText"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/soundCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/soundCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/soundCheckBox" />
+
+        <CheckBox
+            android:id="@+id/vibrateCheckBox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_checkbox_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soundCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thirdSettingSecondDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:text="진동"
+            android:textColor="@color/notificationOptionText"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/vibrateCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/thirdSettingFirstDetail"
+            app:layout_constraintTop_toTopOf="@+id/vibrateCheckBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

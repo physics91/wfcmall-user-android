@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/payment_fail_graph"
+    app:startDestination="@id/paymentFailFragment">
+
+    <fragment
+        android:id="@+id/paymentFailFragment"
+        android:name="com.theone.busandbt.fragment.payment.PaymentFailFragment"
+        android:label="fragment_payment_fail">
+        <argument
+            android:name="resultCode"
+            app:argType="string" />
+        <argument
+            android:name="resultMessage"
+            app:argType="string" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

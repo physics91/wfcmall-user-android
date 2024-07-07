@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_myinfo_background"
+    android:elevation="8dp"
+    android:paddingVertical="16dp">
+
+    <View
+        android:id="@+id/orderHitBox"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.7dp"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:src="@drawable/ic_myinfo_order"
+        app:layout_constraintEnd_toEndOf="@+id/orderHitBox"
+        app:layout_constraintStart_toStartOf="@+id/orderHitBox"
+        app:layout_constraintTop_toTopOf="@+id/orderHitBox" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderText"
+        style="@style/myInfoMenuText"
+        android:layout_marginTop="8.2dp"
+        android:elevation="8dp"
+        android:text="주문내역"
+        app:layout_constraintEnd_toEndOf="@id/order"
+        app:layout_constraintStart_toStartOf="@id/order"
+        app:layout_constraintTop_toBottomOf="@+id/order" />
+
+    <View
+        android:id="@+id/likeHitBox"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reviewHitBox"
+        app:layout_constraintStart_toEndOf="@+id/orderHitBox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/hart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:src="@drawable/ic_myinfo_hart"
+        app:layout_constraintEnd_toEndOf="@+id/likeHitBox"
+        app:layout_constraintStart_toStartOf="@+id/likeHitBox"
+        app:layout_constraintTop_toTopOf="@+id/order" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hartText"
+        style="@style/myInfoMenuText"
+        android:elevation="8dp"
+        android:text="찜"
+        app:layout_constraintBottom_toBottomOf="@id/orderText"
+        app:layout_constraintEnd_toEndOf="@id/hart"
+        app:layout_constraintStart_toStartOf="@id/hart" />
+
+    <View
+        android:id="@+id/reviewHitBox"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/couponHitBox"
+        app:layout_constraintStart_toEndOf="@+id/likeHitBox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:src="@drawable/ic_myinfo_review"
+        app:layout_constraintEnd_toEndOf="@+id/reviewHitBox"
+        app:layout_constraintStart_toStartOf="@+id/reviewHitBox"
+        app:layout_constraintTop_toTopOf="@+id/hart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reviewText"
+        style="@style/myInfoMenuText"
+        android:elevation="8dp"
+        android:text="리뷰"
+        app:layout_constraintBottom_toBottomOf="@id/orderText"
+        app:layout_constraintEnd_toEndOf="@id/review"
+        app:layout_constraintStart_toStartOf="@id/review" />
+
+    <View
+        android:id="@+id/couponHitBox"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/couponImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:src="@drawable/ic_myinfo_coupon"
+        app:layout_constraintEnd_toEndOf="@+id/couponHitBox"
+        app:layout_constraintStart_toStartOf="@+id/couponHitBox"
+        app:layout_constraintTop_toTopOf="@+id/review" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/couponText"
+        style="@style/myInfoMenuText"
+        android:elevation="8dp"
+        android:text="쿠폰"
+        app:layout_constraintBottom_toBottomOf="@id/orderText"
+        app:layout_constraintEnd_toEndOf="@id/couponImg"
+        app:layout_constraintStart_toStartOf="@id/couponImg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

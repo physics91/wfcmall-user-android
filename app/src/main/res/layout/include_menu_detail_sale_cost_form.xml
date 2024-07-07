@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menuCost"
+            type="int" />
+        <variable
+            name="menuSaleCost"
+            type="int" />
+        <variable
+            name="discountRate"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/discountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainColor"
+            android:textSize="19dp"
+            app:percentForm="@{discountRate}"
+            app:visibleOrGone="@{discountRate > 0}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="33%" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/originalPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/disableColor"
+            android:textSize="19dp"
+            app:commonCost="@{discountRate > 0 ? menuCost : 0}"
+            app:visibleOrGone="@{discountRate > 0}"
+            app:layout_constraintStart_toEndOf="@+id/discountTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="18,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="26dp"
+            app:commonCost="@{discountRate > 0 ? menuSaleCost : menuCost}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discountTextView"
+            tools:text="12,060원" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="menu"
+            type="com.theone.busandbt.dto.menu.Menu" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        tools:background="#fff2f2">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/foodImg"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:background="@drawable/bg_banner_main_item_image_form"
+            android:scaleType="centerCrop"
+            android:foreground="@color/foodListItemForeground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/foodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/sult_medium"
+            android:letterSpacing="-0.04"
+            android:text="@{menu.name}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:drawablePadding="5dp"
+            android:includeFontPadding="false"
+            tools:text="테스트sfafsaasfssagsagasgsgsg"
+            tools:drawableEnd="@drawable/ic_adult_main"
+            app:layout_constraintWidth_max="146dp"
+            app:layout_constraintStart_toStartOf="@id/foodImg"
+            app:layout_constraintTop_toBottomOf="@id/foodImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/sult_bold"
+            android:textColor="#111111"
+            android:letterSpacing="-0.04"
+            android:textSize="20dp"
+            tools:text="23,000"
+            app:layout_constraintStart_toStartOf="@id/foodImg"
+            app:layout_constraintTop_toBottomOf="@id/foodName" />
+
+        <View
+            android:id="@+id/grayView"
+            android:layout_width="146dp"
+            android:visibility="gone"
+            android:layout_height="146dp"
+            android:background="@drawable/bg_represesentative_menu_img"
+            android:backgroundTint="#59000911"
+            app:layout_constraintBottom_toBottomOf="@id/foodImg"
+            app:layout_constraintEnd_toEndOf="@id/foodImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/foodImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/sult_bold"
+            android:background="@drawable/bg_sold_out"
+            android:text="품절"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:visibility="gone"
+            android:gravity="center"
+            tools:visibility="visible"
+            app:visibleOrGone="@{!menu.available}"
+            app:layout_constraintBottom_toBottomOf="@id/foodImg"
+            app:layout_constraintEnd_toEndOf="@id/foodImg"
+            app:layout_constraintStart_toStartOf="@id/foodImg"
+            app:layout_constraintTop_toTopOf="@id/foodImg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

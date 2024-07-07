@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shop"
+            type="com.theone.busandbt.dto.shop.PackagingShopInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_packaging_map_shop">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/shopImageView"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_packaging_map_shop_image"
+            app:glideImageUrl="@{shop.imageUrl}"
+            app:replacementImage="@{@drawable/img_not_shop_common}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:text="@{shop.name}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="마왕족발 수영점"
+            app:layout_constraintStart_toEndOf="@id/shopImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/delivery"
+            android:layout_width="54dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_coupon_textview_background"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:letterSpacing="-0.05"
+            android:textColor="#3A3A3A"
+            android:textSize="11dp"
+            app:deliveryTypeList="@{shop.deliveryTypeList}"
+            app:layout_constraintStart_toStartOf="@id/shopNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/shopNameTextView"
+            tools:text="배달·포장" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="48dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/bg_new_retaurant_textview_layout"
+            android:backgroundTint="#FFE2B8"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:letterSpacing="-0.07"
+            android:text="포장 할인"
+            android:textColor="#E25B00"
+            android:textSize="11dp"
+            app:visibleOrGone="@{shop.packagingDiscountCost > 0}"
+            app:layout_constraintStart_toEndOf="@id/delivery"
+            app:layout_constraintTop_toTopOf="@id/delivery" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/starImageView"
+            android:layout_width="14.99dp"
+            android:layout_height="14.01dp"
+            android:layout_marginTop="4.98dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@id/shopNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/delivery" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:textColor="@color/mainTextColor"
+            android:textSize="14dp"
+            tools:text="5.0"
+            app:doubleToText="@{shop.star}"
+            app:layout_constraintBottom_toBottomOf="@id/starImageView"
+            app:layout_constraintStart_toEndOf="@id/starImageView"
+            app:layout_constraintTop_toTopOf="@id/starImageView" />
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/couponText"-->
+<!--            android:layout_width="31dp"-->
+<!--            android:layout_height="18dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:background="@drawable/bg_new_retaurant_textview_layout"-->
+<!--            android:fontFamily="@font/sult_medium"-->
+<!--            android:gravity="center"-->
+<!--            android:letterSpacing="-0.05"-->
+<!--            android:text="쿠폰"-->
+<!--            android:textColor="#2559A4"-->
+<!--            android:textSize="12dp"-->
+<!--            app:layout_constraintStart_toStartOf="@id/delivery"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/delivery" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

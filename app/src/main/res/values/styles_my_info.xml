@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myInfoMenuText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="myInfoTitleText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/myInfoTitleText</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="myInfoOptionText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/myInfoOptionText</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="myInfoEditTitleText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/myInfoEditTitleText</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="myInfoErrorText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/myInfoErrorText</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="myInfoEditText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:textColorHint">@color/hintText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">11dp</item>
+        <item name="android:paddingEnd">11dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/bg_common_edittext</item>
+        <item name="android:textCursorDrawable">@drawable/bg_edittext_cursor_color</item>
+    </style>
+
+    <style name="myInfoEditButton" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:paddingStart">10.5dp</item>
+        <item name="android:paddingEnd">13dp</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">10.5dp</item>
+        <item name="android:background">@drawable/bg_my_info_button_selector</item>
+    </style>
+
+    <style name="myReviewButtonText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/myReviewButtonText</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8.5dp</item>
+        <item name="android:paddingBottom">8.5dp</item>
+        <item name="android:background">@drawable/bg_my_review_text_form</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="accountSettingTitleText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/accountSettingTitleText</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="accountSettingContentText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/accountContentText</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+</resources>

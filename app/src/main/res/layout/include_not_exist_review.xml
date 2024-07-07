@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/notExistShopImageView"
+        android:layout_width="96.18dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_not_exist_review" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/notExistShopTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/sult_bold"
+        android:textColor="@color/mainTextColor"
+        android:text="아직 등록된 리뷰가 없어요"
+        android:textSize="16dp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notExistShopImageView"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_medium"
+        android:includeFontPadding="false"
+        android:text="주문 후, 첫번째 리뷰를 작성해보세요!"
+        android:textColor="@color/reviewSubText"
+        android:textSize="14dp"
+        android:letterSpacing="-0.05"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notExistShopTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

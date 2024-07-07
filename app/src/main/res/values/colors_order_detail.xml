@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orderDetailTitleText">#999999</color>
+    <color name="orderDetailPriceText">#999999</color>
+    <color name="orderDetailStork">#D9D9D9</color>
+    <color name="orderDetailFooterForm">#F8F8F8</color>
+    <color name="orderDetailFooterTitleText">#555555</color>
+    <color name="orderDetailFooterSubText">#AEAEAE</color>
+    <color name="orderDetailPackingForm">#FFEED9</color>
+    <color name="orderDetailPackingText">#FF7A00</color>
+    <color name="orderDetailAddressCopyForm">#F3F3F3</color>
+    <color name="orderDetailAddressCopyText">#8C8C8C</color>
+</resources>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="deliveryCostInfo"
+            type="com.theone.busandbt.dto.cost.response.GetDeliveryCostInfoResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:background="#00000080">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_popup_logout_background"
+            android:backgroundTint="#FFFFFF"
+            android:paddingBottom="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/deliveryCostTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/sult_bold"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="2dp"
+                android:text="배달비 안내"
+                android:textColor="#101010"
+                android:textSize="18dp"
+                android:translationY="-0.76dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deliveryCostDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/sult_regular"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="1dp"
+                android:text="· 배달비는 가게에서 책정한 금액입니다.\n· 동백통은 배달비 결제만 대행하고 금액은 가게로 전달됩니다."
+                android:textColor="#111111"
+                android:textSize="14dp"
+                android:translationY="-0.26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deliveryCostTitle" />
+
+            <View
+                android:id="@+id/firstLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#E3E3E3"
+                app:layout_constraintTop_toBottomOf="@id/deliveryCostDesc"
+                tools:layout_editor_absoluteX="11dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/baseDeliveryCostTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="-1dp"
+                android:text="기본 배달비"
+                android:textColor="#1C1C1C"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstLine" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="-1dp"
+                android:text="배달비"
+                android:textColor="#1C1C1C"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/baseDeliveryCostTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/baseDeliveryCostTitle" />
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_height="9dp"
+                app:layout_constraintStart_toStartOf="@id/baseDeliveryCostTitle"
+                app:layout_constraintTop_toBottomOf="@id/baseDeliveryCostTitle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deliveryCostRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/space" />
+
+            <View
+                android:id="@+id/secondLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#E3E3E3"
+                app:layout_constraintTop_toBottomOf="@id/deliveryCostRecyclerView"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/extraCostIntro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/sult_regular"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="0dp"
+                android:text="아래 할증금액이 배달비에 추가됩니다."
+                android:textColor="#111111"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondLine" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/extraCostForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="11dp"
+                app:cardBackgroundColor="#F3F3F3"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/extraCostIntro">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:text="지역별 할증"
+                        android:textColor="#808080"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@id/areaExtraCostTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/areaExtraCostTextView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:text="시간별 할증 "
+                        android:textColor="#808080"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@id/timeExtraCostTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/timeExtraCostTextView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:text="휴무일별 할증 "
+                        android:textColor="#808080"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@id/holidayExtraCostTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/holidayExtraCostTextView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:text="기타 할증 "
+                        android:textColor="#808080"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@id/etcExtraCostTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/etcExtraCostTextView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/areaExtraCostTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:textColor="#333333"
+                        android:textSize="14dp"
+                        app:commonCost="@{deliveryCostInfo.dongExtraCost}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="+1,500원" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/timeExtraCostTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:textColor="#333333"
+                        android:textSize="14dp"
+                        app:commonCost="@{deliveryCostInfo.timeExtraCost}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/areaExtraCostTextView"
+                        tools:text="+1,000원" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/holidayExtraCostTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:textColor="#333333"
+                        android:textSize="14dp"
+                        app:commonCost="@{deliveryCostInfo.holidayExtraCost}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/timeExtraCostTextView"
+                        tools:text="+500원" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etcExtraCostTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/sult_regular"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="0dp"
+                        android:textColor="#333333"
+                        android:textSize="14dp"
+                        app:commonCost="@{deliveryCostInfo.distanceExtraCost + deliveryCostInfo.areaExtraCost}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/holidayExtraCostTextView"
+                        tools:text="+2,000원" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/goDeliveryCostDetailButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11.97dp"
+                android:layout_marginEnd="7dp"
+                android:background="@drawable/bg_popup_delivery_price_background"
+                android:drawableEnd="@drawable/ic_delivery_info_right_arrow"
+                android:drawablePadding="5.4dp"
+                android:fontFamily="@font/sult_regular"
+                android:gravity="center"
+                android:letterSpacing="-0.07"
+                android:paddingVertical="4.86dp"
+                android:paddingStart="11dp"
+                android:paddingEnd="12dp"
+                android:text="배달비 안내 상세보기"
+                android:textColor="#333333"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/extraCostForm" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="16.77dp"
+                android:layout_marginEnd="11dp"
+                android:background="@drawable/bg_round_27dp_main_color"
+                android:fontFamily="@font/sult_semibold"
+                android:letterSpacing="-0.05"
+                android:text="확인"
+                android:textColor="@drawable/bg_basket_text_color_selector"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goDeliveryCostDetailButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

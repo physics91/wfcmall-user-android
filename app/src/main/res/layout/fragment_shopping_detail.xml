@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shopDetail"
+            type="com.theone.busandbt.dto.shop.MallShopDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.theone.busandbt.view.StickyHeaderListScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/mainToolbarForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:outlineProvider="none"
+                    android:tag="sticky"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/mainToolbarContent"
+                        layout="@layout/include_shop_detail_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/shopImageForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="shopImageViewPager,shopImageIndicator" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/shopImageViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:fitsSystemWindows="true"
+                    android:foreground="@drawable/bg_shop_image_gradient"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/shopImageIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:layout_marginBottom="12dp"
+                    app:dotsColor="#80FFFFFF"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="7dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsWidthFactor="0.1"
+                    app:layout_constraintEnd_toEndOf="@id/shopImageViewPager"
+                    app:layout_constraintStart_toStartOf="@id/shopImageViewPager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:selectedDotColor="#E6FFFFFF" />
+
+                <View
+                    android:id="@+id/shopDetailHeaderFormSpace"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/shopImageIndicator" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="14dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="14dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.07"
+                    android:text="@{shopDetail.name}"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="27dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="상점명" />
+
+                <View
+                    android:id="@+id/doShareSpace"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintEnd_toStartOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintStart_toEndOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share_btn"
+                    app:layout_constraintEnd_toStartOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <View
+                    android:id="@+id/betweenShareAndLikeLine"
+                    android:layout_width="1dp"
+                    android:layout_height="36.67dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#E3E3E3"
+                    app:layout_constraintBottom_toBottomOf="@id/share"
+                    app:layout_constraintEnd_toStartOf="@id/likeButton"
+                    app:layout_constraintStart_toEndOf="@id/share"
+                    app:layout_constraintTop_toBottomOf="@id/shopNameTextView" />
+
+                <View
+                    android:id="@+id/toggleLikeSpace"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintEnd_toStartOf="@id/betweenLikeAndStarLine"
+                    app:layout_constraintStart_toEndOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/likeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_like_selector"
+                    app:layout_constraintEnd_toStartOf="@id/betweenLikeAndStarLine"
+                    app:layout_constraintStart_toEndOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/likeCountTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3.6dp"
+                    android:fontFamily="@font/sult_regular"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="-4dp"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/likeButton"
+                    app:layout_constraintStart_toStartOf="@id/likeButton"
+                    app:layout_constraintTop_toBottomOf="@id/likeButton"
+                    app:likeCount="@{shopDetail.likeCount}"
+                    tools:text="0" />
+
+                <View
+                    android:id="@+id/betweenLikeAndStarLine"
+                    android:layout_width="1dp"
+                    android:layout_height="36.67dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="#E3E3E3"
+                    app:layout_constraintEnd_toStartOf="@id/review"
+                    app:layout_constraintStart_toEndOf="@id/likeButton"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <View
+                    android:id="@+id/goReviewListSpace"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/betweenShareAndLikeLine"
+                    app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/betweenLikeAndStarLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/review"
+                    android:layout_width="22.26dp"
+                    android:layout_height="22.26dp"
+                    android:src="@drawable/ic_star"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/betweenLikeAndStarLine"
+                    app:layout_constraintTop_toTopOf="@id/betweenShareAndLikeLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/starTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3.3dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/review"
+                    app:layout_constraintStart_toStartOf="@id/review"
+                    app:layout_constraintTop_toBottomOf="@id/review"
+                    tools:text="0.0(0)" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopInfoButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableEnd="@drawable/ic_right_arrow"
+                    android:fontFamily="@font/sult_regular"
+                    android:letterSpacing="-0.05"
+                    android:paddingVertical="12dp"
+                    android:text="매장 정보"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="17dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.52"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/likeCountTextView" />
+
+                <include
+                    android:id="@+id/couponDownloadInclude"
+                    layout="@layout/include_coupon_download"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopInfoButton"
+                    app:maxDiscountCost="@{shopDetail.maxDiscountCost}"
+                    app:visibleOrGone="@{shopDetail.maxDiscountCost > 0}" />
+
+                <include
+                    android:id="@+id/menuDetailGuideInclude"
+                    layout="@layout/include_shopping_menu_detail_guide_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/couponDownloadInclude" />
+
+                <View
+                    android:id="@+id/searchLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/mainLineColor"
+                    app:layout_constraintTop_toBottomOf="@id/menuDetailGuideInclude" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/goSearchButton"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_common_edittext"
+                    android:fontFamily="@font/sult_medium"
+                    android:gravity="center_vertical"
+                    android:letterSpacing="-0.04"
+                    android:paddingHorizontal="11dp"
+                    android:textColor="@color/hintText"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/searchLine"
+                    tools:hint="테스트" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:scaleType="center"
+                    app:layout_constraintEnd_toEndOf="@id/goSearchButton"
+                    app:layout_constraintTop_toTopOf="@id/goSearchButton"
+                    app:srcCompat="@drawable/ic_search_main" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/mainCategoryTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/shoppingTabForm"
+                    android:letterSpacing="-0.04"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/goSearchButton"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:tabGravity="start"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="scrollable"
+                    app:tabRippleColor="@null"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextAppearance="@style/shoppingMainTabUnselectedTextAppearance"
+                    app:tabTextColor="@color/mainTextColor" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/mainCategoryViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="839dp"
+                    android:clipToPadding="false"
+                    android:paddingBottom="80dp"
+                    android:tag="sticky"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mainCategoryTabLayout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.theone.busandbt.view.StickyHeaderListScrollView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/offWorkNoticeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_off_work_notice"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            android:text="영업 준비 중입니다."
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

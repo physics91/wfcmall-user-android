@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderIdTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:text="주문번호"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderIdTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@id/orderIdTitle"
+            tools:text="해운대구" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryAddressTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="배달주소"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderIdTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryAddressTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/deliveryAddressTitle"
+            tools:text="해운대구\n(도로명)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerTelTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="연락처"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deliveryAddressTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerTelTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/customerTelTitle"
+            tools:text="010-***\n010-3020" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopMemoTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="매장 사장님께"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customerTelTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopMemoTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/shopMemoTitle"
+            tools:text="010-***" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/riderMemoTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="배달 기사님께"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopMemoTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/riderMemoTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/riderMemoTitle"
+            tools:text="010-***" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

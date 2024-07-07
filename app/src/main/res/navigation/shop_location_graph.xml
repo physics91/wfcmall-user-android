@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shop_location_graph"
+    app:startDestination="@id/shopLocation">
+    <fragment
+        android:id="@+id/shopLocation"
+        android:name="com.theone.busandbt.fragment.address.ShopLocationFragment"
+        android:label="ShopLocationFragment">
+        <argument
+            android:name="location"
+            app:argType="com.theone.busandbt.dto.address.Location" />
+        <argument
+            android:name="enableMyLocation"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

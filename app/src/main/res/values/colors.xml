@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 공통으로 사용되는 색상코드를 정의한다. -->
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grayColor">#F3F3F3</color>
+    <color name="mainColor">#F52B2B</color>
+    <color name="disabledColor">#AAAAAA</color>
+    <color name="popupCancelButton">#AAAAAA</color>
+    <color name="packagingColor">#FF6B00</color>
+    <color name="parcelColor">#006ED4</color>
+    <color name="bundleColor">#238f71</color>
+    <color name="markBack">#FFEED9</color>
+    <color name="bundlemarkBack">#EDFBF7</color>
+    <color name="cancelColor">#848484</color>
+    <color name="mainTextColor">#111111</color>
+    <color name="mainLineColor">#E3E3E3</color>
+    <color name="disableColor">#A0A0A0</color>
+    <color name="mainBack">#F5F2F2</color>
+    <color name="mainButtonTextColor">#353535</color>
+    <color name="addressBackgroundSolidColor">#D9D9D9</color>
+    <color name="blackLine">#111111</color>
+    <color name="bannerBackGround">#C1E1FF</color>
+    <color name="hintText">#C1C1C1</color>
+    <color name="agreeDisableColor">#AEAEAE</color>
+    <color name="editTextBottomHorizontalLine">#111111</color>
+    <color name="popupSubText">#808080</color>
+    <color name="popupMainText">#101010</color>
+    <color name="switchDisabled">#DCDCDC</color>
+    <color name="switchDisable">#DCDCDC</color>
+    <color name="imageForeground">#0D000000</color>
+    <color name="popularImageForeground">#4D000000</color>
+    <color name="commonSortForm">#D5D5D5</color>
+    <color name="commonSortTrueForm">#FFF2F2</color>
+    <color name="mainSubForm">#FFF2F2</color>
+    <color name="packingImage">#FF6B00</color>
+    <color name="mainForm">#FFE9E9</color>
+    <color name="shoppingForm">#EEF5FF</color>
+    <color name="shoppingSub">#DBEBFF</color>
+    <color name="shoppingText">#006ED4</color>
+    <color name="shoppingTabDisabledText">#AEAEAE</color>
+</resources>

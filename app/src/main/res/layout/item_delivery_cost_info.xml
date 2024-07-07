@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/standardTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="0dp"
+            tools:text="50,000원 이상"
+            android:textColor="#1C1C1C"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="0dp"
+            tools:text="1,000원"
+            android:textColor="#1C1C1C"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/standardTextView"
+            app:layout_constraintBottom_toBottomOf="@id/standardTextView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

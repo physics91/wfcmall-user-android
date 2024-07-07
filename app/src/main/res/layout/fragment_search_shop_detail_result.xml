@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".fragment.search.SearchResultFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/goBackButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:paddingHorizontal="18dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toStartOf="@id/mainSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mainSearch"
+            app:srcCompat="@drawable/ic_left_arrow" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/mainSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_address_edittext_selector"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="start|center"
+            android:letterSpacing="-0.03"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="12dp"
+            android:singleLine="true"
+            android:textColor="#111111"
+            android:textColorHint="#C1C1C1"
+            android:textCursorDrawable="@drawable/bg_edittext_curosr"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@id/goBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="김밥" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainSearchShadow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="12dp"
+            android:singleLine="true"
+            android:textColor="#111111"
+            android:textColorHint="#C1C1C1"
+            android:textCursorDrawable="@drawable/bg_edittext_curosr"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@id/goBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="김밥" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resultShopCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="0개"
+            android:textColor="#949494"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/keywordSearchButton"
+            android:layout_width="19.5dp"
+            android:layout_height="19.5dp"
+            android:layout_marginEnd="15.95dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_main_search"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toEndOf="@id/mainSearch"
+            app:layout_constraintTop_toTopOf="@id/mainSearch" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="14dp" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/searchListViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

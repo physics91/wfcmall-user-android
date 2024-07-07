@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="shoppingParcelText">#606060</color>
+    <color name="shoppingItemTitle">#808080</color>
+    <color name="shoppingFoodSafetyForm">#00A341</color>
+    <color name="shoppingListText">#333333</color>
+    <color name="shoppingTabForm">#FFF2F2</color>
+    <color name="shoppingHorizontalLine">#E3E3E3</color>
+    <color name="menuInfoBackground">#EBEBEB</color>
+    <color name="shoppingMoreButtonStork">#D9D9D9</color>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_order_graph"
+    app:startDestination="@id/addOrder">
+
+    <fragment
+        android:id="@+id/addOrder"
+        android:name="com.theone.busandbt.fragment.order.AddOrderFragment"
+        android:label="fragment_add_order"
+        tools:layout="@layout/fragment_add_order">
+        <action
+            android:id="@+id/action_directDeliveryOrder_to_orderPhoneChangeFragment"
+            app:destination="@id/orderPhoneChangeFragment" />
+        <action
+            android:id="@+id/action_addOrderFragment_to_orderStatusFragment"
+            app:destination="@id/order_status_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+
+        <action
+            android:id="@+id/action_addOrderFragment_to_couponListFragment"
+            app:destination="@id/coupon_list_graph">
+            <argument
+                android:name="shopIdList"
+                app:argType="integer[]"
+                app:nullable="true"/>
+            <argument
+                android:name="couponTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="paymentCost"
+                app:argType="integer" />
+            <argument
+                android:name="couponIdList"
+                app:argType="integer[]"
+                app:nullable="true"/>
+        </action>
+        <action
+            android:id="@+id/action_directDeliveryOrder_to_shopBasketMainFragment"
+            app:destination="@id/basket_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryCost"
+            app:argType="integer" />
+    </fragment>
+</navigation>

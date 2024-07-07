@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="loginSnsTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/loginHintText</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="loginSnsButton">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="loginSnsHorizontalLine" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/loginLine</item>
+    </style>
+
+    <style name="loginBottomTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/loginBottomText</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

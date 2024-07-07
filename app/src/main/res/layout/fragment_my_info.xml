@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="memberDetail"
+            type="com.theone.busandbt.dto.member.MemberDetail" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="19dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="25dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="25dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_myinfo_profile_background"
+                android:src="@drawable/ic_myinfo_profile_img"
+                app:glideImageUrl="@{memberDetail.profileImageUrl}"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/goManagement"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="17dp"
+                app:layout_constraintBottom_toBottomOf="@id/profileImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/profileImageView"
+                app:layout_constraintTop_toTopOf="@id/profileImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/sult_extrabold"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="1dp"
+                android:textColor="@color/mainTextColor"
+                android:textSize="18dp"
+                app:greeting="@{memberDetail.nickname}"
+                app:layout_constraintEnd_toStartOf="@+id/rightArrowImageView"
+                app:layout_constraintStart_toStartOf="@id/goManagement"
+                app:layout_constraintTop_toTopOf="@id/profileImageView"
+                tools:text="안녕하세요님,반가워요!" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/sult_medium"
+                android:includeFontPadding="false"
+                android:text="@{memberDetail.email}"
+                android:textColor="@color/myInfoEmailText"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/nameTextView"
+                app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+                tools:text="yiok79@naver.com" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rightArrowImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="17dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_my_info_right_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/profileImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/profileImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/serviceCenterTitleTextView"
+                style="@style/myInfoTitleText"
+                android:layout_marginTop="16dp"
+                android:text="고객센터"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/myInfoBackground" />
+
+            <View
+                android:id="@+id/myInfoBackground"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_myinfo_background"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileImageView" />
+
+            <View
+                android:id="@+id/goOrderListSpace"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/myInfoBackground"
+                app:layout_constraintStart_toStartOf="@id/myInfoBackground"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9.5dp"
+                android:elevation="8dp"
+                android:outlineProvider="none"
+                android:src="@drawable/ic_myinfo_order"
+                app:layout_constraintBottom_toTopOf="@+id/orderText"
+                app:layout_constraintEnd_toEndOf="@id/goOrderListSpace"
+                app:layout_constraintStart_toStartOf="@id/goOrderListSpace"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="21dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:outlineProvider="none"
+                android:text="주문내역"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/myInfoBackground"
+                app:layout_constraintEnd_toEndOf="@id/order"
+                app:layout_constraintStart_toStartOf="@id/order" />
+
+            <View
+                android:id="@+id/goLikeListSpace"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="@id/myInfoBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.360"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/hart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9.5dp"
+                android:elevation="8dp"
+                android:outlineProvider="none"
+                android:src="@drawable/ic_myinfo_hart"
+                app:layout_constraintBottom_toTopOf="@+id/hartText"
+                app:layout_constraintEnd_toEndOf="@id/goLikeListSpace"
+                app:layout_constraintStart_toStartOf="@id/goLikeListSpace"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:outlineProvider="none"
+                android:text="찜"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/orderText"
+                app:layout_constraintEnd_toEndOf="@id/hart"
+                app:layout_constraintStart_toStartOf="@id/hart"
+                app:layout_constraintTop_toTopOf="@id/orderText" />
+
+            <View
+                android:id="@+id/goMyReviewListSpace"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="@id/myInfoBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.634"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9.5dp"
+                android:elevation="8dp"
+                android:outlineProvider="none"
+                android:src="@drawable/ic_myinfo_review"
+                app:layout_constraintBottom_toTopOf="@+id/reviewTextView"
+                app:layout_constraintEnd_toEndOf="@id/goMyReviewListSpace"
+                app:layout_constraintStart_toStartOf="@id/goMyReviewListSpace"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reviewTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:outlineProvider="none"
+                android:text="리뷰"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/orderText"
+                app:layout_constraintEnd_toEndOf="@id/review"
+                app:layout_constraintStart_toStartOf="@id/review"
+                app:layout_constraintTop_toTopOf="@id/orderText" />
+
+            <View
+                android:id="@+id/goMyCouponListSpace"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/myInfoBackground"
+                app:layout_constraintEnd_toEndOf="@id/myInfoBackground"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/couponImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9.5dp"
+                android:elevation="8dp"
+                android:outlineProvider="none"
+                android:src="@drawable/ic_myinfo_coupon"
+                app:layout_constraintBottom_toTopOf="@+id/couponTextView"
+                app:layout_constraintEnd_toEndOf="@id/goMyCouponListSpace"
+                app:layout_constraintStart_toStartOf="@id/goMyCouponListSpace"
+                app:layout_constraintTop_toTopOf="@id/myInfoBackground" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:outlineProvider="none"
+                android:text="쿠폰"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/orderText"
+                app:layout_constraintEnd_toEndOf="@id/couponImg"
+                app:layout_constraintStart_toStartOf="@id/couponImg"
+                app:layout_constraintTop_toTopOf="@id/orderText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/contactUsTextView"
+                style="@style/myInfoOptionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="문의하기"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/profileImageView"
+                app:layout_constraintTop_toBottomOf="@+id/serviceCenterTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/noticeListTextView"
+                style="@style/myInfoOptionText"
+                android:fontFamily="@font/sult_medium"
+                android:text="공지사항"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/profileImageView"
+                app:layout_constraintTop_toBottomOf="@+id/contactUsTextView" />
+
+            <View
+                android:id="@+id/footerLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myInfoHorizontalLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noticeListTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/serviceSettingTitleTextView"
+                style="@style/myInfoTitleText"
+                android:layout_marginTop="24dp"
+                android:text="서비스 설정"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/footerLine" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cardSetting"
+                style="@style/myInfoOptionText"
+                android:layout_marginTop="8dp"
+                android:text="카드 결제 관리"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/profileImageView"
+                app:layout_constraintTop_toBottomOf="@+id/serviceSettingTitleTextView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/notificationSetting"
+                style="@style/myInfoOptionText"
+                android:text="알림 설정"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/profileImageView"
+                app:layout_constraintTop_toBottomOf="@+id/cardSetting" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/accountSetting"
+                style="@style/myInfoOptionText"
+                android:text="계정 설정"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/profileImageView"
+                app:layout_constraintTop_toBottomOf="@id/notificationSetting" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="20dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

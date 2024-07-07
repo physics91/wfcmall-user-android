@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_circle_layout"
+        android:elevation="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/sult_bold"
+            android:text="할인쿠폰"
+            android:textColor="#111111"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/exitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:src="@drawable/ic_exit"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/couponList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:clipToPadding="false"
+            android:paddingBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@+id/allCouponDownloadButton"
+            app:layout_constraintHeight_max="400dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_coupon_download" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/allCouponDownloadButton"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_coupon_popup_btn_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="6dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:text="쿠폰 전체 받기"
+            android:textColor="@drawable/bg_coupon_text_color_selector"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/allCouponDownloadButton"
+            app:layout_constraintEnd_toEndOf="@id/allCouponDownloadButton"
+            app:layout_constraintStart_toStartOf="@id/allCouponDownloadButton"
+            app:layout_constraintTop_toTopOf="@id/allCouponDownloadButton" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

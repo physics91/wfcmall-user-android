@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/basket_graph"
+    app:startDestination="@id/basketMainFragment">
+    <fragment
+        android:id="@+id/basketMainFragment"
+        android:name="com.theone.busandbt.fragment.basket.BasketMainFragment"
+        android:label="basketMainFragment">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_shopBasketMainFragment_to_addOrderFragment"
+            app:destination="@id/add_order_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryCost"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopBasketMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment">
+            <argument
+                android:name="back"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_shopBasketMainFragment_to_menuDetailsFragment"
+            app:destination="@id/menu_detail_graph">
+            <argument
+                android:name="menuId"
+                app:argType="integer" />
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="shopName"
+                app:argType="string" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="minOrderCost"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopBasketMainFragment_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopBasketMainFragment_to_restaurantListFragment"
+            app:destination="@id/food_list_graph">
+            <argument
+                android:name="categoryId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

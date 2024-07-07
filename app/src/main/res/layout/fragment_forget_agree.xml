@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".fragment.login.LoginFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/join_title_margin_top"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="서비스 이용을 위한\n약관에 동의해주세요."
+            android:textColor="#111111"
+            android:textSize="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/allCheckBox"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="@dimen/join_agree_all_check_margin_top"
+            android:background="@drawable/bg_checkbox_selector"
+            android:button="@null"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="2dp"
+            android:letterSpacing="-0.05"
+            android:fontFamily="@font/sult_medium"
+            android:lineSpacingExtra="-1dp"
+            android:text="본인확인 서비스 약관 전체 동의"
+            android:textColor="#111111"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/allCheckBox"
+            app:layout_constraintStart_toEndOf="@id/allCheckBox"
+            app:layout_constraintTop_toTopOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/firstCheckBox"
+            android:layout_width="15dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="@dimen/join_agree_first_check_margin_top"
+            android:background="@drawable/bg_check_selector"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allCheckBox"
+            app:layout_constraintTop_toBottomOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="만14세 이상입니다(필수)"
+            android:textColor="#AEAEAE"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/firstCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allText"
+            app:layout_constraintTop_toTopOf="@id/firstCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstDetail"
+            android:layout_width="38dp"
+            android:layout_height="21dp"
+            android:text="자세히"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            android:letterSpacing="-0.05"
+            android:fontFamily="@font/sult_semibold"
+            android:background="@drawable/bg_gray_btn"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/firstText"
+            app:layout_constraintTop_toTopOf="@id/firstText"
+            app:layout_constraintBottom_toBottomOf="@id/firstText" />
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/secondCheckBox"
+            android:layout_width="15dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="@dimen/join_agree_second_check_margin_top"
+            android:background="@drawable/bg_check_selector"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allCheckBox"
+            app:layout_constraintTop_toBottomOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="동백통 서비스 이용약관 (필수)"
+            android:textColor="#AEAEAE"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/secondCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allText"
+            app:layout_constraintTop_toTopOf="@id/secondCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondDetail"
+            android:layout_width="38dp"
+            android:layout_height="21dp"
+            android:text="자세히"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            android:letterSpacing="-0.05"
+            android:fontFamily="@font/sult_semibold"
+            android:background="@drawable/bg_gray_btn"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/secondText"
+            app:layout_constraintTop_toTopOf="@id/secondText"
+            app:layout_constraintBottom_toBottomOf="@id/secondText" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/thirdCheckBox"
+            android:layout_width="15dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="@dimen/join_agree_third_check_margin_top"
+            android:background="@drawable/bg_check_selector"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allCheckBox"
+            app:layout_constraintTop_toBottomOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thirdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="전자금융거래 이용약관 (필수)"
+            android:textColor="#AEAEAE"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/thirdCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allText"
+            app:layout_constraintTop_toTopOf="@id/thirdCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thirdDetail"
+            android:layout_width="38dp"
+            android:layout_height="21dp"
+            android:text="자세히"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            android:letterSpacing="-0.05"
+            android:fontFamily="@font/sult_semibold"
+            android:background="@drawable/bg_gray_btn"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/thirdText"
+            app:layout_constraintTop_toTopOf="@id/thirdText"
+            app:layout_constraintBottom_toBottomOf="@id/thirdText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_round_23dp_disabled"
+            android:enabled="false"
+            android:fontFamily="@font/sult_extrabold"
+            android:letterSpacing="-0.05"
+            android:text="다음"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

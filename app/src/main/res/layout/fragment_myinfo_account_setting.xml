@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstSettingTitle"
+            style="@style/accountSettingTitleText"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:text="안심번호 항상 사용"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstSettingDetail"
+            style="@style/accountSettingContentText"
+            android:layout_width="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:text="개인정보보호를 위해 전화번호 대신 가상의 번호를 통해 전화를 받을 수 있어요"
+            app:layout_constraintEnd_toStartOf="@+id/securityTelToggleButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstSettingTitle" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/securityTelToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginEnd="14dp"
+            android:padding="2dp"
+            app:kswAnimationDuration="0"
+            app:kswBackColor="@drawable/bg_switch_color_selector"
+            app:kswThumbColor="@color/white"
+            app:kswThumbWidth="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/firstSettingTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/firstSettingTitle" />
+
+        <View
+            android:id="@+id/secondUnderscore"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="19dp"
+            android:background="@color/myInfoHorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstSettingDetail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondSettingTitle"
+            style="@style/accountSettingTitleText"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="19dp"
+            android:text="내 주문 횟수를 가게에 제공"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/secondUnderscore" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondSettingDetail"
+            style="@style/accountSettingContentText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:text="최근 6개월 간 내가 주문한 횟수를 가게에서 확인할 수 있도록 허용해요"
+            app:layout_constraintEnd_toStartOf="@+id/orderCountToggleButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondSettingTitle" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/orderCountToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginEnd="14dp"
+            android:padding="2dp"
+            app:kswAnimationDuration="0"
+            app:kswBackColor="@drawable/bg_switch_color_selector"
+            app:kswThumbColor="@color/white"
+            app:kswThumbWidth="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/secondSettingTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/secondSettingTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

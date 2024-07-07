@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.address.AddressFineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white">
+
+        <com.naver.maps.map.MapView
+            android:id="@+id/mapImg"
+            android:name="com.naver.maps.map.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_map_background"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/exit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_round_15dp_white_gray_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/exitImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_address_fine_exit"
+            app:layout_constraintBottom_toBottomOf="@+id/exit"
+            app:layout_constraintEnd_toEndOf="@+id/exit"
+            app:layout_constraintStart_toStartOf="@+id/exit"
+            app:layout_constraintTop_toTopOf="@+id/exit" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/explainMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_round_9dp_white_gray_line"
+            android:fontFamily="@font/sult_semibold"
+            android:paddingStart="17dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="17dp"
+            android:paddingBottom="7dp"
+            android:text="손가락으로 지도를 밀어 주소지를 설정하세요"
+            android:textColor="@color/mainColor"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/exit"
+            app:layout_constraintStart_toEndOf="@+id/exit"
+            app:layout_constraintTop_toTopOf="@+id/exit" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_address_popup_layout"
+            android:backgroundTint="@color/white"
+            android:elevation="11dp"
+            app:layout_constraintBottom_toBottomOf="@id/mapImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/roadTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/sult_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="1dp"
+                android:textColor="@color/mainTextColor"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/buildingNameTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/addressJibun" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buildingNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/sult_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="1dp"
+                android:textColor="@color/mainTextColor"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/jibunTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roadTextView"
+                tools:text="@string/addressPlace" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jibunTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/sult_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="2dp"
+                android:paddingBottom="30dp"
+                android:textColor="@color/exampleSubTitle"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/settingBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/addressRoad" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/settingBtn"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_round_27dp_main_color"
+                android:fontFamily="@font/sult_extrabold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:text="주소 설정하기"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

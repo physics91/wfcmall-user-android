@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="address"
+            type="com.theone.busandbt.dto.address.DeliveryAddress" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addressMarker"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/sult_semibold"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="@{address.name}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/addressMarker"
+            app:layout_constraintStart_toEndOf="@id/addressMarker"
+            app:layout_constraintTop_toTopOf="@id/addressMarker"
+            tools:text="주소명" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressCheckTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="배달주소"
+            android:textColor="@color/mainColor"
+            android:textSize="12dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/addressNameTextView"
+            app:layout_constraintStart_toEndOf="@id/addressNameTextView"
+            app:layout_constraintTop_toTopOf="@id/addressNameTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addressCheckImg"
+            android:layout_width="9dp"
+            android:layout_height="7dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="1dp"
+            android:src="@drawable/ic_main_color_check"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/addressCheckTextView"
+            app:layout_constraintEnd_toStartOf="@id/addressCheckTextView"
+            app:layout_constraintTop_toTopOf="@id/addressCheckTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressContentTextView"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="@{address.road +' '+ address.addressDetail}"
+            android:textColor="@color/exampleSubTitle"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/addressMarker"
+            app:layout_constraintStart_toStartOf="@id/addressNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/addressMarker"
+            tools:text="우리집 아닙니다 우리집 아니에여" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addAddressButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/bg_round_14dp_add_address_layout"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:letterSpacing="-0.05"
+            android:paddingHorizontal="9.5dp"
+            android:paddingVertical="5.5dp"
+            android:text="+ 추가"
+            android:textColor="@color/addAddressText"
+            android:textSize="13dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/addressMarker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addressMarker"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/firstUnderscore"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/horizontalLine"
+            app:layout_constraintTop_toBottomOf="@id/addressContentTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="coupon"
+            type="com.theone.busandbt.dto.coupon.MemberCouponListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/couponBackground"
+        android:background="@drawable/bg_direct_delivery_coupon_selector"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/sult_bold"
+            android:letterSpacing="-0.07"
+            tools:text="3,000원"
+            android:textColor="#111111"
+            android:textSize="26dp"
+            app:commonCost="@{coupon.discountCost}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/minOrderCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="119dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="0dp"
+            tools:text="최소주문금액 25,000원"
+            android:textColor="#848484"
+            android:textSize="12dp"
+            android:translationY="-0.18dp"
+            app:minOrderCost="@{coupon.minOrderCost}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="59dp"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.05"
+            android:text="@{coupon.name}"
+            tools:text="로얄경양식&amp;스테이크 광안점"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="79dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="0dp"
+            tools:text="사용기한 7일 남음"
+            android:textColor="@color/mainColor"
+            android:textSize="12dp"
+            android:translationY="-0.18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="79dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="0dp"
+            tools:text="(08/22 ~ 09/04)"
+            android:textColor="#0A0A0A"
+            android:textSize="12dp"
+            android:translationY="-0.18dp"
+            app:layout_constraintStart_toEndOf="@id/deadline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

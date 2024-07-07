@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="horizontalLine">#F4F4F4</color>
+    <color name="exampleTitle">#595959</color>
+    <color name="exampleSubTitle">#949494</color>
+    <color name="checkedColor">#FFF2F2</color>
+    <color name="addressGuideText">#C1C1C1</color>
+    <color name="addAddressText">#808080</color>
+    <color name="addAddressLayout">#F3F3F3</color>
+</resources>

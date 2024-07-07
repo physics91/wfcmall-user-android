@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/startImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_map_shop_info_start" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/shopNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="6.87dp"
+        android:background="@drawable/img_map_shop_info_text"
+        android:fontFamily="@font/sult_medium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@id/startImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="상점명" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/endImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/shopNameTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_map_shop_info_end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

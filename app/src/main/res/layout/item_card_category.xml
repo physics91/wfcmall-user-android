@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cardItem"
+            type="com.theone.busandbt.dto.card.CardInfoListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:layout_marginStart="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cardImageView"
+            cardBackground="@{cardItem.type}"
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_store_infor_img_background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_card_mini" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="44dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="33dp"
+            android:src="@drawable/ic_mini_chip"
+            app:layout_constraintBottom_toBottomOf="@+id/cardImageView"
+            app:layout_constraintStart_toStartOf="@+id/cardImageView"
+            app:layout_constraintTop_toTopOf="@+id/cardImageView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="3.7dp"
+            android:layout_height="7.4dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_mini_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/cardImageView"
+            app:layout_constraintStart_toStartOf="@+id/cardImageView"
+            app:layout_constraintTop_toTopOf="@+id/cardImageView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cardTextImageView"
+            cardMiniItemType="@{cardItem.type}"
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/cardImageView"
+            app:layout_constraintTop_toTopOf="@+id/cardImageView"
+            tools:src="@drawable/ic_bc_card_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cardNumberTextView"
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:cardNumber="@{cardItem.cardNo}"
+            app:cardTextType="@{cardItem.type}"
+            app:layout_constraintBottom_toBottomOf="@+id/cardImageView"
+            app:layout_constraintEnd_toEndOf="@+id/cardImageView"
+            app:layout_constraintStart_toStartOf="@+id/cardImageView"
+            tools:text="하나카드 5163 1546" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/defaultCardImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_default_card" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cardPlusImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_card_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cardRegistrationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text="카드 등록하기"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardPlusImageView"
+            app:layout_constraintStart_toStartOf="@+id/cardPlusImageView"
+            app:layout_constraintTop_toBottomOf="@+id/cardPlusImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cardSubTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text="카드를 한번만 등록해놓으면\n매번 쉽게 결제할 수 있어요!"
+            android:textColor="@color/cardSubTextView"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardRegistrationTextView"
+            app:layout_constraintStart_toStartOf="@+id/cardRegistrationTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cardRegistrationTextView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/deleteButton"
+            visibleOrGone="@{cardItem.type != 0}"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_card_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/cardGroup"
+            visibleOrGone="@{cardItem.type == 0}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="defaultCardImageView,cardSubTextView,cardRegistrationTextView,cardPlusImageView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

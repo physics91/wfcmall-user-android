@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> <!-- 온보딩에 사용되는 스타일-->
+
+    <style name="onboardingLine">
+        <item name="android:background">@color/blackLine</item>
+        <item name="android:layout_width">@dimen/horizontalLineWidth</item>
+        <item name="android:layout_height">@dimen/horizontalLineHeight</item>
+    </style>
+
+</resources>

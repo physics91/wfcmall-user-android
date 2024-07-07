@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_review_list_graph"
+    app:startDestination="@id/menuReviewListFragment">
+    <fragment
+        android:id="@+id/menuReviewListFragment"
+        android:name="com.theone.busandbt.fragment.review.MenuReviewListFragment"
+        android:label="MenuReviewListFragment">
+        <argument
+            android:name="menuId"
+            app:argType="integer"/>
+        <argument
+            android:name="menuName"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_seeMenuReviewFragment_to_menuDetailsFragment"
+            app:destination="@id/menu_detail_graph">
+            <argument
+                android:name="menuId"
+                app:argType="integer" />
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="shopName"
+                app:argType="string" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="minOrderCost"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

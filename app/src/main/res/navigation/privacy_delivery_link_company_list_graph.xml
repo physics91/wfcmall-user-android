@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/privacy_delivery_link_company_list_graph"
+    app:startDestination="@id/privacyDeliveryLinkCompanyListFragment">
+
+    <fragment
+        android:id="@+id/privacyDeliveryLinkCompanyListFragment"
+        android:name="com.theone.busandbt.fragment.privacy.PrivacyDeliveryLinkCompanyListFragment"
+        android:label="fragment_privacy_delivery_link_company_list"
+        tools:layout="@layout/fragment_privacy_delivery_link_company_list"/>
+</navigation>

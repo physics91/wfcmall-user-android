@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="deliveryAddress"
+            type="com.theone.busandbt.dto.address.DeliveryAddress" />
+        <variable
+            name="customerTel"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressInformationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sult_bold"
+            android:letterSpacing="-0.04"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:text="배달지 정보"
+            android:textColor="@color/addOrderAddressInformationText"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/jibunTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sult_bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="@{deliveryAddress.jibun}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressInformationTextView"
+            tools:text="부산 해운대구 우동 1466" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/roadTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sult_medium"
+            android:letterSpacing="-0.04"
+            android:includeFontPadding="false"
+            android:text="@{`[도로명]` + deliveryAddress.road}"
+            tools:text="[도로명]부산 해운대구 센텀7로 6"
+            android:textColor="@color/addOrderAddressInformationText"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jibunTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/addOrderEditText"
+            android:id="@+id/addressDetailEditText"
+            android:layout_marginTop="10dp"
+            android:hint="상세주소를 입력해 주세요."
+            app:fontDifference="@{false}"
+            android:text="@{deliveryAddress.addressDetail}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roadTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopTelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:text="@{customerTel}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressDetailEditText"
+            tools:text="010-5113-4551" />
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneChangeTextView"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            style="@style/addOrderOptionButtonTextView"
+            android:layout_marginTop="24dp"
+            android:text="변경"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addressDetailEditText" />-->
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/securityTelGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="securityCheckBox,securityTelLabel,phonePopupTextView"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/securityCheckBox"
+            style="@style/addOrderCheckBox"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopTelTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/securityTelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/sult_medium"
+            android:letterSpacing="-0.04"
+            android:text="1회용 안심번호 사용"
+            android:textColor="@color/addOrderSecurityNumber"
+            android:includeFontPadding="false"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/securityCheckBox"
+            app:layout_constraintTop_toTopOf="@id/securityCheckBox"
+            app:layout_constraintBottom_toBottomOf="@id/securityCheckBox"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phonePopupTextView"
+            style="@style/addOrderOptionButtonTextView"
+            android:layout_width="72dp"
+            android:layout_height="28dp"
+            android:text="안심번호란?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/securityCheckBox"
+            app:layout_constraintBottom_toBottomOf="@id/securityCheckBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

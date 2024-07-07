@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_detail_graph"
+    app:startDestination="@id/orderDetail">
+    <fragment
+        android:id="@+id/orderDetail"
+        android:name="com.theone.busandbt.fragment.order.OrderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_orderDirectDeliveryDetail_to_orderHistoryFragment"
+            app:destination="@id/order_list_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+        </action>
+        <action
+            android:id="@+id/action_orderDirectDeliveryDetail_to_reviewWriteFragment"
+            app:destination="@id/review_write_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_orderDirectDeliveryDetail_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

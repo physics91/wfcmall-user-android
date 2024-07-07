@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_list_graph"
+    app:startDestination="@id/orderListFragment">
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.theone.busandbt.fragment.order.OrderListMainFragment"
+        android:label="fragment_order_list"
+        tools:layout="@layout/fragment_order_list">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer"
+            android:defaultValue="1"/>
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer"
+            android:defaultValue="1"/>
+        <action
+            android:id="@+id/action_orderListFragment_to_orderDetail"
+            app:destination="@id/order_detail_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_orderStatusDirectDeliveryFragment"
+            app:destination="@id/order_status_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_reviewWriteFragment"
+            app:destination="@id/review_write_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+    </fragment>
+</navigation>

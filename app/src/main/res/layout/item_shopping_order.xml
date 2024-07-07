@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="order"
+            type="com.theone.busandbt.dto.order.MallOrderListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderNumberTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="주문번호"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderNumberTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:text="@{order.id}"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/costTextView"
+            app:layout_constraintStart_toEndOf="@+id/orderNumberTitleTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="D1E22K21F85Z23" />
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/shoppingHistoryListHorizontalLine"
+            app:layout_constraintTop_toBottomOf="@+id/orderNumberTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:textColor="@color/orderListDateText"
+            android:textSize="16dp"
+            app:orderListDateTime="@{order.createDateTime}"
+            app:layout_constraintStart_toStartOf="@+id/orderNumberTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/topLine"
+            tools:text="22.11.16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="@{order.menuName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="@+id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+            tools:text="서동 양념구이 뱅어포" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/costTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:commonCost="@{order.paymentCost}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nameTextView"
+            tools:text="4,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goToOrderDetailButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_round_7dp_stork_order_list_review_button"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:text="주문 상세"
+            android:textColor="@color/mainColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+        <View
+            android:id="@+id/footerLine"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/myInfoHorizontalStarveLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goToOrderDetailButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

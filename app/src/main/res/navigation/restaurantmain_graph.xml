@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/service_main_graph"
+    app:startDestination="@id/serviceMainFragment">
+    <fragment
+        android:id="@+id/serviceMainFragment"
+        android:name="com.theone.busandbt.fragment.shop.ServiceMainFragment"
+        android:label="RestaurantMainFragment">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer"
+            android:defaultValue="1"/>
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer"
+            android:defaultValue="1"/>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"/>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_myInfoFragment"
+            app:destination="@id/myinfo"/>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_promotionListFragment"
+            app:destination="@id/promotionListFragment">
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_couponViewAllFragment"
+            app:destination="@id/discountShopListFragment">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_shopBasketMainFragment"
+            app:destination="@id/basket_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_orderHistoryFragment"
+            app:destination="@id/order_list_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_restaurantListFragment"
+            app:destination="@id/food_list_graph">
+            <argument
+                android:name="categoryId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_populaViewAllFragment"
+            app:destination="@id/newShopListFragment">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_homeFragment"
+            app:destination="@id/main_graph" />
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_searchMainFragment"
+            app:destination="@id/search_main"/>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_myWishListFragment"
+            app:destination="@id/like_list_graph">
+            <argument
+                android:name="serviceTypeId"
+                android:defaultValue="1"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                android:defaultValue="1"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_restaurantMainFragment_to_haveAddressSetFragment"
+            app:destination="@id/delivery_address_list_graph"/>
+    </fragment>
+</navigation>

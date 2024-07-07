@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbarInclude"
+            layout="@layout/include_address_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/bottomForm"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarInclude">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bannerForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:paddingBottom="30dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bannerViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="21dp"
+                    android:overScrollMode="never"
+                    android:background="@drawable/bg_category_selection_item"
+                    android:elevation="1dp"
+                    android:descendantFocusability="blocksDescendants"
+                    app:layout_constraintDimensionRatio="H,2.5:1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pageNumberTextView"
+                    style="@style/mainBannerPageTextView"
+                    android:layout_marginStart="11dp"
+                    android:elevation="3dp"
+                    android:textColor="@color/mainColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/bannerViewAllTextView"
+                    app:layout_constraintStart_toStartOf="@id/bannerViewAllTextView"
+                    app:layout_constraintTop_toTopOf="@+id/bannerViewAllTextView"
+                    tools:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bannerViewAllTextView"
+                    style="@style/mainBannerPageTextView"
+                    android:layout_marginEnd="11dp"
+                    android:background="@drawable/bg_restaurant_viewpager_layout"
+                    android:drawableEnd="@drawable/ic_indicator_box"
+                    android:drawablePadding="7.5dp"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:paddingVertical="4dp"
+                    android:paddingStart="19dp"
+                    android:paddingEnd="8.5dp"
+                    android:textColor="@color/mainBannerViewPagerCountText"
+                    app:layout_constraintBottom_toBottomOf="@id/bannerViewPager"
+                    app:layout_constraintTop_toBottomOf="@id/bannerViewPager"
+                    app:layout_constraintEnd_toEndOf="@id/bannerViewPager"
+                    tools:text="/ 3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- TODO - 뷰페이저와 함께 스크롤링이 되어야 한다. 현재는 좋은 방안이 없어 임시로 이렇게 처리 -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/foodMainTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="14dp"
+                android:background="@drawable/bg_service_main_tab_layout"
+                android:clipToPadding="true"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bannerForm"
+                app:tabGravity="fill"
+                app:tabMinWidth="0dp"
+                app:tabMode="fixed"
+                app:tabPadding="0dp"
+                app:tabPaddingBottom="0dp"
+                app:tabPaddingEnd="0dp"
+                app:tabPaddingStart="0dp"
+                app:tabPaddingTop="0dp" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/foodMainViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/foodMainTabLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_25dp_top_left_right_white"
+            android:elevation="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <View
+                android:id="@+id/centerView"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/homeImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="32.56dp"
+                android:layout_marginTop="2.77dp"
+                android:elevation="12dp"
+                android:src="@drawable/ic_main_home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/homeHitBox" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeTitleTextView"
+                style="@style/foodMainFooterMenuTextView"
+                android:layout_marginTop="9.4dp"
+                android:elevation="12dp"
+                android:text="홈"
+                app:layout_constraintEnd_toEndOf="@id/homeImageView"
+                app:layout_constraintStart_toStartOf="@id/homeImageView"
+                app:layout_constraintTop_toBottomOf="@+id/homeImageView" />
+
+            <View
+                android:id="@+id/homeHitBox"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:elevation="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/homeImageView"
+                app:layout_constraintStart_toStartOf="@id/homeImageView"
+                app:layout_constraintTop_toTopOf="@+id/bottomForm" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/orderImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:elevation="12dp"
+                android:src="@drawable/ic_footer_order_list"
+                app:layout_constraintEnd_toStartOf="@+id/centerView"
+                app:layout_constraintStart_toEndOf="@+id/homeHitBox"
+                app:layout_constraintTop_toTopOf="@+id/homeImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderListTitleTextView"
+                style="@style/foodMainFooterMenuTextView"
+                android:elevation="12dp"
+                android:text="주문내역"
+                app:layout_constraintEnd_toEndOf="@id/orderImageView"
+                app:layout_constraintStart_toStartOf="@id/orderImageView"
+                app:layout_constraintTop_toTopOf="@+id/homeTitleTextView" />
+
+            <View
+                android:id="@+id/orderListHitBox"
+                android:layout_width="41dp"
+                android:layout_height="0dp"
+                android:elevation="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/homeHitBox"
+                app:layout_constraintEnd_toEndOf="@id/orderListTitleTextView"
+                app:layout_constraintStart_toStartOf="@id/orderListTitleTextView"
+                app:layout_constraintTop_toTopOf="@+id/homeHitBox" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/likedImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:elevation="12dp"
+                android:src="@drawable/ic_main_liked"
+                app:layout_constraintEnd_toStartOf="@+id/myInfoHitBox"
+                app:layout_constraintStart_toEndOf="@+id/centerView"
+                app:layout_constraintTop_toTopOf="@+id/homeImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/likedTitleTextView"
+                style="@style/foodMainFooterMenuTextView"
+                android:elevation="12dp"
+                android:text="찜"
+                app:layout_constraintEnd_toEndOf="@id/likedImageView"
+                app:layout_constraintStart_toStartOf="@id/likedImageView"
+                app:layout_constraintTop_toTopOf="@+id/homeTitleTextView" />
+
+            <View
+                android:id="@+id/likedHitBox"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:elevation="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/homeHitBox"
+                app:layout_constraintEnd_toEndOf="@id/likedImageView"
+                app:layout_constraintStart_toStartOf="@id/likedImageView"
+                app:layout_constraintTop_toTopOf="@+id/homeHitBox" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mypageImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="34.61dp"
+                android:elevation="12dp"
+                android:src="@drawable/ic_main_my_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/homeImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myInfoTitleTextView"
+                style="@style/foodMainFooterMenuTextView"
+                android:elevation="12dp"
+                android:text="@string/myInfoLabel"
+                app:layout_constraintEnd_toEndOf="@id/mypageImageView"
+                app:layout_constraintStart_toStartOf="@id/mypageImageView"
+                app:layout_constraintTop_toTopOf="@+id/homeTitleTextView" />
+
+            <View
+                android:id="@+id/myInfoHitBox"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:elevation="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/homeHitBox"
+                app:layout_constraintEnd_toEndOf="@id/myInfoTitleTextView"
+                app:layout_constraintStart_toStartOf="@id/myInfoTitleTextView"
+                app:layout_constraintTop_toTopOf="@+id/homeHitBox" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchView"
+            android:layout_width="58dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="-7dp"
+            android:background="@drawable/bg_oval_58dp_white"
+            android:elevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomForm" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchImageView"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:elevation="12dp"
+            android:src="@drawable/ic_menu_search"
+            app:layout_constraintBottom_toBottomOf="@id/searchView"
+            app:layout_constraintEnd_toEndOf="@id/searchView"
+            app:layout_constraintStart_toStartOf="@id/searchView"
+            app:layout_constraintTop_toTopOf="@id/searchView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

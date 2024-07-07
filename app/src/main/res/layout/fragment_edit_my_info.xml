@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.my_info.EditMyInfo">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="14dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameTitle"
+            style="@style/myInfoEditTitleText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:text="닉네임"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/nameEdit"
+            style="@style/myInfoEditText"
+            fontDifference="@{true}"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:enabled="false"
+            android:hint="부기"
+            android:inputType="text"
+            app:layout_constraintEnd_toStartOf="@id/nameChangeButton"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/nameTitle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nameChangeButton"
+            style="@style/myInfoEditButton"
+            android:layout_marginStart="16dp"
+            android:enabled="true"
+            android:text="변경"
+            app:layout_constraintBottom_toBottomOf="@id/nameEdit"
+            app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+            app:layout_constraintTop_toTopOf="@id/nameEdit" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailTitle"
+            style="@style/myInfoEditTitleText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="21dp"
+            android:text="이메일"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameEdit" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/emailEdit"
+            style="@style/myInfoEditText"
+            fontDifference="@{true}"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:enabled="false"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toStartOf="@id/emailChangeButton"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/emailTitle"
+            tools:hint="test@ireal.co.kr" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/emailChangeButton"
+            style="@style/myInfoEditButton"
+            android:text="변경"
+            app:layout_constraintBottom_toBottomOf="@id/emailEdit"
+            app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+            app:layout_constraintTop_toTopOf="@id/emailEdit" />
+
+        <View
+            android:id="@+id/footerLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="22dp"
+            android:background="@color/myInfoHorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailEdit" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goPasswordChange"
+            style="@style/myInfoOptionText"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="4dp"
+            android:text="비밀번호 변경"
+            app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/footerLine" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_my_info_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/goPasswordChange"
+            app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+            app:layout_constraintTop_toTopOf="@id/goPasswordChange" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

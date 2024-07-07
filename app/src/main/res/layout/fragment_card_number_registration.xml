@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/numberInfoTextView"
+                style="@style/cardInfoTextView"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="24dp"
+                android:text="카드번호"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/cardEditTextInclude"
+                layout="@layout/include_card_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numberInfoTextView" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardEditTextInclude">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/individualCard"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/sult_regular"
+                    android:text="개인카드"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="18dp" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/corporationCard"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/sult_regular"
+                    android:text="법인카드"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="18dp" />
+
+            </RadioGroup>
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/buttonSpace"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintBottom_toTopOf="@+id/nextButton"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/keyboardSpace"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/keyboard"
+                app:layout_constraintTop_toBottomOf="@id/cardEditTextInclude" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nextButton"
+                style="@style/commonBottomToggleButton"
+                android:text="다음"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.theone.busandbt.view.CustomKeyboard
+                android:id="@+id/keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_bold"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.05"
+        android:text="예시"
+        android:textColor="@color/mainTextColor"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/contentTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sult_semibold"
+        android:layout_marginEnd="14dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.05"
+        android:text="@string/content"
+        android:textColor="@color/addressGuideText"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/roadCheckImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_address_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        style="@style/addressGuideTextView"
+        android:layout_marginStart="2dp"
+        android:text="도로명 + 건물번호"
+        app:layout_constraintBottom_toBottomOf="@+id/roadCheckImageView"
+        app:layout_constraintStart_toEndOf="@+id/roadCheckImageView"
+        app:layout_constraintTop_toTopOf="@+id/roadCheckImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/roadSubTextView"
+        style="@style/addressGuideSubTextView"
+        android:layout_marginTop="3dp"
+        android:text="예) 동백로 123번길 45"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/jibunCheckImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_address_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roadSubTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/jibunTextView"
+        style="@style/addressGuideTextView"
+        android:text="지역명(동/리) + 번지"
+        app:layout_constraintBottom_toBottomOf="@+id/jibunCheckImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toTopOf="@+id/jibunCheckImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/joibunSubTextView"
+        style="@style/addressGuideSubTextView"
+        android:layout_marginTop="3dp"
+        android:text="예) 동백로 123-4"
+        app:layout_constraintStart_toStartOf="@+id/jibunTextView"
+        app:layout_constraintTop_toBottomOf="@+id/jibunTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/houseNameCheckImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_address_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/joibunSubTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/houseNameTextView"
+        style="@style/addressGuideTextView"
+        android:text="건물명 또는 아파트명"
+        app:layout_constraintBottom_toBottomOf="@+id/houseNameCheckImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toTopOf="@+id/houseNameCheckImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/addressGuideSubTextView"
+        android:text="예) 동백아파트 101동"
+        app:layout_constraintStart_toStartOf="@+id/houseNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/houseNameTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

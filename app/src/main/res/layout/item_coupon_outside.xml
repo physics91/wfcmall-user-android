@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="memberCoupon"
+            type="com.theone.busandbt.dto.coupon.MemberCouponByShop" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_round_8dp_add_order_title_text_form"
+            android:clickable="false"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:paddingVertical="8dp"
+            android:paddingStart="11dp"
+            android:text="@{memberCoupon.shopName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="20dp"
+            app:visibleOrGone="@{memberCoupon.shopId > 0}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="로얄경양식&amp;스테이크 광안점" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/downArrowImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/bg_delivery_btn_img_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:text=""
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/shopNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shopNameTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/couponRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopNameTextView"
+            tools:listitem="@layout/item_my_coupon"
+            tools:itemCount="4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

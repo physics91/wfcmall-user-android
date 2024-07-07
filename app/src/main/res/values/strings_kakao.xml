@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kakaoSdkKey">62074a820e2a37e82098b5587d27b63f</string>
+    <string name="kakaoSdkOAuth">kakao62074a820e2a37e82098b5587d27b63f</string>
+    <string name="kakaoOpenId">_xfvlFs</string>
+</resources>

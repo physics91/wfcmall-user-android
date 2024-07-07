@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_add_order_card_payment"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/sult_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.03"
+        android:text="동백전 카드는 등록이 불가합니다."
+        android:textColor="@color/mainColor"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/seeMoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/sult_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.03"
+        android:text="@string/addOrderCardPaymentText"
+        android:textColor="@color/addOrderCardPaymentText"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/addOrderSitePayment"
+        app:layout_constraintTop_toBottomOf="@+id/seeMoreTextView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cardList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="40dp"
+        android:paddingStart="36dp"
+        android:clipToPadding="false"
+        android:paddingEnd="44dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/background" />
+
+    <LinearLayout
+        android:id="@+id/indicator_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/cardList"
+        app:layout_constraintEnd_toEndOf="@id/cardList"
+        app:layout_constraintTop_toBottomOf="@id/cardList"
+        android:orientation="horizontal"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

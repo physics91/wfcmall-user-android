@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/business_info_graph"
+    app:startDestination="@id/businessInfoFragment">
+
+    <fragment
+        android:id="@+id/businessInfoFragment"
+        android:name="com.theone.busandbt.fragment.BusinessInfoFragment"
+        android:label="BusinessInfoFragment" />
+</navigation>

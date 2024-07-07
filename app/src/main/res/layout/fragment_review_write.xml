@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="orderDetail"
+            type="com.theone.busandbt.dto.order.OrderDetail" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="14dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="14dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sult_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.07"
+                android:text="@{orderDetail.shopName}"
+                android:textColor="@color/mainTextColor"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="마왕족발 수영점" />
+
+            <com.willy.ratingbar.BaseRatingBar
+                android:id="@+id/reviewRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView"
+                app:srb_clearRatingEnabled="false"
+                app:srb_drawableEmpty="@drawable/ic_review_star_inactive"
+                app:srb_drawableFilled="@drawable/ic_review_star_active"
+                app:srb_minimumStars="1.0"
+                app:srb_rating="4.0"
+                app:srb_stepSize="0.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reviewTitleTextView"
+                style="@style/reviewTitleTextView"
+                android:layout_marginTop="50dp"
+                android:text="음식의 후기를 써주세요 "
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/reviewRatingBar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:text="(200자 이내)"
+                android:textColor="@color/reviewWriteGuideText"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/reviewTitleTextView"
+                app:layout_constraintStart_toEndOf="@id/reviewTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/reviewTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/reviewContentEditText"
+                fontDifference="@{false}"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/bg_review_create_edittext"
+                android:fontFamily="@font/sult_regular"
+                android:gravity="top"
+                android:hint="주문하신 음식의 후기(맛, 포장상태 등)을 남겨주시면 다른 고객님들에게도 도움이 됩니다."
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="3dp"
+                android:maxLength="200"
+                android:paddingHorizontal="11dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="@color/reviewHintText"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/reviewTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/photoTitleTextView"
+                style="@style/reviewTitleTextView"
+                android:layout_marginTop="32dp"
+                android:text="사진을 올려주세요"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/reviewContentEditText" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/photoBind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/photoTitleTextView">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageAddButton"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_review_photo_upload"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/reviewImageCountTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_review_camera"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:gravity="center"
+                    android:text="0/3"
+                    android:textColor="#CCCCCC"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageAddButton"
+                    app:layout_constraintEnd_toEndOf="@+id/imageAddButton"
+                    app:layout_constraintStart_toStartOf="@+id/imageAddButton"
+                    app:layout_constraintTop_toTopOf="@+id/imageAddButton" />
+
+                <com.theone.busandbt.view.NestedScrollableHost
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageAddButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageAddButton">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/imageList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_review_write_image" />
+                </com.theone.busandbt.view.NestedScrollableHost>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <CheckBox
+                android:id="@+id/visibleCheckBox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_checkbox_selector"
+                android:button="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/photoBind" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/blindComment"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.07"
+                android:text="사장님만 보이게"
+                android:textColor="@color/reviewBlindCommentText"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/visibleCheckBox"
+                app:layout_constraintLeft_toRightOf="@id/visibleCheckBox"
+                app:layout_constraintTop_toTopOf="@+id/visibleCheckBox" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recommendBind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/blindComment">
+
+                <View
+                    android:id="@+id/grayLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="34dp"
+                    android:background="#f4f4f4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/recommendTitle"
+                    style="@style/reviewTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="추천하고 싶은 메뉴를 선택해 주세요"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/grayLine" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/menuList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="32dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recommendTitle"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_create_review_recommend_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomBind"
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:background="@color/reviewFooterLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recommendBind">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cautionMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="3dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="14dp"
+                    android:text="@string/reviewWarningMessage"
+                    android:textColor="#A0A0A0"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/writeButton"
+                    style="@style/commonBottomToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="22dp"
+                    android:enabled="true"
+                    android:text="작성 완료"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

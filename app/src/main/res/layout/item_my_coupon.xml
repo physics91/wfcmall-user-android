@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="memberCouponListItem"
+            type="com.theone.busandbt.dto.coupon.MemberCouponListItem" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/couponConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_coupon_list_selector"
+            android:paddingStart="14dp"
+            android:paddingTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sult_bold"
+                android:includeFontPadding="false"
+                android:textColor="@color/mainTextColor"
+                android:textSize="28dp"
+                app:commonCost="@{memberCouponListItem.discountCost}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3000원" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deliveryTypeRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="-5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="@+id/couponPriceTextView"
+                app:layout_constraintTop_toBottomOf="@+id/couponPriceTextView"
+                tools:listitem="@layout/item_coupon_delivery_type"
+                tools:itemCount="3"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponDuplication"
+                visibleOrGone="@{memberCouponListItem.eventOverlapUseEnabled == true}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:background="@drawable/bg_coupon_duplication"
+                android:drawableStart="@drawable/ic_purple_check"
+                android:drawablePadding="1dp"
+                android:fontFamily="@font/sult_semibold"
+                android:padding="3dp"
+                android:text="중복사용 가능"
+                android:textColor="@color/couponDuplication"
+                android:textSize="9dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/deliveryTypeRecyclerView"
+                app:layout_constraintStart_toEndOf="@+id/deliveryTypeRecyclerView"
+                app:layout_constraintTop_toTopOf="@+id/deliveryTypeRecyclerView"
+                tools:visibility="visible" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/minOrderCostTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sult_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.03"
+                android:textColor="@color/couponMinCostText"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/couponPriceTextView"
+                app:layout_constraintTop_toBottomOf="@+id/couponNameTextView"
+                app:minOrderCost="@{memberCouponListItem.minOrderCost}"
+                tools:text="최소주문금액 10,000원" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:text="@{memberCouponListItem.name}"
+                android:textColor="@color/mainTextColor"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/couponImageView"
+                app:layout_constraintStart_toStartOf="@+id/couponPriceTextView"
+                app:layout_constraintTop_toBottomOf="@+id/deliveryTypeRecyclerView"
+                tools:text="반짝상회" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponDeadlineTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:textColor="@color/mainColor"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/couponPriceTextView"
+                app:layout_constraintTop_toBottomOf="@+id/minOrderCostTextView"
+                tools:text="D-2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:textColor="@color/mainTextColor"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/couponDeadlineTextView"
+                app:layout_constraintStart_toEndOf="@id/couponDeadlineTextView"
+                app:layout_constraintTop_toTopOf="@id/couponDeadlineTextView"
+                tools:text="(12/1 ~ 12/31)" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/couponImageView"
+                android:layout_width="120dp"
+                android:layout_height="104dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/couponDateTextView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponSigunguTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="22dp"
+                android:background="@drawable/bg_round_9dp_coupon_sigungu"
+                android:fontFamily="@font/sult_semibold"
+                android:letterSpacing="-0.04"
+                android:padding="5dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:color="#FEE"
+                android:text="@{memberCouponListItem.sigungu}"
+                visibleOrGone="@{memberCouponListItem.sigungu != null}"
+                android:textColor="@color/mainColor"
+                app:layout_constraintBottom_toTopOf="@+id/couponImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="연제구 내 매장 한정" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

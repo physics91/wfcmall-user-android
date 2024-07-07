@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/issue_coupon_graph"
+    app:startDestination="@id/issueCouponFragment">
+
+    <fragment
+        android:id="@+id/issueCouponFragment"
+        android:name="com.theone.busandbt.fragment.coupon.IssueCouponFragment"
+        android:label="fragment_issue_coupon"
+        tools:layout="@layout/fragment_issue_coupon" />
+</navigation>

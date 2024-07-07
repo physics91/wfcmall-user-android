@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/likeSortTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="최근 추가한 순"
+        android:textSize="14dp"
+        android:textColor="@color/mainTextColor"
+        android:gravity="center"
+        android:letterSpacing="-0.05"
+        android:fontFamily="@font/sult_medium"
+        android:drawablePadding="6dp"
+        android:drawableEnd="@drawable/bg_delivery_btn_img_selector"
+        app:layout_constraintEnd_toStartOf="@+id/editButton"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="편집"
+        android:textColor="@color/mainColor"
+        android:textSize="14dp"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:fontFamily="@font/sult_medium"
+        android:letterSpacing="-0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/likeSortTypeTextView"
+        app:layout_constraintBottom_toBottomOf="@id/likeSortTypeTextView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

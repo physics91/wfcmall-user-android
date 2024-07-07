@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="shopInfoNoticeHorizontalLine">#FFC0C0</color>
+    <color name="shopInfoHorizontalLine">#E3E3E3</color>
+    <color name="shopInfoOnWorkBadge">#006ED4</color>
+    <color name="shopInfoRestBadge">#808080</color>
+    <color name="shopInfoRoutineHolidayBadge">#dd3737</color>
+    <color name="shopInfoTempHolidayBadge">#ff8b8b</color>
+    <color name="shopInfoHolidayInfoBadge">#5b0000</color>
+    <color name="shopInfoDividerLine">#F4CFCF</color>
+    <color name="shopInfoLayout">#FFF2F2</color>
+    <color name="shopInfoJibunText">#656565</color>
+    <color name="shopInfoFooterText">#636363</color>
+</resources>

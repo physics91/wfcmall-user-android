@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menu"
+            type="com.theone.busandbt.dto.menu.Menu" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="@{menu.name}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            android:drawablePadding="5dp"
+            app:layout_constraintEnd_toStartOf="@id/menuImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constrainedWidth="true"
+            tools:drawableEnd="@drawable/ic_adult_main"
+            tools:text="간장새우덮밥간장새우덮밥간장새우덮밥간장새우덮밥" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menuImageView"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/bg_gray_shop_image"
+            android:foreground="#0D111111"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/menuNameTextView"
+            app:srcCompat="@drawable/img_not_shop_common" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/optionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="@{menu.struct}"
+            android:textColor="#8B8B8B"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toStartOf="@id/menuImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menuNameTextView"
+            app:visibleOrGone="@{menu.struct.trim().length() > 0}"
+            tools:text="간장새우덮밥간장새우덮밥간장새우덮밥간장새우덮밥" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuCostTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionTextView"
+            app:layout_constraintEnd_toStartOf="@id/menuImageView"
+            tools:text="소 : 23,000\n중 : 23,000" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/menuBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="menuCostTextView, menuImageView" />
+
+        <View
+            android:id="@+id/lastView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="30dp"
+            android:background="#E3E3E3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menuBarrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/soldOutLabel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#59000911"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:text="품절"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleOrGone="@{!menu.available}"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

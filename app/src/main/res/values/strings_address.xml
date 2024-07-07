@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content">아래와 같은 조합으로 검색을 하시면 더욱 정확하게 검색할 수 있습니다.</string>
+    <string name="addressSearchEditText">건물명,도로명 또는 지번으로 검색해주세요</string>
+    <string name="noResultText">해당 주소에 대한 검색결과가 없어요.</string>
+    <string name="noResultExplain">예시에 따라 정확한 검색어를 입력해 주세요.</string>
+    <string name="detailAddressExample">상세 주소를 입력하세요</string>
+    <string name="optionalExample">예) 동백이네, 고모댁</string>
+</resources>

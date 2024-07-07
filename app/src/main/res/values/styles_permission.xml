@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> <!-- 퍼미션에 사용되는 스타일-->
+
+    <style name="permissionTitleText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/permissionTitleText</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+    </style>
+
+    <style name="permissionContentText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/permissionContentText</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+    </style>
+
+</resources>

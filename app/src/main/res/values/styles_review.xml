@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="reviewMenuTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/reviewMenuText</item>
+        <item name="android:lineSpacingExtra">-4dp</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="reviewMenuRankingTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">14dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="reviewMenuRankingNumberTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="reviewCountTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="reviewTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="reviewSortTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingStart">9dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:layout_marginStart">13.5dp</item>
+        <item name="android:layout_marginEnd">14.5dp</item>
+    </style>
+
+    <style name="reviewSortCheckImageView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:src">@drawable/ic_review_sort_popup_check</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+</resources>

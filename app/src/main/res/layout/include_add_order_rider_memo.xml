@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/riderMemoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_bold"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.03"
+        android:text="배달 기사님에게"
+        android:textColor="@color/mainTextColor"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/riderMemoSelection"
+        style="@style/addOrderEditText"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_light_gary_down_arrow"
+        android:gravity="start|center"
+        android:hint="요청사항을 입력해 주세요."
+        android:lineSpacingExtra="0dp"
+        android:paddingEnd="11.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riderMemoTitle" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/riderMemoInputTextView"
+        style="@style/addOrderEditText"
+        android:layout_marginTop="11dp"
+        android:gravity="start|center"
+        android:hint="예) 1층 현관에서 벨 눌러주세요"
+        android:inputType="text"
+        android:maxLength="60"
+        android:maxLines="1"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riderMemoSelection"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/riderMemoNextUseCheckBox"
+        style="@style/addOrderCheckBox"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riderMemoInputTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/addOrderSubOptionTextView"
+        android:layout_marginStart="12dp"
+        android:text="다음에도 사용"
+        app:layout_constraintBottom_toBottomOf="@id/riderMemoNextUseCheckBox"
+        app:layout_constraintStart_toEndOf="@id/riderMemoNextUseCheckBox"
+        app:layout_constraintTop_toTopOf="@id/riderMemoNextUseCheckBox" />
+</androidx.constraintlayout.widget.ConstraintLayout>

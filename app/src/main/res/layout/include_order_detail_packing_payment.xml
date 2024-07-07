@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="orderDetail"
+            type="com.theone.busandbt.dto.order.OrderDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderCostTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:text="총 주문금액"
+            app:layout_constraintTop_toTopOf="@id/orderCostTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderCostTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="42,500원" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/couponGroup"
+            app:constraint_referenced_ids="eventDiscountCostTextView,shopCostTextView,shopDiscountCostTitle,totalCostTextView,shopCouponTextView,eventCouponTextView
+"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopDiscountCostTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="쿠폰 할인"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderCostTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalCostTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/shopDiscountCostTitle"
+            tools:text="(-)1,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopCostTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/shopCouponTextView"
+            tools:text="(-)2,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopCouponTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_order_detail_coupon"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/sult_medium"
+            android:layout_marginStart="11dp"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="@{@string/orderDetailCoupon(orderDetail.shopName)}"
+            android:textColor="@color/orderStatusFooterTitleText"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalCostTextView"
+            tools:text="마왕족발 수영점 쿠폰" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eventCouponTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:drawableStart="@drawable/ic_order_detail_coupon"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="이벤트 쿠폰"
+            android:textColor="@color/orderStatusFooterTitleText"
+            android:textSize="14dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shopCouponTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eventDiscountCostTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/eventCouponTextView"
+            tools:text="(-)2,000원" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/packingDiscountCostTitle"
+            style="@style/orderStatusFooterTitleTextView"
+            android:layout_marginTop="12dp"
+            android:text="포장 할인"
+            app:layout_constraintEnd_toStartOf="@id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDiscountCostTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/packingDiscountCostTextView"
+            style="@style/orderStatusFooterSubTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/packingDiscountCostTitle"
+            tools:text="(-)2,000원" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/locationImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/img_permission_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/locationTitleTextView"
+        style="@style/permissionTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="위치 (선택)"
+        app:layout_constraintStart_toEndOf="@+id/locationImageView"
+        app:layout_constraintTop_toTopOf="@+id/locationImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/locationContentTextView"
+        style="@style/permissionContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="현재 위치를 기준으로 매장 검색"
+        app:layout_constraintStart_toStartOf="@+id/locationTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/locationTitleTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/camaraImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/img_permission_camara"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/camaraTitleTextView"
+        style="@style/permissionTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="카메라/앨범"
+        app:layout_constraintStart_toEndOf="@+id/camaraImageView"
+        app:layout_constraintTop_toTopOf="@+id/camaraImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/camaraContentTextView"
+        style="@style/permissionContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="사진 리뷰 및 프로필 사진 촬영/첨부"
+        app:layout_constraintStart_toStartOf="@+id/camaraTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/camaraTitleTextView" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/phoneImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="26dp"
+        android:includeFontPadding="false"
+        android:src="@drawable/img_permission_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camaraImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneTitleTextView"
+        style="@style/permissionTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="전화"
+        app:layout_constraintStart_toEndOf="@+id/phoneImageView"
+        app:layout_constraintTop_toTopOf="@+id/phoneImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneContentTextView"
+        style="@style/permissionContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="매장 전화 연결"
+        app:layout_constraintStart_toStartOf="@+id/phoneTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTitleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

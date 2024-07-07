@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_popup_logout_background">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/warningImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_login_check_exclamation_mark"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="0dp"
+            android:textColor="@color/popupMainText"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/warningImageView"
+            tools:text="메인" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="1dp"
+            android:textColor="@color/popupSubText"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            tools:text="서브" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelButton"
+            style="@style/commonPopupButton"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_round_24dp_disable_color"
+            android:text="취소"
+            app:layout_constraintEnd_toStartOf="@id/doneButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/doneButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/doneButton"
+            style="@style/commonPopupButton"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/bg_round_24dp_main_color"
+            android:text="확인"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancelButton"
+            app:layout_constraintTop_toBottomOf="@+id/subTitleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

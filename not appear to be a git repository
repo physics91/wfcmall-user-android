@@ -1,0 +1,256 @@
+[33mcommit a0b83b750f870aa31b1347db142a9dbea4ea9b49[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Merge: d940f15 54fabd9
+Author: Makhleb <cgh9694@gmail.com>
+Date:   Fri Sep 23 18:50:20 2022 +0900
+
+    공지사항 ui 완료
+
+[33mcommit d940f158fa2ffdb7ead0369b0a3ab3d7b4bd8477[m
+Author: Makhleb <cgh9694@gmail.com>
+Date:   Fri Sep 23 17:51:01 2022 +0900
+
+    NDBT-76 * 공지사항 ui구현, 강조효과 추가
+
+[33mcommit fa5f92aa3743774ef66f3cc08e34009cf136c7c2[m
+Author: Makhleb <cgh9694@gmail.com>
+Date:   Fri Sep 23 11:11:28 2022 +0900
+
+    0923 강조글 적용전
+
+[33mcommit 54fabd9e6c59b48d4fa59c25e1a37ecfa5632f75[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/NDBT-81[m[33m, [m[1;31morigin/NDBT-76[m[33m)[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Fri Sep 23 10:39:30 2022 +0900
+
+    NDBT-78
+    
+    * 전체리뷰보기 ui 완료
+    
+    * 안쓰는 이미지삭제 , 이미지 이름,철자 수정 ,안쓰는 변수 삭제로그인 글씨 크기 , 폰트 , editText 커서색 ,밑줄색 변경 , 화면 비율 조금씩 수정
+    
+    * 오류 수정
+    
+    * 안쓰는 코드 제거
+    
+    * my동백 페이지 완성
+    
+    * 공백제거
+    
+    * 스크롤 뷰로 바꾸기 ,사이 간격 조정
+    
+    * 간격 재수정
+    
+    * 여백 수정
+
+[33mcommit 1b99cb3dcc101a8c98a1e0247d05bcf9a7f8d6ef[m
+Author: Makhleb <cgh9694@gmail.com>
+Date:   Fri Sep 23 09:54:50 2022 +0900
+
+    0923_before
+
+[33mcommit 441cc86be3c53a064eba518df56650c317c4e97c[m
+Author: Makhleb <cgh9694@gmail.com>
+Date:   Thu Sep 22 17:07:10 2022 +0900
+
+    0922_edit1
+
+[33mcommit 3fe0b84bd98a97918e424a1139c733b6b3ac4d22[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Thu Sep 22 15:40:48 2022 +0900
+
+    NDBT-62
+    
+    * 전체리뷰보기 ui 완료
+    
+    * 안쓰는 이미지삭제 , 이미지 이름,철자 수정 ,안쓰는 변수 삭제로그인 글씨 크기 , 폰트 , editText 커서색 ,밑줄색 변경 , 화면 비율 조금씩 수정
+    
+    * 오류 수정
+    
+    * 안쓰는 코드 제거
+
+[33mcommit b9f59246cca564affa8f96bc412bbb72b60d0125[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Tue Sep 20 15:09:03 2022 +0900
+
+    NDBT-63
+    
+    * 장바구니 ui구현
+    
+    * 장바구니 ui 구현  , 버튼 모양 변경 ,누름효과 추가
+    
+    * 공백제거
+    
+    * 변수명 , 아이디 규칙맞게 수정 , const 로 변경 , 주석보강 ,텍스트 스키마 사용
+    
+    * 음식리스트 아이템 수정 , ripple effect 효과 넣기 , 각 글자 줄간격 조절 ,Companion 생략
+    
+    * fargment_shop_details.xml 파일입니다 . 탭은 deliveryTab 뷰페이저는 deliveryViewPager입니다
+    
+    * 가게 상세페이지 ui
+    
+    * 대표메뉴 아이콘 고정
+    
+    * string파일 수정
+    
+    * 매장상세 ui 구현완료 , 모든 레이아웃 글자 자간설정
+    
+    * 깃오류 테스트
+    
+    * 전화번호 수직 , 사업자 간격 , appcompat 적용
+
+[33mcommit 645e34af9ca77a746dfedfaba599d1f7d6a166e1[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Mon Sep 19 16:36:32 2022 +0900
+
+    NDBT-109
+    
+    * 장바구니 ui구현
+    
+    * 장바구니 ui 구현  , 버튼 모양 변경 ,누름효과 추가
+    
+    * 공백제거
+    
+    * 변수명 , 아이디 규칙맞게 수정 , const 로 변경 , 주석보강 ,텍스트 스키마 사용
+    
+    * 음식리스트 아이템 수정 , ripple effect 효과 넣기 , 각 글자 줄간격 조절 ,Companion 생략
+    
+    * fargment_shop_details.xml 파일입니다 . 탭은 deliveryTab 뷰페이저는 deliveryViewPager입니다
+    
+    * 가게 상세페이지 ui
+    
+    * 대표메뉴 아이콘 고정
+    
+    * string파일 수정
+
+[33mcommit b6d93f225593385f15e33a54244b857359a8588f[m[33m ([m[1;31morigin/NDBT-109[m[33m)[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Thu Sep 15 15:06:22 2022 +0900
+
+    NDBT-60
+    
+    * 장바구니 ui구현
+    
+    * 장바구니 ui 구현  , 버튼 모양 변경 ,누름효과 추가
+    
+    * 공백제거
+    
+    * 변수명 , 아이디 규칙맞게 수정 , const 로 변경 , 주석보강 ,텍스트 스키마 사용
+    
+    * 음식리스트 아이템 수정 , ripple effect 효과 넣기 , 각 글자 줄간격 조절 ,Companion 생략
+
+[33mcommit 25f3e3bbfb1060b54bb08e53af4a33c223b0cd5f[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Wed Sep 14 11:29:24 2022 +0900
+
+    NDBT-59
+    
+    * 음식점 리스트 맨 마지막 아이템 안나오던 오류 수정 , 주소 설정 ui/ux 레이아웃 구현완료
+    
+    * 배달팁  -> 배달비 로 전부변경
+    
+    * 변수 위치수정 ,주석 수정 , drawable 파일이름 underscore 방식으로 수정 , layout xml 파일들 이름 수정
+    
+    * 모든 파일 주석 수정 완료
+    
+    * 주석 문서화주석 형식으로 수정
+    
+    * 파일들 전부 확인 후 변수명 규칙에 맞게 수정 , with 스코프 함수 사용해보기 ,
+    
+    * 전체적인 레이아웃 사이즈를 조절했습니다
+    
+    * margint , paddingleft , right -> start,end 로 변경 ,기본 컴포넌트들 appcompat 으로 변경
+    
+    * 레이아웃 전체 비율 설정 , 뷰 크기 설정
+    
+    * 회원가입 레이아웃 위치 수정
+    
+    * 다시 확인해보다 수정 안된 파일 2개 수정 이름입력 , 약관동의
+    
+    * 레이아웃 전체 수정 완료
+    
+    * 변수명 수정
+    
+    * 변수명 수정
+    
+    * 레이아웃 전체수정 , 변수들 이름변경 , 공백제거
+
+[33mcommit cf121c3d774d97872cb14054b0081c327e437ece[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Mon Sep 5 15:04:54 2022 +0900
+
+    NDBT-61
+    
+    * 음식점 가게리스트 레이아웃 완성 , BottomDialog에 중복되던 코드들 함수써서 줄이기
+    
+    * 못 찾았던 공백 제거
+    
+    * rsetaurantlist_item.xml중 (신규 , 쿠폰,배달포장)은 피그마와 똑같이 marginTop줄시 밑으로 조금 쳐져서 marginTop 2씩 작게 해줘서 맞춰봤습니다
+    
+    * 프래그먼트 하나에서 카테고리 생성 안되는 코드
+    
+    * 쓸모없는 주석제거
+    
+    * 음식점 리스트 완성(일단 한식과 치킨까지만 구현해놨습니다)
+    
+    * 실수로 수정한 파일 추가안해주고 commit, push 해서 다시 했습니다
+
+[33mcommit ed39464a7133be52ab999e9f775a98cd5fc14a28[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Fri Aug 26 11:01:03 2022 +0900
+
+    NDBT-58
+    
+    * 음식점 메인화면 레이아웃 구현
+    
+    * 음식점 메인화면 레이아웃 구현
+    
+    * 음식점메인 레이아웃구현
+    
+    * 플러그인 제거 , cupon -> coupon 으로 변경 ,그리드뷰 주석설명 추가, 이름변경 , 잘못된 주석들 , 안쓰는 주석 정리  , 레스토랑어뎁터이름 변경 , num_tabs 내부 선언으로 변경 ,뷰페이저 어뎁터 이름 변경 , item_conut 에 대한 설명 , 패키지 이름 변경
+    
+    * item_count private 선언 constructor 삭제 불필요한 공백 제거 쿠폰 철자 수정 viewmodel -> BannerViewModel 로 수정
+    
+    * 코드 , 아이콘 , xml 모든파일 cupon -> coupon 으로 변경 ,FoodcCategoryGridViewAdater,CouponAdapter,PopularAdapter 들의 변수명 , 레이아웃 이름 변경
+    
+    * FoodPagerAdapter 변수명 변경
+
+[33mcommit 939176d49cdbc6e65b57e8417e45f32299481534[m
+Author: hanwoosung1 <110220484+hanwoosung1@users.noreply.github.com>
+Date:   Mon Aug 22 14:53:36 2022 +0900
+
+    NDBT-48
+    
+    * login layout
+    
+    * login layout modification
+    
+    * login layout modify
+    
+    * login layout modify
+    
+    * firstFragment -> FirstLoginFragment 로 변경 SecondFragment -> LoginFragment로 이름변경 각 프래그먼트의 기능들 주석작성 , 리소스 파일 아이콘 -> ic 배경은 ->bg로 수정 불필요한 공백 제거
+    
+    * img2 처럼 애매한 이름들 수정 , def 외부 스코프로 빼고 task 정리 , _binding -> binding 으로 수정 모든 코드 코드정렬 단축키 사용해서 정리
+    
+    * test
+    
+    * 모든파일 _binding -> binding 호출로 변경 , 모든 layout에서 무의미한 id 값 변경 이미지는 요청후 이미지가 만들어지면 추후에 수정하겠습니다
+    
+    * 불필요한 공백제거 , bundleKey 의미모호한 이름 변경 , 이유없이 m으로 시작되던 변수명 변경 ,의미없는 !! 호출 변경 , 사용하지 않는 코드제거, 안쓰는 코드제거
+    
+    * 안스는 코드 제거 완료
+    
+    * dialog.xml 레이아웃 안에 레이아웃 없앰.
+    
+    * dialog.xml 안에 constraintLayout 없앰  중복제거는 추후에 수정하겠습니다
+
+[33mcommit 85c6cf890995c149b6aa0300dc589d55100ec1dc[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m, [m[1;32mNDBT-76[m[33m)[m
+Author: jaeyeongkim <physics91@ireal.co.kr>
+Date:   Wed Aug 10 13:47:24 2022 +0900
+
+    코드 정리
+
+[33mcommit c0cff060f776022f3081762608e1fd7e5dc36c9b[m
+Author: jaeyeongkim <physics91@ireal.co.kr>
+Date:   Tue Aug 9 13:58:34 2022 +0900
+
+    Initial commit

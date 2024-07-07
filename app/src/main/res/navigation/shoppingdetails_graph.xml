@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shoppingdetails_graph"
+    app:startDestination="@id/shoppingDetailFragment">
+
+    <fragment
+        android:id="@+id/shoppingDetailFragment"
+        android:name="com.theone.busandbt.fragment.shop.ShoppingDetailFragment"
+        android:label="ShoppingDetailFragment">
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            android:defaultValue="1" />
+    </fragment>
+
+</navigation>

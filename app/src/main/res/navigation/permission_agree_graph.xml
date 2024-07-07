@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/permissionAgreeFragment"
+    android:id="@+id/permission_agree_graph">
+
+    <fragment
+        android:id="@+id/permissionAgreeFragment"
+        android:name="com.theone.busandbt.fragment.PermissionAgreeFragment"
+        android:label="PermissionAgreeFragment"
+        tools:layout="@layout/fragment_permission_agree">
+        <action
+            android:id="@+id/action_permissionAgreeFragment_to_serviceAgreeFragment"
+            app:destination="@id/service_agree_graph" />
+    </fragment>
+</navigation>

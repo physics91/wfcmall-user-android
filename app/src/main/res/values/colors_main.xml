@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mainBackLayout">#F5F2F2</color>
+    <color name="mainButtonText">#353535</color>
+    <color name="mainLine">#E3E3E3</color>
+    <color name="mainBottomMenuText">#353535</color>
+    <color name="mainAddressPopupLayout">#F9AFAF</color>
+    <color name="mainBottomText">#AAAAAA</color>
+    <color name="mainBannerViewPagerCountText">#939393</color>
+    <color name="mainSubText">#8C8484</color>
+    <color name="mainHintText">#AAAAAA</color>
+</resources>

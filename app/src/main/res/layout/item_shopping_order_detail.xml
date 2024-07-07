@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="orderShop"
+            type="com.theone.busandbt.dto.order.MallOrderShopInDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_shopping_order_detail_item_stork"
+        android:paddingBottom="14dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingVertical="16.5dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="8dp"
+            android:drawablePadding="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:text="@{orderShop.shopName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="17dp"
+            app:drawableEndCompat="@drawable/ic_shopping_order_detail_right_arrow"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/callButton"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="우리집상점우리집상점우리집상점우리집상점우리집상점우리집상점우리집상점우리집상점" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/callButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_shopping_order_detail_item_stork"
+            android:drawableStart="@drawable/ic_order_detail_call"
+            android:drawablePadding="2.36dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:paddingHorizontal="9dp"
+            android:paddingVertical="5.5dp"
+            android:text="전화걸기"
+            android:textColor="@color/mainColor"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/shopNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shopNameTextView" />
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/basketLine"
+            app:layout_constraintTop_toBottomOf="@+id/shopNameTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderItemRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLine"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_shopping_detail_product" />
+
+        <View
+            android:id="@+id/middleLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/basketLine"
+            app:layout_constraintTop_toBottomOf="@+id/orderItemRecyclerView" />
+
+        <include
+            android:id="@+id/reviewWriteInclude"
+            layout="@layout/include_review_write"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/middleLine"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderCancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_round_7dp_stork_order_list_review_button"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:text="주문 취소"
+            android:textColor="#525252"
+            android:textSize="16dp"
+            app:layout_constraintTop_toBottomOf="@id/reviewWriteInclude" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliverySituationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/shoppingText"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderCancelButton"
+            tools:text="배송완료" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="11dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:commonCost="@{orderShop.deliveryCost}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/deliverySituationTextView"
+            tools:text="2,500원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="배송비 "
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/deliveryCostTextView"
+            app:layout_constraintEnd_toStartOf="@+id/deliveryCostTextView"
+            app:layout_constraintTop_toTopOf="@+id/deliveryCostTextView" />
+
+        <View
+            android:id="@+id/bottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/basketLine"
+            app:layout_constraintTop_toBottomOf="@+id/deliverySituationTextView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/shopInfoCostGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toStartOf="@id/copyTextView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomLine"
+            app:visibleOrGone="@{orderShop.waybillNo != null}"
+            tools:text="로젠택배 34944848584" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/copyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:letterSpacing="-0.04"
+            android:text="복사하기"
+            android:textColor="@color/mainColor"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/productNumberTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/productNumberTextView"
+            app:layout_constraintTop_toTopOf="@+id/productNumberTextView"
+            app:visibleOrGone="@{orderShop.waybillNo != null}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

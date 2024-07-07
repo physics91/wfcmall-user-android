@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goShopDetailButton"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/bg_round_21dp_white_stork_order_detail_stork"
+        android:stateListAnimator="@null"
+        app:layout_constraintEnd_toStartOf="@id/callShopButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_order_detail_see_shop"
+        android:drawablePadding="6.5dp"
+        android:fontFamily="@font/sult_bold"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.04"
+        android:text="매장보기"
+        android:textColor="@color/mainColor"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/goShopDetailButton"
+        app:layout_constraintEnd_toEndOf="@+id/goShopDetailButton"
+        app:layout_constraintStart_toStartOf="@+id/goShopDetailButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/callShopButton"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/bg_round_21dp_white_stork_order_detail_stork"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="@id/goShopDetailButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/goShopDetailButton"
+        app:layout_constraintTop_toTopOf="@id/goShopDetailButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/callTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_bold"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.04"
+        android:drawableStart="@drawable/ic_order_detail_call"
+        android:drawablePadding="6.96dp"
+        android:text="전화걸기"
+        android:textColor="@color/mainColor"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/callShopButton"
+        app:layout_constraintEnd_toEndOf="@+id/callShopButton"
+        app:layout_constraintStart_toStartOf="@+id/callShopButton"
+        app:layout_constraintTop_toTopOf="@+id/callShopButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

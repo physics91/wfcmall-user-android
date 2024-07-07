@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="14dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22.5dp"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:text="거리 설정"
+            android:textColor="@color/mainTextColor"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/exitBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="13.5dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_exit"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bugi"
+            android:layout_width="141dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="69dp"
+            android:src="@drawable/img_distance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sult_extrabold"
+            android:includeFontPadding="false"
+            android:text="0.5"
+            android:textColor="@color/mainColor"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bugi" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="KM 이내"
+            android:textColor="#595959"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/distance"
+            app:layout_constraintStart_toEndOf="@id/distance" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@null"
+            android:max="100"
+            android:maxHeight="13dp"
+            android:minHeight="13dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:progressBackgroundTint="#F3F3F3"
+            android:progressDrawable="@drawable/bg_custom_progressbar"
+            android:progressTint="@color/mainColor"
+            android:splitTrack="false"
+            android:thumb="@drawable/ic_seekbar"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/distance"
+            tools:progress="50" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstText"
+            style="@style/distanceText"
+            android:text="0.5Km"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondText"
+            style="@style/distanceText"
+            android:text="1.0Km"
+            app:layout_constraintEnd_toStartOf="@id/thridText"
+            app:layout_constraintStart_toEndOf="@id/firstText"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/thridText"
+            style="@style/distanceText"
+            android:text="1.5Km"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fourthText"
+            style="@style/distanceText"
+            android:text="2.0Km"
+            app:layout_constraintEnd_toStartOf="@id/lastText"
+            app:layout_constraintStart_toEndOf="@id/thridText"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lastText"
+            style="@style/distanceText"
+            android:text="2.5Km"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirmBtn"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_distance_button_main_color"
+            android:fontFamily="@font/sult_extrabold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="적용하기"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/firstText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

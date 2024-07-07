@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="orderDoneMinutesFormat" formatted="true">%d~%d분</string>
+    <string name="orderDoneMinutesDashFormat" formatted="true">%d-%d분</string>
+    <string name="minOrderCostFormat" formatted="true">최소주문금액 %s원</string>
+    <string name="deliveryCostRangeFormat" formatted="true">%s~%s원</string>
+    <string name="deliveryCostDecimalRangeFormat" formatted="true">%d~%d원</string>
+    <string name="deliveryCostFormat" formatted="true">배달비 %s원</string>
+    <string name="parcelCostFormat" formatted="true">배송비 %s원</string>
+    <string name="maxDiscountCostFormat" formatted="true">최대 %d원 할인!</string>
+    <string name="maxDiscountCostForCouponDownloadFormat" formatted="true">최대 %s원 할인쿠폰</string>
+</resources>

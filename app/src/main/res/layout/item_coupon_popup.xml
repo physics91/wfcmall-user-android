@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coupon"
+            type="com.theone.busandbt.dto.coupon.ShopCouponListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/couponBackgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginTop="2dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/bg_coupon_enabled"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/sult_bold"
+                android:letterSpacing="-0.05"
+                android:textColor="#111111"
+                android:textSize="28dp"
+                app:commonCost="@{coupon.discountCost}"
+                app:layout_constraintStart_toStartOf="@+id/couponBackgroundImageView"
+                app:layout_constraintTop_toTopOf="@+id/couponBackgroundImageView"
+                tools:text="50,000원" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/minOrderCostTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sult_regular"
+                android:letterSpacing="-0.05"
+                android:textColor="#848484"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/price"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+                app:minOrderCost="@{coupon.minOrderCost}"
+                tools:text="최소주문금액 14,000원" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponInstantBadge"
+                android:layout_width="29dp"
+                android:layout_height="14.19dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/bg_round_6dp_food_main_discount_item_coupon_text_form"
+                android:backgroundTint="#A0A0A0"
+                android:fontFamily="@font/sult_regular"
+                android:gravity="center"
+                android:paddingTop="1dp"
+                android:text="배달"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/minOrderCostTextView"
+                app:layout_constraintStart_toEndOf="@+id/minOrderCostTextView"
+                app:layout_constraintTop_toTopOf="@id/minOrderCostTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/availableDaysTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/sult_semibold"
+                android:letterSpacing="-0.05"
+                android:textColor="@color/mainColor"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/minOrderCostTextView"
+                app:layout_constraintTop_toBottomOf="@id/minOrderCostTextView"
+                tools:text="사용기간 7일 남음" />
+
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/couponImg"-->
+<!--                android:layout_width="75dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:fontFamily="@font/sult_medium"-->
+<!--                android:letterSpacing="-0.05"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.652"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/price" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/downImg"-->
+<!--                android:layout_width="34dp"-->
+<!--                android:layout_height="34dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/availableDaysTextView"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/couponBackgroundImageView"-->
+<!--                app:layout_constraintHorizontal_bias="0.910"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/couponBackgroundImageView"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/price"-->
+<!--                app:layout_constraintVertical_bias="0.461" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/downText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="11dp"-->
+<!--                android:fontFamily="@font/sult_bold"-->
+<!--                android:letterSpacing="-0.05"-->
+<!--                android:text="@{coupon.downText}"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="10dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/downImg"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/downImg"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/downImg" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

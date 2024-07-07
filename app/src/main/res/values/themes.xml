@@ -1,0 +1,109 @@
+<!-- 공통으로 사용되는 테마 스타일을 정의한다. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Customer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <!--        <item name="android:windowBackground">@color/white</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.Customer" parent="Base.Theme.Customer" />
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_address_popup_layout</item>
+    </style>
+
+    <style name="basicEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">@drawable/bg_edittext_curosr</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColorHint">@color/hintText</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:background">@drawable/bg_common_edittext_bottom_horizontal_line</item>
+    </style>
+
+    <style name="dialogFullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="dialogMessage" parent="Base.V7.Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/bg_popup_logout_background</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@drawable/img_splash</item>
+    </style>
+
+    <style name="mainButton" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@drawable/bg_round_27dp_main_color</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/sult_extrabold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="commonBottomToggleButton" parent="mainButton">
+        <item name="android:layout_marginBottom">@dimen/commonBottomButtonMarginBottom</item>
+        <item name="android:layout_marginStart">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_marginEnd">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:enabled">false</item>
+        <item name="android:background">@drawable/bg_round_27dp_selector_bottom_button</item>
+        <item name="android:layout_height">@dimen/commonBottomButtonHeight</item>
+    </style>
+
+    <style name="commonPopupButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">49dp</item>
+    </style>
+
+    <style name="commonBottomButton" parent="mainButton">
+        <item name="android:layout_marginBottom">@dimen/commonBottomButtonMarginBottom</item>
+        <item name="android:layout_marginStart">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_marginEnd">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/commonBottomButtonHeight</item>
+    </style>
+
+    <style name="commonBottomDisabledButton" parent="mainButton">
+        <item name="android:layout_marginBottom">@dimen/commonBottomButtonMarginBottom</item>
+        <item name="android:layout_marginStart">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_marginEnd">@dimen/commonBottomButtonMarginHorizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bg_round_27dp_disabled_color</item>
+        <item name="android:layout_height">@dimen/commonBottomButtonHeight</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="commonSortTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_common_sort</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

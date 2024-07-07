@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.busandbt.code.MenuStatus" />
+        <variable
+            name="menu"
+            type="com.theone.busandbt.dto.menu.MallMenuListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/newLogoImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_banner_main_item_image_form"
+            android:foreground="@color/imageForeground"
+            android:scaleType="centerCrop"
+            app:glideImageUrl="@{menu.imageUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:replacementImage="@{@drawable/img_not_shop_common}"
+            app:layout_constraintDimensionRatio="H,1:1"
+            tools:src="@drawable/img_not_shop_common"  />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/couponTextView"
+            android:layout_width="31dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_round_9dp_food_main_item_coupon_text_form"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="쿠폰"
+            android:textColor="@color/foodMainItemCouponText"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/newLogoImageView"
+            app:layout_constraintStart_toStartOf="@+id/newLogoImageView"
+            app:visibleOrGone="@{menu.hasCoupon}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/goToBasketImageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_go_to_basket"
+            app:layout_constraintBottom_toBottomOf="@+id/newLogoImageView"
+            app:layout_constraintEnd_toEndOf="@+id/newLogoImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuImageSoldOutLabel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_sold_out"
+            android:clickable="true"
+            android:elevation="1dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:text="품절"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/newLogoImageView"
+            app:layout_constraintTop_toTopOf="@id/newLogoImageView"
+            app:visibleOrGone="@{menu.status == MenuStatus.SOLD_OUT.id}"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="@{menu.shopName}"
+            android:textColor="@color/shoppingItemTitle"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newLogoImageView"
+            tools:text="올펫" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/menuDiscountGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="originalPriceTextView,discountRateTextView,space"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:textColor="@color/foodMainItemText"
+            android:textSize="18dp"
+            android:text="@{menu.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            tools:text="원모어패티" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/originalPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/disableColor"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@id/menuTextView"
+            tools:text="12,000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/discountRateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainColor"
+            android:textSize="20dp"
+            app:visibleOrGone="@{menu.discountRate > 0}"
+            app:layout_constraintStart_toStartOf="@+id/originalPriceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/originalPriceTextView"
+            tools:text="10%" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            app:visibleOrGone="@{menu.discountRate > 0}"
+            app:layout_constraintBottom_toBottomOf="@+id/discountRateTextView"
+            app:layout_constraintStart_toEndOf="@+id/discountRateTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toBottomOf="@+id/originalPriceTextView"
+            tools:text="10,800원" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/footerSpace"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            app:visibleOrGone="@{menu.safeFood}"
+            app:layout_constraintStart_toStartOf="@+id/priceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/foodSafetyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_shopping_food_safety_form"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="1dp"
+            android:text="안전 식품"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            android:visibility="gone"
+            app:visibleOrGone="@{menu.safeFood}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/footerSpace"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

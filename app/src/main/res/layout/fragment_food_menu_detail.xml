@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.busandbt.code.DeliveryType" />
+
+        <variable
+            name="menuName"
+            type="String" />
+
+        <variable
+            name="menuDesc"
+            type="String" />
+
+        <variable
+            name="reviewCount"
+            type="int" />
+
+        <variable
+            name="minOrderCost"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/mainTextColor"
+        android:fitsSystemWindows="true"
+        tools:alpha="1"
+        tools:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            tools:alpha="1"
+            tools:background="@color/white">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toTopOf="@id/footerForm"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rect_transparent">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/headerCollapsingToolbarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_collapseMode="pin">
+
+                            <androidx.constraintlayout.widget.Group
+                                android:id="@+id/menuImageForm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                app:constraint_referenced_ids="menuImageViewPager,dots_indicator"
+                                tools:visibility="visible" />
+
+                            <androidx.viewpager2.widget.ViewPager2
+                                android:id="@+id/menuImageViewPager"
+                                android:layout_width="match_parent"
+                                android:layout_height="359dp"
+                                android:foreground="@drawable/bg_shop_image_gradient"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                                android:id="@+id/dots_indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                app:dotsColor="#80FFFFFF"
+                                app:dotsCornerRadius="8dp"
+                                app:dotsSize="7dp"
+                                app:dotsSpacing="4dp"
+                                app:dotsWidthFactor="0.1"
+                                app:layout_constraintBottom_toTopOf="@id/titleForm"
+                                app:layout_constraintEnd_toEndOf="@id/menuImageViewPager"
+                                app:layout_constraintStart_toStartOf="@id/menuImageViewPager"
+                                app:selectedDotColor="#E6FFFFFF" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/menuImageSoldOutLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:background="#59111111"
+                                android:elevation="1dp"
+                                android:fontFamily="@font/sult_bold"
+                                android:gravity="center"
+                                android:text="품절"
+                                android:textColor="@color/white"
+                                android:textSize="30dp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@id/menuImageViewPager"
+                                app:layout_constraintTop_toTopOf="@id/menuImageViewPager"
+                                tools:visibility="visible" />
+
+                            <androidx.legacy.widget.Space
+                                android:id="@+id/titleFormSpace"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toTopOf="@id/titleForm" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/titleForm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/bg_shop_details_layout"
+                                android:elevation="2dp"
+                                app:layout_constraintBottom_toBottomOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="14dp"
+                                    android:layout_marginTop="33dp"
+                                    android:fontFamily="@font/sult_semibold"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:letterSpacing="-0.07"
+                                    android:text="@{menuName}"
+                                    android:textColor="@color/mainTextColor"
+                                    android:textSize="27dp"
+                                    android:drawablePadding="5dp"
+                                    tools:drawableEnd="@drawable/ic_adult_main"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    tools:text="상점명상점명상점명상점명" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/mainToolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/commonActionBarHeight"
+                            app:contentInsetLeft="0dp"
+                            app:contentInsetStart="0dp"
+                            app:contentInsetStartWithNavigation="0dp"
+                            app:layout_collapseMode="pin">
+
+                            <include
+                                android:id="@+id/mainToolbarContent"
+                                layout="@layout/include_normal_toolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </androidx.appcompat.widget.Toolbar>
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/menuDetailForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/startGuideLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="14dp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/endGuideLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_end="14dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/menuDescTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="14dp"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/sult_regular"
+                            android:gravity="center_horizontal|top"
+                            android:letterSpacing="-0.07"
+                            android:lineSpacingExtra="-2dp"
+                            android:text="@{menuDesc}"
+                            android:textColor="#646464"
+                            android:textSize="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="찹쌀현미, 찹쌀, 찰보리쌀, 찰흑비쌀, 기장쌀을 혼합한 영양만점 국내산 5곡 쌀입니다~" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/reviewSee"
+                            android:layout_width="114dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="28dp"
+                            android:background="@drawable/bg_menu_details_textview"
+                            android:fontFamily="@font/sult_bold"
+                            android:gravity="center"
+                            android:letterSpacing="-0.05"
+                            android:textColor="@color/mainColor"
+                            android:textSize="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/menuDescTextView"
+                            app:menuReviewCount="@{reviewCount}"
+                            tools:text="리뷰보기" />
+
+                        <View
+                            android:id="@+id/headerLine"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="19dp"
+                            android:background="#E3E3E3"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/reviewSee" />
+
+                        <androidx.constraintlayout.widget.Barrier
+                            android:id="@+id/menuCostBarrier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:barrierDirection="bottom"
+                            app:constraint_referenced_ids="menuCostUnNamedInclude, menuCostSelectableInclude" />
+
+                        <include
+                            android:id="@+id/menuCostUnNamedInclude"
+                            layout="@layout/include_food_menu_cost_unnamed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16.5dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/headerLine" />
+
+                        <include
+                            android:id="@+id/menuCostSelectableInclude"
+                            layout="@layout/include_food_menu_cost_selectable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/headerLine"
+                            tools:visibility="visible"/>
+
+                        <View
+                            android:id="@+id/menuOptionGroupLine"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15.5dp"
+                            android:background="#E3E3E3"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/menuCostBarrier" />
+
+                        <RelativeLayout
+                            android:id="@+id/menuOptionGroupForm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:descendantFocusability="blocksDescendants"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/menuOptionGroupLine">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/menuOptionGroupRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                app:newDivider="@{@drawable/divider_common}"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/item_menu_option_group" />
+                        </RelativeLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <View
+                android:id="@+id/systemBarColorView"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/white"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/footerForm"
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_round_33dp_top_right_left"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:elevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/minOrderCostTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:lineSpacingExtra="-7dp"
+                    android:textColor="#808080"
+                    android:textSize="16dp"
+                    app:minOrderCost="@{minOrderCost}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="최소주문금액 15,000원" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/minus"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="43dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_basket_minus"
+                    app:layout_constraintBottom_toBottomOf="@id/plus"
+                    app:layout_constraintEnd_toStartOf="@id/plus"
+                    app:layout_constraintTop_toTopOf="@id/plus" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sult_bold"
+                    android:letterSpacing="-0.05"
+                    android:text="1"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/minus"
+                    app:layout_constraintEnd_toStartOf="@id/plus"
+                    app:layout_constraintStart_toEndOf="@id/minus"
+                    app:layout_constraintTop_toTopOf="@id/minus" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/plus"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="14dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_basket_plus"
+                    app:layout_constraintBottom_toBottomOf="@id/minOrderCostTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/minOrderCostTextView" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_round_27dp_main_color"
+                    android:fontFamily="@font/sult_extrabold"
+                    android:textColor="@drawable/bg_basket_text_color_selector"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="23,000원 장바구니 담기" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

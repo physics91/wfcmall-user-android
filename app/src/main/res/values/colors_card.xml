@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardSubTextView">#9F9F9F</color>
+    <color name="cardNumberTextView">#0E0E0E</color>
+    <color name="cardHorizontalLine">#61788B</color>
+    <color name="cardKeyboard">#E8E8E8</color>
+    <color name="bcCard">#E83E44</color>
+    <color name="shinhanCard">#0046FF</color>
+    <color name="nonghyubCard">#0066B3</color>
+    <color name="kbCard">#FCAF16</color>
+    <color name="lotteCard">#ED1B23</color>
+    <color name="samsungCard">#0060A9</color>
+    <color name="cityCard">#004187</color>
+    <color name="hyundaiCard">#000101</color>
+    <color name="hanaCard">#00B09A</color>
+    <color name="wooriCard">#0083CA</color>
+    <color name="suhyubCard">#0068B7</color>
+    <color name="kbankCard">#140064</color>
+    <color name="kwangjuCard">#002C6A</color>
+    <color name="jejuCard">#005BAC</color>
+</resources>

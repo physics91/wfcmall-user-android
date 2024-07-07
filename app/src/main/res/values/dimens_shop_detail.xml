@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shopDetailTabContentMarginTop">28dp</dimen>
+    <dimen name="shopDetailTabContentMarginHorizontal">25dp</dimen>
+    <dimen name="shopDetailTabContentInterval">8dp</dimen>
+</resources>

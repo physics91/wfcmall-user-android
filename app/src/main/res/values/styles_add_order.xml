@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="addOrderHorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/addOrderHorizontalLine</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="addOrderEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/bg_round_10dp_add_order_eidt_text_form</item>
+        <item name="android:layout_height">47dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">60</item>
+        <item name="android:textColorHint">@color/addOrderHintText</item>
+        <item name="android:textCursorDrawable">@drawable/bg_edittext_cursor_color</item>
+        <item name="android:paddingStart">11dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="addOrderOptionButtonTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/addOrderPhoneChangeText</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/bg_round_18dp_add_order_title_text_form</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="addOrderSubOptionTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:textColor">@color/addOrderSubOptionText</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="addOrderCheckBox">
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:background">@drawable/bg_checkbox_selector</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="addOrderCouponTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="addOrderCouponCostTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="addOrderCouponUseTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:textColor">@color/addOrderUseText</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="addOrderCouponTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">78dp</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_round_17dp_add_order_coupon_form_color_stork_main_color</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="addOrderSitePaymentTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+    <style name="addOrderDeliveryRequestTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">27dp</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>

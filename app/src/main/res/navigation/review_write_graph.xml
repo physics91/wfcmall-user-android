@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/review_write_graph"
+    app:startDestination="@id/reviewWriteFragment">
+    <fragment
+        android:id="@+id/reviewWriteFragment"
+        android:name="com.theone.busandbt.fragment.review.ReviewWriteFragment"
+        android:label="fragment_review_write"
+        tools:layout="@layout/fragment_review_write">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coupon_list_graph"
+    app:startDestination="@id/couponListFragment">
+    <fragment
+        android:id="@+id/couponListFragment"
+        android:name="com.theone.busandbt.fragment.coupon.CouponListFragment"
+        android:label="fragment_coupon_list"
+        tools:layout="@layout/fragment_coupon_list">
+        <argument
+            android:name="shopIdList"
+            app:argType="integer[]"
+            app:nullable="true" />
+        <argument
+            android:name="couponTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="paymentCost"
+            app:argType="integer" />
+        <argument
+            android:name="couponIdList"
+            app:argType="integer[]"
+            app:nullable="true"/>
+    </fragment>
+</navigation>

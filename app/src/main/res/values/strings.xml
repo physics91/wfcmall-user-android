@@ -1,0 +1,21 @@
+<!-- 공통으로 쓰이는 문자열들을 정의한다. -->
+<resources>
+    <string name="google_client_id">366355521776-smt604m473rhr8ni5p9d9knanl690ggn.apps.googleusercontent.com</string>
+    <string name="google_client_secret"></string>
+    <string name="default_notification_channel_id">dbt_alert_normal</string>
+    <string name="default_notification_channel_name">@string/app_name</string>
+    <string name="app_name">동백통</string>
+    <string name="callCenterNo">1899–4423</string> <!-- 고객센터 전화번호 -->
+
+    <string name="social_login_info_naver_client_id">c7pQLMHX8fXSCvqLox8p</string>
+    <string name="social_login_info_naver_client_secret">NfR5jiSp4r</string>
+    <string name="social_login_info_naver_client_name">동백통</string>
+
+    <string name="commonCost" formatted="true">%s원</string>
+    <string name="commonCostMinusFormat" formatted="true">(-)%s원</string>
+    <string name="subAddress" formatted="true">(도로명)%s</string>
+    <string name="jibunAddress" formatted="true">(지번)%s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contactUsDesc">평일 AM 11:00 ~ PM 8:00\n주말·공휴일 AM 11:00 ~ PM 8:00</string>
+</resources>

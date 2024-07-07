@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="14dp"
+    android:viewportWidth="24"
+    android:viewportHeight="14">
+  <group>
+    <clip-path
+        android:pathData="M0,0h24v14H0z"/>
+    <path
+        android:pathData="M20.948,7c-0.03,-0.76 0.236,-1.502 0.738,-2.062 0.502,-0.56 1.2,-0.893 1.94,-0.927V0.384H0.366V3.995c0.726,0.067 1.402,0.41 1.894,0.963 0.492,0.552 0.765,1.274 0.765,2.022 0,0.748 -0.273,1.47 -0.765,2.022 -0.492,0.552 -1.167,0.896 -1.894,0.963v3.62H23.626V9.949c-0.734,-0.031 -1.427,-0.358 -1.929,-0.91 -0.501,-0.552 -0.77,-1.284 -0.749,-2.039Z"
+        android:strokeLineJoin="bevel"
+        android:strokeWidth=".96"
+        android:fillColor="#fff"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M5.667,0.384V1.582"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#00000000"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M5.667,3.748V11.331"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#00000000"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M5.667,12.418v1.199M18.333,0.384V1.582"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#00000000"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M18.333,3.748V11.331"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#00000000"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M18.333,12.418v1.199M14.775,4.147 L9.225,9.853"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#00000000"
+        android:strokeColor="#000"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M9.629,5.681c0.602,0 1.09,-0.501 1.09,-1.119 0,-0.618 -0.488,-1.119 -1.09,-1.119 -0.602,0 -1.09,0.501 -1.09,1.119 0,0.618 0.488,1.119 1.09,1.119ZM14.371,10.548c0.602,0 1.09,-0.501 1.09,-1.119 0,-0.618 -0.488,-1.119 -1.09,-1.119 -0.602,0 -1.09,0.501 -1.09,1.119 0,0.618 0.488,1.119 1.09,1.119Z"
+        android:strokeLineJoin="bevel"
+        android:fillColor="#fff"
+        android:strokeColor="#000"/>
+  </group>
+</vector>

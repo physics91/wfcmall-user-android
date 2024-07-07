@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="review"
+            type="com.theone.busandbt.dto.review.MemberReviewListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/storeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="38.5dp"
+            android:drawableEnd="@drawable/ic_black_right_arrow"
+            android:drawablePadding="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingVertical="4.5dp"
+            android:text="@{review.shopName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/editBtn"
+            app:layout_constraintHorizontal_bias="0.0"
+            tools:text="마왕족발 수영점마왕족발 수영점마왕족발 수영점마왕족발 수영점마왕족발 수영점마왕족발 수영점" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editBtn"
+            style="@style/myReviewButtonText"
+            android:layout_marginEnd="5dp"
+            android:text="수정"
+            app:layout_constraintBottom_toBottomOf="@id/storeTitle"
+            app:layout_constraintEnd_toStartOf="@id/deleteBtn"
+            app:layout_constraintTop_toTopOf="@id/storeTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deleteBtn"
+            style="@style/myReviewButtonText"
+            android:layout_marginEnd="14dp"
+            android:text="삭제"
+            app:layout_constraintBottom_toBottomOf="@id/storeTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/storeTitle" />
+
+        <com.willy.ratingbar.BaseRatingBar
+            android:id="@+id/baseRatingBar"
+            android:layout_width="83dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/storeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editBtn"
+            app:srb_clearRatingEnabled="true"
+            app:srb_clickable="true"
+            app:srb_drawableEmpty="@drawable/ic_rating_off"
+            app:srb_drawableFilled="@drawable/ic_rating_on"
+            app:srb_isIndicator="true"
+            app:srb_minimumStars="1"
+            app:srb_numStars="5"
+            app:srb_rating="4"
+            app:srb_scrollable="true"
+            app:srb_starHeight="30dp"
+            app:srb_starPadding="1dp"
+            app:srb_starWidth="30dp"
+            app:srb_stepSize="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:textColor="@color/myReviewDate"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/baseRatingBar"
+            app:layout_constraintStart_toEndOf="@id/baseRatingBar"
+            app:layout_constraintTop_toTopOf="@id/baseRatingBar"
+            tools:text="22-09-22" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/reviewImageGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="reviewImageViewPager,allCount" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/reviewImageViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="268dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_full_review_img_background"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/storeTitle"
+            app:layout_constraintTop_toBottomOf="@id/baseRatingBar" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/ic_review_viewpager_text"
+            android:fontFamily="@font/sult_regular"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:paddingHorizontal="12dp"
+            android:text="1/3"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/reviewImageViewPager"
+            app:layout_constraintEnd_toEndOf="@id/reviewImageViewPager" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="13dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="3dp"
+            android:text="@{review.content}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/reviewImageViewPager"
+            app:layout_constraintStart_toStartOf="@id/reviewImageViewPager"
+            app:layout_constraintTop_toBottomOf="@id/reviewImageViewPager"
+            tools:text="음식 따뜻하고 빠르게 배달 되어 왔어요!\n넘 맛있게 잘 먹었습니다" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/reviewMenuChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="18dp"
+            app:chipSpacingVertical="-10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reviewText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="28dp"
+            android:background="@color/myInfoHorizontalStarveLine"
+            app:layout_constraintTop_toBottomOf="@id/reviewMenuChipGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

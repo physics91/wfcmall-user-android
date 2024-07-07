@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/allSelectCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginEnd="4dp"
+        android:text="전체선택"
+        android:textColor="@color/mainTextColor"
+        android:textSize="14dp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/sult_medium"
+        app:buttonTint="@color/mainColor"
+        tools:checked="true"
+        app:layout_constraintEnd_toStartOf="@id/removeButton"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="2dp"
+        android:includeFontPadding="false"
+        android:text="삭제"
+        android:textColor="@color/mainColor"
+        android:textSize="14dp"
+        android:fontFamily="@font/sult_medium"
+        android:letterSpacing="-0.05"
+        app:layout_constraintEnd_toStartOf="@id/cancelButton"
+        app:layout_constraintTop_toTopOf="@id/allSelectCheckBox"
+        app:layout_constraintBottom_toBottomOf="@id/allSelectCheckBox"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="2dp"
+        android:includeFontPadding="false"
+        android:text="취소"
+        android:textColor="@color/mainColor"
+        android:textSize="14dp"
+        android:fontFamily="@font/sult_medium"
+        android:letterSpacing="-0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/allSelectCheckBox"
+        app:layout_constraintBottom_toBottomOf="@id/allSelectCheckBox"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

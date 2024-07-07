@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shopDetail"
+            type="com.theone.busandbt.dto.shop.ShopDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="28dp"
+        tools:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/shopDetailTabContentMarginHorizontal"
+            android:layout_marginTop="@dimen/shopDetailTabContentMarginTop"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text="배달 진행 시간"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryProcessTimeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="@dimen/shopDetailTabContentMarginHorizontal"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/time"
+            app:layout_constraintTop_toTopOf="@id/time"
+            app:orderDoneMinutes="@{shopDetail.deliveryDoneMinutes}"
+            tools:text="11시, 16시(하루 2번 일괄 배달)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/minOrderCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentInterval"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text="최소주문금액"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/time"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/minPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:commonCost="@{shopDetail.minOrderCost}"
+            app:layout_constraintBottom_toBottomOf="@id/minOrderCostTextView"
+            app:layout_constraintStart_toEndOf="@id/minOrderCostTextView"
+            app:layout_constraintStart_toStartOf="@id/deliveryProcessTimeTextView"
+            app:layout_constraintTop_toTopOf="@id/minOrderCostTextView"
+            tools:text="20,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentInterval"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text="결제 방법"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/minOrderCostTextView"
+            app:layout_constraintTop_toBottomOf="@id/minOrderCostTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/paymentText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text=""
+            android:textColor="#111111"
+            android:textSize="16dp"
+            tools:text="동백전결제, 카드결제, 현장결제"
+            app:layout_constraintStart_toEndOf="@id/payment"
+            app:layout_constraintStart_toStartOf="@id/minPriceText"
+            app:layout_constraintEnd_toEndOf="@id/deliveryProcessTimeTextView"
+            app:layout_constraintTop_toTopOf="@id/payment" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentInterval"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text="배달비"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/payment"
+            app:layout_constraintTop_toBottomOf="@id/payment" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/paymentText"
+            app:layout_constraintTop_toTopOf="@id/deliveryPrice"
+            app:maxDeliveryCost="@{shopDetail.maxDeliveryCost}"
+            app:minDeliveryCost="@{shopDetail.minDeliveryCost}"
+            tools:text="2,000~3,000원" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:src="@drawable/ic_exclamationmark"
+            app:layout_constraintBottom_toBottomOf="@id/deliveryPriceText"
+            app:layout_constraintStart_toEndOf="@id/deliveryPriceText"
+            app:layout_constraintTop_toTopOf="@id/deliveryPriceText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

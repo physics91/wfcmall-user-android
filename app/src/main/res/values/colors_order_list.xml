@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orderListDateText">#AAAAAA</color>
+    <color name="orderListHorizontalLine">#F3F3F3</color>
+    <color name="orderListReviewButton">#D9D9D9</color>
+    <color name="shoppingHistoryListHorizontalLine">#F4F4F4</color>
+</resources>

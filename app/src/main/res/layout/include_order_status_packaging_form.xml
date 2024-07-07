@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_order_history_shop_background"
+    android:paddingHorizontal="17dp"
+    android:paddingVertical="24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expectedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_order_status_text_background"
+        android:drawableStart="@drawable/ic_order_status_clock"
+        android:drawablePadding="3.28dp"
+        android:fontFamily="@font/sult_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.05"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2.5dp"
+        android:textColor="@color/mainTextColor"
+        android:textSize="14dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="13:46 도착예정"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sult_bold"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.05"
+        android:text="매장에서 접수 대기 중이에요."
+        android:textColor="@color/mainColor"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expectedTime" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/firstCheck"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_order_status_checkbox_selector"
+        android:button="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderStatusTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/receipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/sult_bold"
+        android:letterSpacing="-0.03"
+        android:text="접수중"
+        android:textColor="@drawable/bg_order_status_text_selector"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@id/firstCheck"
+        app:layout_constraintStart_toStartOf="@id/firstCheck"
+        app:layout_constraintTop_toBottomOf="@id/firstCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/receiptTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/sult_regular"
+        android:letterSpacing="-0.03"
+        android:text="13:29"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/receipt"
+        app:layout_constraintStart_toStartOf="@id/receipt"
+        app:layout_constraintTop_toBottomOf="@id/receipt" />
+
+    <View
+        android:id="@+id/firstLine"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#D9D9D9"
+        android:backgroundTint="@drawable/bg_order_status_line_selector"
+        app:layout_constraintBottom_toBottomOf="@id/firstCheck"
+        app:layout_constraintEnd_toStartOf="@id/secondCheck"
+        app:layout_constraintStart_toEndOf="@id/firstCheck"
+        app:layout_constraintTop_toTopOf="@id/firstCheck" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/secondCheck"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:background="@drawable/bg_order_status_checkbox_selector"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/firstCheck"
+        app:layout_constraintEnd_toStartOf="@id/thirdCheck"
+        app:layout_constraintStart_toEndOf="@id/firstCheck"
+        app:layout_constraintTop_toTopOf="@id/firstCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/sult_bold"
+        android:letterSpacing="-0.03"
+        android:text="조리중"
+        android:textColor="@drawable/bg_order_status_text_selector"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@id/secondCheck"
+        app:layout_constraintStart_toStartOf="@id/secondCheck"
+        app:layout_constraintTop_toBottomOf="@id/secondCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cookingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/sult_regular"
+        android:letterSpacing="-0.03"
+        android:text="13:29"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cooking"
+        app:layout_constraintStart_toStartOf="@id/cooking"
+        app:layout_constraintTop_toBottomOf="@id/cooking" />
+
+    <View
+        android:id="@+id/secondLine"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#D9D9D9"
+        android:backgroundTint="@drawable/bg_order_status_line_selector"
+        app:layout_constraintBottom_toBottomOf="@id/firstCheck"
+        app:layout_constraintEnd_toStartOf="@id/thirdCheck"
+        app:layout_constraintStart_toEndOf="@id/secondCheck"
+        app:layout_constraintTop_toTopOf="@id/firstCheck" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/thirdCheck"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="83dp"
+        android:background="@drawable/bg_order_status_checkbox_selector"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/firstCheck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/firstCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/deliveryClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/sult_bold"
+        android:letterSpacing="-0.03"
+        android:text="포장완료"
+        android:textColor="@drawable/bg_order_status_text_selector"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@id/thirdCheck"
+        app:layout_constraintStart_toStartOf="@id/thirdCheck"
+        app:layout_constraintTop_toBottomOf="@id/thirdCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/deliveryClearTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/sult_regular"
+        android:letterSpacing="-0.03"
+        android:text="13:29"
+        android:textColor="#111111"
+        android:textSize="15dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/deliveryClear"
+        app:layout_constraintStart_toStartOf="@id/deliveryClear"
+        app:layout_constraintTop_toBottomOf="@id/deliveryClear" />
+
+    <View
+        android:id="@+id/firstUnderscore"
+        android:layout_width="0dp"
+        android:layout_height="2.5dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_order_dircet_delivery_line_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receiptTime" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="141dp"
+        android:fontFamily="@font/sult_semibold"
+        android:letterSpacing="-0.03"
+        android:text="조리가 시작되면 취소할 수 없어요."
+        android:textColor="#848484"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderStatusTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderCancelButton"
+        android:layout_width="76dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="173dp"
+        android:background="@drawable/bg_round_18dp_stork_order_status_cancel_text_form"
+        android:fontFamily="@font/sult_bold"
+        android:gravity="center"
+        android:text="주문취소"
+        android:textColor="@color/mainColor"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderStatusTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

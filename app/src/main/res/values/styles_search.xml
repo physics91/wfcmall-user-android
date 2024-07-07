@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="searchTotalTitleText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+    </style>
+
+    <style name="searchOrderMoreButton">
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/searchMoreText</item>
+        <item name="android:background">@drawable/bg_order_more_button</item>
+        <item name="android:paddingStart">22dp</item>
+        <item name="android:paddingEnd">22dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

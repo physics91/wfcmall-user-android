@@ -1,0 +1,12 @@
+<!-- 공통으로 사용되는 크기를 정의한다. -->
+<resources>
+    <dimen name="commonBottomButtonMarginBottom">16dp</dimen>
+    <dimen name="commonBottomButtonMarginHorizontal">14dp</dimen>
+    <dimen name="commonBottomButtonHeight">54dp</dimen>
+    <dimen name="horizontalLineHeight">0.5dp</dimen>
+    <dimen name="horizontalLineWidth">0dp</dimen>
+    <dimen name="joinTitleTextViewMarginTop">16dp</dimen>
+    <dimen name="commonActionBarHeight">44dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="securityKeyboardButtonHeight">44dp</dimen>
+</resources>

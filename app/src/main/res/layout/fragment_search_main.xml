@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="14dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/goBackButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:paddingHorizontal="18dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toStartOf="@id/mainSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mainSearch"
+            app:srcCompat="@drawable/ic_left_arrow" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/mainSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_address_edittext_selector"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="start|center"
+            android:hint=" 메뉴,가게를 검색하세요!"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:letterSpacing="-0.05"
+            android:maxLength="100"
+            android:paddingVertical="12dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textCursorDrawable="@drawable/bg_edittext_curosr"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@id/goBackButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchImg"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_main_search"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toEndOf="@id/mainSearch"
+            app:layout_constraintTop_toTopOf="@id/mainSearch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currentSearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/searchForm"
+            app:layout_constraintTop_toBottomOf="@id/mainSearch" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clockImg"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="21dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_search_clock"
+            app:layout_constraintBottom_toBottomOf="@id/currentSearchLayout"
+            app:layout_constraintStart_toStartOf="@id/currentSearchLayout"
+            app:layout_constraintTop_toTopOf="@id/currentSearchLayout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6.5dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:text="최근 검색어"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/clockImg"
+            app:layout_constraintStart_toEndOf="@id/clockImg"
+            app:layout_constraintTop_toTopOf="@id/clockImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allKeywordDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="3.5dp"
+            android:text="전체 삭제"
+            android:textColor="@color/searchDeleteText"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/clockImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clockImg" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/keywordRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currentSearchLayout" />
+
+        <include
+            android:id="@+id/notExistSearchInclude"
+            layout="@layout/include_not_exist_recent_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

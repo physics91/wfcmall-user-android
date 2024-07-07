@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="couponSelectTrueSolid">#FFF2F2</color>
+    <color name="couponSelectFalseStork">#ECECEC</color>
+    <color name="couponTypeForm">#ECECEC</color>
+    <color name="couponTypeText">#666060</color>
+    <color name="couponMinCostText">#848484</color>
+    <color name="couponDisabled">#a0a0a0</color>
+    <color name="couponDuplication">#6100DD</color>
+    <color name="bgCouponDuplication">#F7F1FF</color>
+</resources>

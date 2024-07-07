@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="25dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="25dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTextView"
+                    style="@style/joinTitleTextView"
+                    android:text="서비스 이용을 위한\n약관에 동의해주세요."
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/allCheckBox"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/bg_checkbox_selector"
+                    android:button="@null"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/allTextTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="-1dp"
+                    android:text="본인확인 서비스 약관 전체 동의"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@id/allCheckBox"
+                    app:layout_constraintStart_toEndOf="@+id/allCheckBox"
+                    app:layout_constraintTop_toTopOf="@id/allCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ageCheckbox"
+                    style="@style/joinLowerCheckBox"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+                    app:layout_constraintStart_toStartOf="@id/allCheckBox"
+                    app:layout_constraintTop_toBottomOf="@id/allCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ageTextView"
+                    style="@style/joinLowerCheckTextView"
+                    android:layout_marginStart="10dp"
+                    android:text="만 14세 이상입니다 (필수)"
+                    app:layout_constraintBottom_toBottomOf="@id/ageCheckbox"
+                    app:layout_constraintStart_toEndOf="@+id/ageCheckbox"
+                    app:layout_constraintTop_toTopOf="@id/ageCheckbox" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/serviceCheckbox"
+                    style="@style/joinLowerCheckBox"
+                    android:layout_marginTop="17dp"
+                    app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+                    app:layout_constraintStart_toStartOf="@id/allCheckBox"
+                    app:layout_constraintTop_toBottomOf="@id/ageTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceTextView"
+                    style="@style/joinLowerCheckTextView"
+                    android:layout_marginStart="10dp"
+                    android:text="동백통 서비스 이용약관 (필수)"
+                    app:layout_constraintBottom_toBottomOf="@+id/serviceCheckbox"
+                    app:layout_constraintStart_toEndOf="@+id/serviceCheckbox"
+                    app:layout_constraintTop_toTopOf="@+id/serviceCheckbox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceDetailButton"
+                    style="@style/joinDetailsTextView"
+                    app:layout_constraintBottom_toBottomOf="@id/serviceTextView"
+                    app:layout_constraintStart_toEndOf="@+id/serviceTextView"
+                    app:layout_constraintTop_toTopOf="@id/serviceTextView" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/privacyCheckbox"
+                    style="@style/joinLowerCheckBox"
+                    android:layout_marginTop="17dp"
+                    app:layout_constraintEnd_toEndOf="@id/serviceCheckbox"
+                    app:layout_constraintStart_toStartOf="@id/serviceCheckbox"
+                    app:layout_constraintTop_toBottomOf="@id/serviceCheckbox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/privacyTitleTextView"
+                    style="@style/joinLowerCheckTextView"
+                    android:layout_marginStart="10dp"
+                    android:text="개인정보 처리방침 (필수)"
+                    app:layout_constraintBottom_toBottomOf="@+id/privacyCheckbox"
+                    app:layout_constraintStart_toEndOf="@+id/privacyCheckbox"
+                    app:layout_constraintTop_toTopOf="@+id/privacyCheckbox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/privacyDetailButton"
+                    style="@style/joinDetailsTextView"
+                    app:layout_constraintBottom_toBottomOf="@id/privacyTitleTextView"
+                    app:layout_constraintStart_toEndOf="@+id/privacyTitleTextView"
+                    app:layout_constraintTop_toTopOf="@id/privacyTitleTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            style="@style/commonBottomToggleButton"
+            android:text="다음"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="joinLowerCheckBox">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/bg_check_selector</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="joinLowerCheckTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/joinLowerCheckText</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="joinTitleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:textSize">26dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:layout_marginTop">@dimen/joinTitleTextViewMarginTop</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="joinDetailsTextView">
+        <item name="android:layout_width">38dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:background">@drawable/bg_round_7dp_gray</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">자세히</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="joinGuideTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/joinGuideText</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="joinStatusTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/joinStatusText</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="passwordToggleBackButton">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="passwordToggleImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/ic_password_visibility_toggle</item>
+    </style>
+
+</resources>

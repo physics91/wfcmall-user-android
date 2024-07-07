@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menu"
+            type="com.theone.busandbt.dto.order.OrderMenuInDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menuImageView"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/bg_shopping_basket_img"
+            android:foreground="@color/basketForegroundImage"
+            android:scaleType="centerCrop"
+            app:glideImageUrl="@{menu.menuImageUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:replacementImage="@{@drawable/img_not_shop_common}"
+            app:srcCompat="@drawable/img_not_exist_shopping_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="11dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:text="@{menu.menuName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/menuImageView"
+            app:layout_constraintTop_toTopOf="@id/menuImageView"
+            tools:text="더블치즈버거 세트" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/optionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:textColor="@color/basketItemOptionText"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/menuNameTextView"
+            app:layout_constraintStart_toStartOf="@id/menuNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/menuNameTextView"
+            tools:text="· 토핑 추가: 치즈(+1,000원)/머쉬룸(+2,000원)
+· 음료 추가: 콜라(+1,500원)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/sult_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="17dp"
+            app:layout_constraintStart_toStartOf="@+id/menuNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/optionTextView"
+            tools:text="11,000원" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuOptionTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/orderDetailPriceText"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="사이즈" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuOptionContentTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/orderDetailPriceText"
+            android:textFontWeight="500"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/menuOptionTitleTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1인분(8,000원),1인분(8,000원),1인분(8,000원),1인분(8,000원),1인분(8,000원)" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

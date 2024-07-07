@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/myInfoBackground"
+    android:layout_width="match_parent"
+    android:layout_height="74dp"
+    android:background="@drawable/bg_myinfo_background"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/goToHistoryOrderTextView"
+        style="@style/mainBottomMenu"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_order_list_button"
+        android:drawablePadding="8.93dp"
+        android:text="주문내역" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/goToCouponTextView"
+        style="@style/mainBottomMenu"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_coupon_button"
+        android:drawablePadding="10.96dp"
+        android:paddingTop="1dp"
+        android:text="쿠폰함" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/goToJjimTextView"
+        style="@style/mainBottomMenu"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_hart"
+        android:drawablePadding="4dp"
+        android:paddingTop="2dp"
+        android:text="찜" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/goToMyInfoTextView"
+        style="@style/mainBottomMenu"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_myinfo_button"
+        android:drawablePadding="6dp"
+        android:paddingTop="1dp"
+        android:text="MY동백" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

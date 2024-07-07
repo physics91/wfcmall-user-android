@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomMenuAppRelated"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/businessInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center"
+        android:layout_weight="1"
+        android:fontFamily="@font/sult_medium"
+        android:letterSpacing="-0.05"
+        android:text="사업자정보확인"
+        android:textColor="#595959"
+        android:textSize="12dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firstVertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#595959" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/terms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:fontFamily="@font/sult_medium"
+        android:gravity="center"
+        android:letterSpacing="-0.05"
+        android:text="이용약관"
+        android:textColor="#595959"
+        android:textSize="12dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/secondVertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#595959" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/infoPolicy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:fontFamily="@font/sult_medium"
+        android:gravity="center"
+        android:letterSpacing="-0.05"
+        android:maxLines="1"
+        android:text="개인정보처리방침"
+        android:textColor="#595959"
+        android:textSize="12dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/thirdVertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#595959" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/openSourceLicenses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/sult_medium"
+        android:gravity="end"
+        android:letterSpacing="-0.05"
+        android:maxLines="1"
+        android:text="오픈소스 라이센스"
+        android:textColor="#595959"
+        android:textSize="12dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

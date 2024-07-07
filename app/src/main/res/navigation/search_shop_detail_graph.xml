@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_shop_detail_graph"
+    app:startDestination="@id/searchShopDetailMainFragment">
+
+    <fragment
+        android:id="@+id/searchShopDetailMainFragment"
+        android:name="com.theone.busandbt.fragment.search.SearchShopDetailMainFragment"
+        android:label="SearchShopDetailMainFragment">
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <argument
+            android:name="shopName"
+            app:argType="string" />
+        <argument
+            android:name="minOrderCost"
+            app:argType="integer" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

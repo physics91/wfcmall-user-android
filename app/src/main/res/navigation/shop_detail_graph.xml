@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_detail_graph"
+    app:startDestination="@id/shopDetailFragment">
+    <fragment
+        android:id="@+id/shopDetailFragment"
+        android:name="com.theone.busandbt.fragment.shop.ShopDetailFragment"
+        android:label="ShopDetailFragment"
+        tools:layout="@layout/fragment_shop_details">
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_menuDetailsFragment"
+            app:destination="@id/food_menu_detail_graph">
+            <argument
+                android:name="menuId"
+                app:argType="integer" />
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="shopName"
+                app:argType="string" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="minOrderCost"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_fullReviewFragment"
+            app:destination="@id/shop_review_list">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_storeInformationFragment"
+            app:destination="@id/shop_info_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_fullAddress"
+            app:destination="@id/shop_location_graph">
+            <argument
+                android:name="location"
+                app:argType="com.theone.busandbt.dto.address.Location" />
+            <argument
+                android:name="enableMyLocation"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_populaViewAllFragment"
+            app:destination="@id/newShopListFragment" />
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_shopBasketMainFragment"
+            app:destination="@id/basket_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

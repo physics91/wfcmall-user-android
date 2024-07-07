@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="join_title_margin_top">35dp</dimen>
+    <dimen name="join_first_line_margin_top">229dp</dimen>
+    <dimen name="join_agree_all_check_margin_top">237dp</dimen>
+    <dimen name="join_agency_line_margin_top">232.5dp</dimen>
+    <dimen name="join_terms_agree_margin_top">264dp</dimen>
+    <dimen name="join_agree_first_check_margin_top">25dp</dimen>
+    <dimen name="join_agree_second_check_margin_top">65dp</dimen>
+    <dimen name="join_agree_third_check_margin_top">105dp</dimen>
+    <dimen name="join_agree_fourth_check_margin_top">145dp</dimen>
+    <dimen name="join_agree_fifth_check_margin_top">185dp</dimen>
+    <dimen name="join_agree_sixth_check_margin_top">225dp</dimen>
+    <dimen name="join_agree_app_text_margin_top">262dp</dimen>
+    <dimen name="join_agree_message_text_margin_top">300dp</dimen>
+    <dimen name="join_agree_email_text_check_margin_top">338dp</dimen>
+</resources>

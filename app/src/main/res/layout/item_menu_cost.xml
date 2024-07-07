@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menuOption"
+            type="com.theone.busandbt.dto.menu.MenuOption" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12.5dp"
+        android:paddingBottom="12.5dp"
+        tools:background="@color/white">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/checkGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="menuCostCheckbox,menuCostNameTextView" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/menuCostCheckbox"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_shopping_basket_checkbox"
+            android:button="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuCostNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:fontFamily="@font/sult_medium"
+            android:textColor="@color/selector_menu_option"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/menuCostCheckbox"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="가격명" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_medium"
+            android:textColor="@color/selector_menu_option"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="13,000원" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deliveryOrder"
+                style="@style/searchTotalTitleText"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="12dp"
+                android:text="배달"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deliveryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/deliveryOrder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moreDelivery"
+                style="@style/searchOrderMoreButton"
+                android:drawableEnd="@drawable/ic_right_arrow_more_view"
+                android:drawablePadding="12dp"
+                android:gravity="center"
+                android:text="배달 더보기"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deliveryRecycler" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/takeoutOrder"
+                style="@style/searchTotalTitleText"
+                android:layout_marginTop="20dp"
+                android:text="포장"
+                app:layout_constraintStart_toStartOf="@+id/deliveryOrder"
+                app:layout_constraintTop_toBottomOf="@+id/moreDelivery" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/takeOutRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/takeoutOrder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moreTakeout"
+                style="@style/searchOrderMoreButton"
+                android:drawableEnd="@drawable/ic_right_arrow_more_view"
+                android:drawablePadding="12dp"
+                android:text="포장 더보기"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/takeOutRecycler" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/traditionOrder"
+                style="@style/searchTotalTitleText"
+                android:layout_marginTop="20dp"
+                android:text="택배배송"
+                app:layout_constraintStart_toStartOf="@+id/deliveryOrder"
+                app:layout_constraintTop_toBottomOf="@+id/moreTakeout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/traditionRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="20dp"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/traditionOrder"
+                app:spanCount="2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moreMall"
+                style="@style/searchOrderMoreButton"
+                android:layout_marginTop="18dp"
+                android:drawableEnd="@drawable/ic_right_arrow_more_view"
+                android:drawablePadding="12dp"
+                android:text="택배배송 더보기"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/traditionRecycler" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

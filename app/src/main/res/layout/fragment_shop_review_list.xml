@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="reviewStatistics"
+            type="com.theone.busandbt.dto.review.ReviewStatistics" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/notExistGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="notExistReviewCountTextView,notExistCommentTextView,notExistShopReplyCountTextView,notExistReviewMiniText,notExistDataImageView,mainTitleTextView,subTitleTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notExistReviewMiniText"
+            style="@style/reviewCountTextView"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="22dp"
+            android:text="리뷰"
+            android:textColor="@color/reviewCoutText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notExistShopReplyCountTextView"
+            style="@style/reviewCountTextView"
+            android:layout_marginStart="5dp"
+            android:text="0"
+            android:textColor="@color/mainTextColor"
+            app:layout_constraintBottom_toBottomOf="@+id/notExistReviewMiniText"
+            app:layout_constraintStart_toEndOf="@+id/notExistCommentTextView"
+            app:layout_constraintTop_toTopOf="@+id/notExistReviewMiniText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notExistCommentTextView"
+            style="@style/reviewCountTextView"
+            android:layout_marginStart="10dp"
+            android:text="댓글"
+            android:textColor="@color/reviewCoutText"
+            app:layout_constraintBottom_toBottomOf="@+id/notExistReviewMiniText"
+            app:layout_constraintStart_toEndOf="@+id/notExistReviewCountTextView"
+            app:layout_constraintTop_toTopOf="@+id/notExistReviewMiniText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notExistReviewCountTextView"
+            style="@style/reviewCountTextView"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="8dp"
+            android:text="0"
+            android:textColor="@color/mainTextColor"
+            app:layout_constraintBottom_toBottomOf="@+id/notExistReviewMiniText"
+            app:layout_constraintStart_toEndOf="@+id/notExistReviewMiniText"
+            app:layout_constraintTop_toTopOf="@+id/notExistReviewMiniText" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/notExistDataImageView"
+            android:layout_width="106.89dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_not_exist_data" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="66dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="아직 등록된 리뷰가 없어요"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notExistDataImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="주문 후, 첫번째 리뷰를 작성해보세요!"
+            android:textColor="#A0A0A0"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainTitleTextView" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <!-- parallax: 스크롤 시 접힘 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:background="@color/reviewTopLayout"
+                        android:paddingVertical="27dp"
+                        app:layout_collapseMode="parallax">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/starImageView"
+                            android:layout_width="40dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="24dp"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_big_star"
+                            app:layout_constraintBottom_toBottomOf="@+id/averageStarTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/averageStarTextView" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/averageStarTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:fontFamily="@font/sult_bold"
+                            android:gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="-31dp"
+                            android:textColor="@color/mainTextColor"
+                            android:textSize="35dp"
+                            app:doubleToText="@{reviewStatistics.star}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/starImageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="4.9" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bronzeMedalImageView"
+                            android:layout_width="32dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="23dp"
+                            android:src="@drawable/ic_medal"
+                            app:layout_constraintStart_toEndOf="@id/averageStarTextView"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="11dp"
+                            android:fontFamily="@font/sult_bold"
+                            android:text="우리가게 인기메뉴"
+                            android:textColor="@color/mainTextColor"
+                            android:textSize="17dp"
+                            app:layout_constraintBottom_toBottomOf="@id/bronzeMedalImageView"
+                            app:layout_constraintStart_toEndOf="@id/bronzeMedalImageView"
+                            app:layout_constraintTop_toTopOf="@id/bronzeMedalImageView" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/first"
+                            style="@style/reviewMenuRankingNumberTextView"
+                            android:layout_marginTop="14dp"
+                            android:text="1위"
+                            app:layout_constraintEnd_toEndOf="@id/bronzeMedalImageView"
+                            app:layout_constraintStart_toStartOf="@id/bronzeMedalImageView"
+                            app:layout_constraintTop_toBottomOf="@id/bronzeMedalImageView" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/firstPopularMenuNameTextView"
+                            style="@style/reviewMenuRankingTextView"
+                            android:layout_marginStart="19dp"
+                            app:layout_constraintBottom_toBottomOf="@id/first"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/first"
+                            app:layout_constraintTop_toTopOf="@+id/first"
+                            tools:text="치즈돈까스" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/secnond"
+                            style="@style/reviewMenuRankingNumberTextView"
+                            android:layout_marginTop="15dp"
+                            android:text="2위"
+                            app:layout_constraintStart_toStartOf="@+id/first"
+                            app:layout_constraintTop_toBottomOf="@+id/firstPopularMenuNameTextView" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/secondPopularMenuNameTextView"
+                            style="@style/reviewMenuRankingTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/firstPopularMenuNameTextView"
+                            app:layout_constraintTop_toTopOf="@id/secnond"
+                            tools:text="등심카레세트(돈까스+새\n우튀김+우동)" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/third"
+                            style="@style/reviewMenuRankingNumberTextView"
+                            android:layout_marginTop="15dp"
+                            android:text="3위"
+                            app:layout_constraintStart_toStartOf="@+id/first"
+                            app:layout_constraintTop_toBottomOf="@+id/secondPopularMenuNameTextView" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/thirdPopularMenuNameTextView"
+                            style="@style/reviewMenuRankingTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/firstPopularMenuNameTextView"
+                            app:layout_constraintTop_toTopOf="@id/third"
+                            tools:text="수제등심카츠 도시락" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/middleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="9dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sortTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="14dp"
+                        android:drawableRight="@drawable/ic_black_down_arrow"
+                        android:drawablePadding="4.5dp"
+                        android:fontFamily="@font/sult_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.05"
+                        android:paddingVertical="5.5dp"
+                        android:text="최근 추가한 순"
+                        android:textColor="@color/mainTextColor"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/reviewMiniText"
+                        style="@style/reviewCountTextView"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="22dp"
+                        android:text="리뷰"
+                        android:textColor="@color/reviewCoutText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/shopReplyCountTextView"
+                        style="@style/reviewCountTextView"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/mainTextColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/reviewMiniText"
+                        app:layout_constraintStart_toEndOf="@+id/commentTextView"
+                        app:layout_constraintTop_toTopOf="@+id/reviewMiniText"
+                        tools:text="378" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/commentTextView"
+                        style="@style/reviewCountTextView"
+                        android:layout_marginStart="10dp"
+                        android:text="댓글"
+                        android:textColor="@color/reviewCoutText"
+                        app:layout_constraintBottom_toBottomOf="@+id/reviewMiniText"
+                        app:layout_constraintStart_toEndOf="@+id/reviewCountTextView"
+                        app:layout_constraintTop_toTopOf="@+id/reviewMiniText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/reviewCountTextView"
+                        style="@style/reviewCountTextView"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/mainTextColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/reviewMiniText"
+                        app:layout_constraintStart_toEndOf="@+id/reviewMiniText"
+                        app:layout_constraintTop_toTopOf="@+id/reviewMiniText"
+                        tools:text="999+" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- 패딩값만큼 크기를 키움-->
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/reviewImageToggleButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="2dp"
+                        android:checked="true"
+                        app:kswBackColor="@drawable/bg_switch_color_selector"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbWidth="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/photoTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/sult_bold"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.05"
+                        android:text="사진리뷰보기"
+                        android:textColor="@color/reviewToggleText"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="@id/reviewImageToggleButton"
+                        app:layout_constraintStart_toEndOf="@id/reviewImageToggleButton"
+                        app:layout_constraintTop_toTopOf="@id/reviewImageToggleButton" />
+                    <!-- 뷰페이저 (layout_behavior를 "@string/appbar_scrolling_view_behavior"로 설정해야함! ) -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/reviewListRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        android:paddingTop="42dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/reviewImageToggleButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

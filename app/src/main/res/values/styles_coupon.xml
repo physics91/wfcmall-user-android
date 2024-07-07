@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="couponTypeTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">10dp</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:textColor">@color/couponTypeText</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/bg_coupon_type_text_solid_coupon_type_form</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:paddingTop">3.5dp</item>
+        <item name="android:paddingBottom">3.5dp</item>
+    </style>
+
+    <style name="couponDownloadDeliveryTypeBadge">
+        <item name="android:background">@drawable/bg_coupon_delivery_type_badge</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:paddingTop">2.5dp</item>
+        <item name="android:paddingBottom">2.5dp</item>
+        <item name="android:paddingStart">4.0dp</item>
+        <item name="android:paddingEnd">4.0dp</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">#666060</item>
+    </style>
+
+    <style name="couponEditText" parent="myInfoEditText" />
+</resources>

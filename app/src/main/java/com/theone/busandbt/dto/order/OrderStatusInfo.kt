@@ -1,0 +1,31 @@
+package com.theone.busandbt.dto.order
+
+data class OrderStatusInfo(
+    val shopName: String,
+    val status: Int,
+    val deliveryType: Int,
+    val customerTel: String, // 소비자 연락처
+    val securityTel: String,
+    val shopMemo: String,
+    var doneExpectMinutes: Int,
+    val cancelType: Int?,
+    val cancelReason: String?,
+    val acceptDateTime: String?,
+    val deliveryStartDateTime: String?,
+    val deliveryDoneDateTime: String?,
+    val packagingDoneDateTime: String?,
+    val memberPickUpDateTime: String?,
+    val cancelDateTime: String?,
+    val createDateTime: String,
+    val jibun: String? = null,
+    val road: String? = null,
+    val addressDetail: String? = null,
+    val lat: Double? = null,
+    val lng: Double? = null,
+    val shopJibun: String? = null,
+    val shopRoad: String? = null,
+    val shopAddressDetail: String? = null,
+    val shopLat: Double? = null,
+    val shopLng: Double? = null,
+    val riderMemo: String? = null,
+)

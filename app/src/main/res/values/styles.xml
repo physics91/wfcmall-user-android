@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 공통으로 사용되는 스타일을 정의한다. -->
+<resources>
+
+    <style name="securityKeyboardButtonStyle">
+        <item name="android:background">@drawable/bg_number_button</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/securityKeyboardButtonHeight</item>
+        <item name="android:foreground">@null</item>
+    </style>
+
+    <!-- 공통 액션바의 텍스트 스타일을 지정한다 -->
+    <style name="actionBarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+    </style>
+
+    <style name="roundedTopCornerCardView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">33dp</item>
+        <item name="cornerSizeTopLeft">33dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="restaurant_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">@color/disableColor</item>
+    </style>
+
+    <style name="tabSelectedTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="tabUnselectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/disableColor</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="shoppingMainTabUnselectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="shoppingMainTabSelectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+    </style>
+
+    <style name="shoppingMiddleTabUnselectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+    </style>
+
+    <style name="shoppingMiddleTabSelectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+    </style>
+
+    <style name="shoppingSmaillTabUnselectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/shoppingTabDisabledText</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+    </style>
+
+    <style name="shoppingSmaillTabSelectedTextAppearance" parent="tabSelectedTextAppearance">
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+    </style>
+
+
+    <style name="basketTabUnselectedTextAppearance" parent="tabUnselectedTextAppearance">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="restaurantList_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+    </style>
+
+    <style name="review_tab_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="basket_Text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="mark_tab_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="shoppingBsket_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+    </style>
+
+    <style name="reviewMenuChipStyle" parent="Base.Widget.MaterialComponents.Chip">
+        <item name="android:clickable">false</item>
+        <item name="android:checkable">true</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="rippleColor">@null</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+        <item name="checkedIcon">@drawable/ic_thumb_up</item>
+        <item name="chipIconSize">13dp</item>
+        <item name="iconGravity">end</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="chipBackgroundColor">@drawable/bg_review_chip</item>
+        <item name="android:textColor">@drawable/text_color_review_chip</item>
+    </style>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_info_graph"
+    app:startDestination="@id/shopInfoFragment">
+    <fragment
+        android:id="@+id/shopInfoFragment"
+        android:name="com.theone.busandbt.fragment.shop.ShopInfoFragment"
+        android:label="fragment_shop_info"
+        tools:layout="@layout/fragment_shop_info">
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="goDeliveryCostInfo"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_storeInformationFragment_to_fullAddress"
+            app:destination="@id/shop_location_graph">
+            <argument
+                android:name="location"
+                app:argType="com.theone.busandbt.dto.address.Location" />
+            <argument
+                android:name="enableMyLocation"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+</navigation>

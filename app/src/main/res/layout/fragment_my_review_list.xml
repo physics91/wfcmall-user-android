@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myReviewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/notExistGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="notExistDataImageView,mainTitleTextView,subTitleTextView"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/notExistDataImageView"
+            android:layout_width="106.89dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_not_exist_data" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="66dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="아직 등록된 리뷰가 없어요"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notExistDataImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="주문 후, 첫번째 리뷰를 작성해보세요!"
+            android:textColor="#A0A0A0"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainTitleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

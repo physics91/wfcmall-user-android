@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/commonActionBarHeight">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/goBackButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/sult_bold"
+        android:textColor="@color/mainTextColor"
+        android:textSize="20dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/goBackButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/goSearchHeaderButton"
+        tools:text="상점명" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/goSearchHeaderButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="center"
+        app:srcCompat="@drawable/ic_search_black"
+        app:layout_constraintTop_toTopOf="@id/basketSpace"
+        app:layout_constraintEnd_toStartOf="@id/basketSpace"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/basketGroup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="basketSpace,goBasketButton,goBasketButtonSpace,basketCountTextView" />
+
+    <androidx.legacy.widget.Space
+        android:id="@+id/basketSpace"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/goBasketButton"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_basket_black"
+        app:layout_constraintStart_toStartOf="@id/basketSpace"
+        app:layout_constraintBottom_toBottomOf="@id/basketSpace"
+        app:layout_constraintEnd_toEndOf="@id/basketSpace"
+        app:layout_constraintTop_toTopOf="@id/basketSpace" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/basketCountTextView"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_basket_text_circle_background"
+        android:fontFamily="@font/sult_bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="11dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/goBasketButtonSpace"
+        app:layout_constraintTop_toTopOf="@id/goBasketButtonSpace"
+        tools:text="99"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/goBasketButtonSpace"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/goBasketButton"
+        app:layout_constraintStart_toStartOf="@id/goBasketButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

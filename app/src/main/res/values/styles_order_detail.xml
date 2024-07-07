@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="orderDetailTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/orderDetailTitleText</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="orderDetailSubTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="orderDetailHorizontalLine" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/bg_order_dircet_delivery_line_background</item>
+        <item name="android:layout_height">3dp</item>
+    </style>
+
+</resources>

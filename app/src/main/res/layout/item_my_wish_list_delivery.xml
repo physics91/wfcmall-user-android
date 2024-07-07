@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shop"
+            type="com.theone.busandbt.dto.shop.LikedFoodListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_food_list_root_view_selector">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurantListLogoImageView"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round_20dp_food_listitem_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:glideImageUrl="@{shop.imageUrl}"
+            app:replacementImage="@{@drawable/img_not_shop_common}"
+            tools:src="@drawable/img_not_shop_common"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurantListTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLength="13"
+            android:maxLines="1"
+            android:text="@{shop.name}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@id/restaurantListLogoImageView"
+            app:layout_constraintTop_toTopOf="@id/restaurantListLogoImageView"
+            tools:text="마왕족발 OO점" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/newShopLabel"
+            style="@style/foodListItemTextView"
+            android:layout_marginStart="4dp"
+            android:letterSpacing="-0.05"
+            android:text="신규"
+            android:textColor="@color/mainColor"
+            app:layout_constraintBottom_toBottomOf="@id/restaurantListTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/restaurantListTitleTextView"
+            app:layout_constraintTop_toTopOf="@id/restaurantListTitleTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hasCouponLabel"
+            android:layout_width="31dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_round_9dp_food_list_item_new_shop_layout"
+            android:backgroundTint="@color/foodListItemCouponLayout"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:text="쿠폰"
+            android:textColor="@color/foodListItemCouponText"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/newShopLabel"
+            app:layout_constraintStart_toEndOf="@id/newShopLabel"
+            app:layout_constraintTop_toTopOf="@id/newShopLabel" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/starImageView"
+            android:layout_width="14.99dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurantListRatedTextView"
+            app:layout_constraintStart_toStartOf="@id/restaurantListTitleTextView"
+            app:layout_constraintTop_toTopOf="@+id/restaurantListRatedTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurantListRatedTextView"
+            style="@style/foodListItemSubTextView"
+            android:layout_marginStart="2.5dp"
+            android:layout_marginTop="6.5dp"
+            app:doubleToText="@{shop.star}"
+            app:layout_constraintStart_toEndOf="@id/starImageView"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantListTitleTextView"
+            tools:text="5.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/timeImageView"
+            android:layout_width="13.45dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="6.28dp"
+            android:src="@drawable/ic_food_list_click"
+            app:layout_constraintBottom_toBottomOf="@+id/orderDoneMinutesTextView"
+            app:layout_constraintStart_toEndOf="@id/restaurantListRatedTextView"
+            app:layout_constraintTop_toTopOf="@+id/orderDoneMinutesTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderDoneMinutesTextView"
+            style="@style/foodListItemSubTextView"
+            android:layout_marginStart="3.28dp"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/timeImageView"
+            app:layout_constraintTop_toTopOf="@+id/restaurantListRatedTextView"
+            tools:text="25분~35분" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryTypeLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/bg_round_8dp_stork_c5c5c5"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="1dp"
+            android:textColor="#3A3A3A"
+            android:textSize="11dp"
+            app:deliveryTypeList="@{shop.deliveryTypeList}"
+            app:layout_constraintBottom_toBottomOf="@id/orderDoneMinutesTextView"
+            app:layout_constraintStart_toEndOf="@id/orderDoneMinutesTextView"
+            app:layout_constraintTop_toTopOf="@id/orderDoneMinutesTextView"
+            tools:text="배달·포장" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/minOrderTextView"
+            style="@style/foodListItemTitleTextView"
+            android:text="최소주문"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurantListMinPriceTextView"
+            app:layout_constraintStart_toStartOf="@id/starImageView"
+            app:layout_constraintTop_toTopOf="@+id/restaurantListMinPriceTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurantListMinPriceTextView"
+            style="@style/foodListItemSubTextView"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5.5dp"
+            app:commonCost="@{shop.minOrderCost}"
+            app:layout_constraintStart_toEndOf="@id/minOrderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantListRatedTextView"
+            tools:text="15,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tipTextView"
+            style="@style/foodListItemTitleTextView"
+            android:layout_marginStart="6dp"
+            android:text="배달비"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurantListTipPrice"
+            app:layout_constraintStart_toEndOf="@id/restaurantListMinPriceTextView"
+            app:layout_constraintTop_toTopOf="@+id/restaurantListTipPrice" />
+
+        <!-- 작은화면일때 정확히 어느정도까지 띄우고 ...처리 할지 안나와있어
+         end 14dp를 준 상태-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurantListTipPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="14dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:textColor="@color/mainTextColor"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tipTextView"
+            app:layout_constraintTop_toTopOf="@+id/restaurantListMinPriceTextView"
+            app:maxDeliveryCost="@{shop.maxDeliveryCost}"
+            app:minDeliveryCost="@{shop.minDeliveryCost}"
+            tools:text="1000원~3000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/saleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_round_8dp_food_list_item_new_shop_layout"
+            android:backgroundTint="@color/foodListItemPackingLayout"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="1dp"
+            android:text="포장 할인"
+            android:textColor="@color/foodListItemPackingText"
+            android:textSize="11dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/minOrderTextView"
+            app:layout_constraintTop_toBottomOf="@id/minOrderTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/kindShopTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_round_8dp_food_list_item_new_shop_layout"
+            android:backgroundTint="@color/foodListItemKindShopLayout"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="1dp"
+            android:text="착한가격업소"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/saleTextView"
+            app:layout_constraintTop_toBottomOf="@id/minOrderTextView"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:elevation="4dp"
+            android:src="@drawable/ic_closed_market"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleOrGone="@{!shop.inOperation}"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/closedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="준비중"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:fontFamily="@font/sult_bold"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:elevation="5dp"
+            app:visibleOrGone="@{!shop.inOperation}"
+            app:layout_constraintTop_toTopOf="@id/closedLayout"
+            app:layout_constraintBottom_toBottomOf="@id/closedLayout"
+            app:layout_constraintStart_toStartOf="@id/closedLayout"
+            app:layout_constraintEnd_toEndOf="@id/closedLayout"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/editCheckBox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/bg_checkbox_selector"
+            android:button="@null"
+            android:visibility="gone"
+            android:elevation="5dp"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/foodListLine"
+            app:layout_constraintTop_toBottomOf="@+id/saleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

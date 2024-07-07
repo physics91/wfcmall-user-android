@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.review.ShopReviewListFragment">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:drawableRight="@drawable/ic_black_down_arrow"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/sult_semibold"
+        android:lineSpacingExtra="-4dp"
+        android:text="등록일순"
+        android:textColor="#111111"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reviewMiniText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/sult_semibold"
+        android:letterSpacing="-0.05"
+        android:lineSpacingExtra="-4dp"
+        android:text="리뷰"
+        android:textColor="#C1C1C1"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/reviewNumber"
+        app:layout_constraintEnd_toStartOf="@id/reviewNumber"
+        app:layout_constraintTop_toTopOf="@id/reviewNumber" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/commentNumber"
+        android:layout_width="23dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/sult_bold"
+        android:letterSpacing="-0.05"
+        android:lineSpacingExtra="-6dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/sult_semibold"
+        android:letterSpacing="-0.05"
+        android:lineSpacingExtra="-4dp"
+        android:text="댓글"
+        android:textColor="#C1C1C1"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/commentNumber"
+        app:layout_constraintEnd_toStartOf="@id/commentNumber"
+        app:layout_constraintTop_toTopOf="@id/commentNumber" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reviewNumber"
+        android:layout_width="23dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/sult_bold"
+        android:letterSpacing="-0.05"
+        android:lineSpacingExtra="-6dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/comment"
+        app:layout_constraintEnd_toStartOf="@id/comment"
+        app:layout_constraintTop_toTopOf="@id/comment" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

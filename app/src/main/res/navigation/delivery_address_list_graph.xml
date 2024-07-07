@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/delivery_address_list_graph"
+    app:startDestination="@id/deliveryAddressListFragment">
+    <fragment
+        android:id="@+id/deliveryAddressListFragment"
+        android:name="com.theone.busandbt.fragment.address.DeliveryAddressListFragment"
+        android:label="DeliveryAddressListFragment">
+        <action
+            android:id="@+id/action_haveAddressSetFragment_to_addressSetEditFragment"
+            app:destination="@id/addressSetEditFragment" />
+        <action
+            android:id="@+id/action_haveAddressSetFragment_to_addressFineFragment"
+            app:destination="@id/address_find_graph" />
+        <action
+            android:id="@+id/action_haveAddressSetFragment_to_addressSearchFragment"
+            app:destination="@id/addressSearchFragment">
+            <argument
+                android:name="addressName"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addressSearchFragment"
+        android:name="com.theone.busandbt.fragment.address.AddressSearchFragment"
+        android:label="fragment_address_search"
+        tools:layout="@layout/fragment_address_search">
+
+        <argument
+            android:name="addressName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addressSearchFragment_to_addressDetailFragment"
+            app:destination="@id/addressDetailFragment" >
+            <argument
+                android:name="address"
+                app:argType="com.theone.busandbt.dto.address.AddressSearchResultItem"
+                app:nullable="true"
+                android:defaultValue="@null" />
+            <argument
+                android:name="item"
+                app:argType="com.theone.busandbt.dto.address.DeliveryAddress"
+                android:defaultValue="@null"
+                app:nullable="true" />
+            <argument
+                android:name="addressName"
+                app:argType="string"
+                app:nullable="true"/>
+        </action>
+    </fragment>
+</navigation>

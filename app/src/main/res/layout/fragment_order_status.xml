@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.order.OrderStatusFragment">
+
+    <data>
+
+        <variable
+            name="orderId"
+            type="String" />
+
+        <variable
+            name="orderStatusInfo"
+            type="com.theone.busandbt.dto.order.OrderStatusInfo" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="14dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="14dp" />
+
+            <include
+                android:id="@+id/packagingForm"
+                layout="@layout/include_order_status_packaging_form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone" />
+
+            <include
+                android:id="@+id/instantForm"
+                layout="@layout/include_order_status_instant_form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/packagingForm"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderIdTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/sult_bold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.04"
+                android:text="주문번호"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/instantForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderIdTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="32dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sult_bold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.04"
+                android:maxLines="1"
+                android:text="@{orderId}"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@id/goOrderDetailButton"
+                app:layout_constraintStart_toEndOf="@id/orderIdTitle"
+                app:layout_constraintTop_toBottomOf="@id/instantForm"
+                tools:text="D1E22K21F85Z23" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/goOrderDetailButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_round_15dp_order_status_order_detail_form"
+                android:fontFamily="@font/sult_semibold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="10.5dp"
+                android:paddingVertical="5.5dp"
+                android:text="주문상세"
+                android:textColor="@color/orderStatusOrderDetailText"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/orderIdTextView"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                app:layout_constraintTop_toTopOf="@id/orderIdTextView" />
+
+            <View
+                android:id="@+id/bottomLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/orderStatusHorizontalSolidLine"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/orderIdTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.04"
+                android:text="@{orderStatusInfo.shopName}"
+                android:textColor="@color/mainTextColor"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/bottomLine"
+                tools:text="로얄경양식&amp;스테이크 광안점" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_round_10dp_stork_order_status_delivery_order_stork"
+                android:fontFamily="@font/sult_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:paddingHorizontal="5.5dp"
+                android:paddingVertical="3dp"
+                android:textColor="@color/mainTextColor"
+                android:textSize="11dp"
+                app:deliveryTypeIdText="@{orderStatusInfo.deliveryType}"
+                app:layout_constraintBottom_toBottomOf="@id/title"
+                app:layout_constraintStart_toEndOf="@id/title"
+                app:layout_constraintTop_toTopOf="@id/title"
+                tools:text="배달" />
+
+            <include
+                android:id="@+id/instantFooterForm"
+                layout="@layout/include_order_status_footer_instant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:visibility="gone" />
+
+            <include
+                android:id="@+id/packagingFooterForm"
+                layout="@layout/include_order_status_footer_packaging"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

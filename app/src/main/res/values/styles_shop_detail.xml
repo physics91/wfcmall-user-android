@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="shopDetailWarningMessageTextView">
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+        <item name="android:textColor">#8b8b8b</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+</resources>

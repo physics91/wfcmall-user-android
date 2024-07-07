@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="myInfoLabel">MY동백</string>
+    <string name="greeting">%s님, 반가워요!</string>
+</resources>

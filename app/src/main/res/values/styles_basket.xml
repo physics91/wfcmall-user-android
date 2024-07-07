@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="basketOptionTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/basketOptionText</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">-1dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

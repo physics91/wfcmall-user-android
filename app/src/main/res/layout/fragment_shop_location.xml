@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="location"
+            type="com.theone.busandbt.dto.address.Location" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFFFFF">
+
+        <com.naver.maps.map.MapView
+            android:id="@+id/mapImg"
+            android:name="com.naver.maps.map.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_map_background"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.naver.maps.map.widget.LogoView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="163dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="43.2dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="48dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/addressImg"
+            app:layout_constraintEnd_toEndOf="@id/addressImg"
+            app:layout_constraintStart_toStartOf="@id/addressImg"
+            app:layout_constraintTop_toTopOf="@id/addressImg" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addressImg"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="159dp"
+            android:background="@drawable/bg_address_fine_btn_selector"
+            android:elevation="8dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_address_popup_layout"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="11dp"
+            app:layout_constraintBottom_toBottomOf="@id/mapImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jibunTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="1dp"
+                android:text="@{location.jibun}"
+                tools:text="부산광역시 해운대구 센텀7로6\n부산영상후반작업시설"
+                android:textColor="#111111"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="3dp"
+                android:text="@{@string/subAddress(location.road)}"
+                tools:text="(도로명)부산 해운대구 센텀7로 6"
+                android:textColor="#949494"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jibunTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

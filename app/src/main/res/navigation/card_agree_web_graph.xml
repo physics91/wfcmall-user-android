@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_agree_web_graph"
+    app:startDestination="@id/cardAgreeWebView">
+
+    <fragment
+        android:id="@+id/cardAgreeWebView"
+        android:name="com.theone.busandbt.fragment.card.CardAgreeWebView"
+        android:label="CardAgreeWebView" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

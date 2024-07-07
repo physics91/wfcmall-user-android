@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_circle_layout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="49dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ringTheBellOption"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/knockOption"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/callOption"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/getMySelfOption"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/MySelfOption"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_shopping_basket_checkbox"
+                    android:button="@null" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ringTheBellTextView"
+                style="@style/addOrderDeliveryRequestTextView"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="47dp"
+                android:layout_height="25dp"
+                android:text="문 앞에 두고 벨 눌러주세요"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/knockTextView"
+                style="@style/addOrderDeliveryRequestTextView"
+                android:text="벨 누르지 말고 노크 부탁드려요"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="@+id/ringTheBellTextView"
+                app:layout_constraintTop_toBottomOf="@+id/ringTheBellTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/callTextView"
+                style="@style/addOrderDeliveryRequestTextView"
+                android:layout_marginTop="14dp"
+                android:text="도착하기 전 전화 부탁드려요"
+                app:layout_constraintStart_toStartOf="@+id/knockTextView"
+                app:layout_constraintTop_toBottomOf="@+id/knockTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/getMySelfTextView"
+                style="@style/addOrderDeliveryRequestTextView"
+                android:text="직접 받을게요"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="@+id/callTextView"
+                app:layout_constraintTop_toBottomOf="@+id/callTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mySelfTextView"
+                style="@style/addOrderDeliveryRequestTextView"
+                android:layout_marginTop="14dp"
+                android:text="직접 입력"
+                app:layout_constraintStart_toStartOf="@+id/getMySelfTextView"
+                app:layout_constraintTop_toBottomOf="@+id/getMySelfTextView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_round_27dp_main_color"
+                android:fontFamily="@font/sult_semibold"
+                android:letterSpacing="-0.05"
+                android:text="확인"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mySelfTextView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tools로 사용되는 예시 데이터를 정의한다 -->
+<resources>
+    <string name="address">해운대구 센텀7로6(우동,1466)201\n호 주소복사</string>
+    <string name="footerText">ㆍ메뉴 이미지는 상품의 종류에 따라 제공되는 이미지로 실제 음식과 다를 수 있습니다.\n\nㆍ(주)부일기획은 상품거래에 대한 통신판매중개자이며,통신판매자의 당사자가 아닙니다.\n따라서 상품거리 정보 및 거래에 대하여 책임을 지지 않습니다.</string>
+    <string name="origin">스테이크:소고기(호주산)/ 쌀:국산/ 소시지:돼지고기(국내산)/ 베이컨:돼지고기(국내산)/ 고춧가루(중국산)/ 감자(국내산)/ 명란(러시아산)/ 두부:콩(외국산)/ 양파(국내산)/ 오징어(외국산)/ 아보카도(미국산)</string>
+    <string name="openTime">[평일] 오전 10:00 ~ 오후 9:00\n[토요일] 오전 10:00 ~ 오후 10:00</string>
+    <string name="breakTime">오전 3:00 ~ 오후 4:00(1시간)</string>
+    <string name="addressJibun">부산광역시 해운대구 센텀7로6</string>
+    <string name="addressPlace">부산영상후반작업시설</string>
+    <string name="addressRoad">(도로명)부산 해운대구 센텀7로 6</string>
+    <string name="mainFooterText">동백통은 통신판매 중개자로서 상품/거래정보 및 거래와 관련하여 통신판매 당사자의 고의 또는 과실로 소비자에게 발생하는 손해에 대해 책임을 지지 않습니다. 상품 및 거래에 대한 정확한 정보는 해당 판매자에게 직접 확인 바랍니다.</string>
+</resources>

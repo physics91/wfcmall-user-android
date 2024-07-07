@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shopInfo"
+            type="com.theone.busandbt.dto.shop.ShopInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="32dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="14dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="14dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/shopInfoHeaderForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_store_layout"
+                    android:paddingStart="11dp"
+                    android:paddingTop="11dp"
+                    android:paddingEnd="11dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/shopImageGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="firstShopImageView,secondShopImageView,thirdShopImageView" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/firstShopImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="156.93dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/secondShopImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="152.09dp"
+                        android:layout_marginTop="5.5dp"
+                        android:layout_marginEnd="2.9dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@id/thirdShopImageView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/firstShopImageView" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/thirdShopImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="152.09dp"
+                        android:layout_marginStart="2.9dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/secondShopImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/secondShopImageView"
+                        app:layout_constraintTop_toTopOf="@id/secondShopImageView" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/shopNoticeGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="shopNoticeTitle, shopNoticeTextView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/shopNoticeTitle"
+                        style="@style/shopInfoTitleTextView"
+                        android:layout_marginTop="30dp"
+                        android:text="사장님 공지사항"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/secondShopImageView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/shopNoticeTextView"
+                        style="@style/shopInfoTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@{shopInfo.notice}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shopNoticeTitle"
+                        tools:text="동백전 사용가능합니다!" />
+
+                    <View
+                        android:id="@+id/shopNoticeLine"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="19dp"
+                        android:background="@color/shopInfoNoticeHorizontalLine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shopNoticeTextView" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/shopNoticeExpandButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/bg_shop_arrow_selector"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shopNoticeLine" />
+
+                    <View
+                        android:id="@+id/shopNoticeExpandTouchArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shopNoticeLine" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/shoppingGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="cooInfoUnderLine,operationTimeUnderLine,cooInfoTitle,cooInfoTextView"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopIntroTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="매장 소개"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopInfoHeaderForm" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopIntroTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@{shopInfo.intro}"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopIntroTitle"
+                    tools:text="안녕하세요. 동백매장 센텀점입니다." />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/openTimeGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="shopIntroUnderLine,operRecyclerView" />
+
+                <View
+                    android:id="@+id/shopIntroUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shopIntroTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/operationTimeTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="영업 시간"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopIntroUnderLine" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/operRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/operationTimeTitle"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_oper" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/deliveryguideGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="deliveryCostInfoTitle
+,deliveryCostInfoFirstChecker,deliveryCostInfoFirst,deliveryCostInfoSecondChecker,deliveryCostInfoSecond
+,deliveryCostInfoThirdChecker,deliveryCostInfoThird,deliveryCostInfoUnderLine" />
+
+                <View
+                    android:id="@+id/operationTimeUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/operRecyclerView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryCostInfoTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="배달비 안내"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/operationTimeUnderLine" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/deliveryCostInfoFirstChecker"
+                    style="@style/shopInfoCheckImageView"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveryCostInfoTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryCostInfoFirst"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="배달비는 동백통에서 수취하는 비용이 아니며 상점\n으로 전달됩니다."
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/deliveryCostInfoFirstChecker"
+                    app:layout_constraintTop_toTopOf="@+id/deliveryCostInfoFirstChecker" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/deliveryCostInfoSecondChecker"
+                    style="@style/shopInfoCheckImageView"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/deliveryCostInfoFirstChecker"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveryCostInfoFirst" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryCostInfoSecond"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="배달비는 상점 사장님이 설정한 금액입니다."
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/deliveryCostInfoFirst"
+                    app:layout_constraintTop_toTopOf="@+id/deliveryCostInfoSecondChecker" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/deliveryCostInfoThirdChecker"
+                    style="@style/shopInfoCheckImageView"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/deliveryCostInfoFirstChecker"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveryCostInfoSecondChecker" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryCostInfoThird"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="배달비는 지역/시간/주문금액에 따라 달라질 수 있습니다."
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/deliveryCostInfoFirst"
+                    app:layout_constraintTop_toTopOf="@+id/deliveryCostInfoThirdChecker" />
+
+                <View
+                    android:id="@+id/deliveryCostInfoUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/deliveryCostInfoThird" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/deliveryCostRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/deliveryCostInfoUnderLine"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_shop_info_delivery_cost" />
+
+                <View
+                    android:id="@+id/cooInfoUpLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/deliveryCostRecyclerView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cooInfoTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="원산지 표기"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/cooInfoUpLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cooInfoTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:lineSpacingExtra="7dp"
+                    android:text="@{shopInfo.cooInfo}"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/cooInfoTitle"
+                    tools:text="중국산중국산/중국산/중국산/중국산/중국산중국산중국산/중국산/중국산/중국산/중국산
+중국산중국산/중국산/중국산/중국산/중국산중국산중국산/중국산/중국산/중국산/중국산" />
+
+                <View
+                    android:id="@+id/cooInfoUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cooInfoTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopTelTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="전화번호"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/cooInfoUnderLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopTelTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{shopInfo.tel}"
+                    app:layout_constraintBottom_toBottomOf="@id/callToShopButton"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/callToShopButton"
+                    tools:text="010-0000-0000" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/callToShopButton"
+                    android:layout_width="105dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_store_button"
+                    android:stateListAnimator="@null"
+                    app:layout_constraintStart_toEndOf="@id/shopTelTextView"
+                    app:layout_constraintTop_toBottomOf="@id/shopTelTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/callTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="17dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.05"
+                    android:text="전화걸기"
+                    android:textColor="@color/mainColor"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/callToShopButton"
+                    app:layout_constraintEnd_toEndOf="@+id/callToShopButton"
+                    app:layout_constraintTop_toTopOf="@id/callToShopButton" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="14.96dp"
+                    android:layout_height="16.12dp"
+                    android:layout_marginEnd="3.26dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_shop_info_call"
+                    app:layout_constraintBottom_toBottomOf="@id/callTextView"
+                    app:layout_constraintEnd_toStartOf="@id/callTextView"
+                    app:layout_constraintTop_toTopOf="@id/callTextView" />
+
+                <View
+                    android:id="@+id/shopTelUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/callToShopButton" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopLocationTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="지도"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopTelUnderLine" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shopLocationCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="235dp"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopLocationTitle">
+
+                    <com.naver.maps.map.MapView
+                        android:id="@+id/shopLocationMap"
+                        android:name="com.naver.maps.map.MapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_map_background"
+                        android:gravity="center" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/shopLocationMapExpandButton"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="11dp"
+                        android:src="@drawable/ic_full_address" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopAddressTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{shopInfo.bizAddress}"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopLocationCardView"
+                    tools:text="부산광역시 해운대구 센텀7로 동백빌딩 101호" />
+
+                <!--지번도 넘어와야함 지번은 안 넘어오는중 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopJibunTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sult_regular"
+                    android:text="@{@string/jibunAddress(shopInfo.jibun)}"
+                    android:textColor="@color/shopInfoJibunText"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopAddressTextView"
+                    tools:text="부산광역시 해운대구 센텀7로 동백빌딩 101호" />
+
+                <View
+                    android:id="@+id/shopLocationUnderLine"
+                    style="@style/shopInfoHorizontalLineView"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shopJibunTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizInfoTitle"
+                    style="@style/shopInfoTitleTextView"
+                    android:layout_marginTop="32dp"
+                    android:text="사업자 정보"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopLocationUnderLine" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bizInfoGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="119dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/reptNameTitle"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="대표자명"
+                    app:layout_constraintBottom_toBottomOf="@id/reptNameTextView"
+                    app:layout_constraintEnd_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/reptNameTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/reptNameTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:lineSpacingExtra="11dp"
+                    android:text="@{shopInfo.reptName}"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/bizInfoTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizShopNameTitle"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="11dp"
+                    android:text="상호명"
+                    app:layout_constraintBottom_toBottomOf="@id/bizShopNameTextView"
+                    app:layout_constraintEnd_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/bizShopNameTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizShopNameTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:lineSpacingExtra="11dp"
+                    android:text="@{shopInfo.realName}"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/bizAddressTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizNoTitle"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="11dp"
+                    android:text="사업자번호"
+                    app:layout_constraintBottom_toBottomOf="@id/bizNoTextView"
+                    app:layout_constraintEnd_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/bizNoTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizNoTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:lineSpacingExtra="11dp"
+                    android:text="@{shopInfo.bizNo}"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/bizShopNameTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizAddressTitle"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="11dp"
+                    android:text="사업자주소"
+                    app:layout_constraintEnd_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/bizAddressTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizAddressTextView"
+                    style="@style/shopInfoTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@{shopInfo.bizAddress}"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/bizInfoGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/reptNameTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bizAddressNotice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:text="※ 위 주소는 사업자등록증에 표기된 주소입니다."
+                    android:textColor="@color/shopInfoFooterText"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@id/bizInfoGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/bizNoTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

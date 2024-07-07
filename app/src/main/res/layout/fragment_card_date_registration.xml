@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateTextView"
+            style="@style/cardInfoTextView"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="24dp"
+            android:text="유효기간"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateSubTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:text="월/년"
+            android:textColor="@color/disableColor"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="@+id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+        <View
+            android:id="@+id/dateBackground"
+            android:layout_width="117dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_address_edittext_selector"
+            app:layout_constraintStart_toStartOf="@+id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/dateSubTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/monthEditTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/sult_semibold"
+            android:hint="MM"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:maxLength="2"
+            android:nextFocusDown="@id/yearEditTextView"
+            android:textColor="@color/mainTextColor"
+            android:layout_marginEnd="8dp"
+            android:textColorHint="@color/hintText"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateBackground"
+            app:layout_constraintEnd_toStartOf="@+id/centerLine"
+            app:layout_constraintTop_toTopOf="@+id/dateBackground" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/centerLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:text="/"
+            android:textColor="@color/cardHorizontalLine"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/monthEditTextView"
+            app:layout_constraintEnd_toEndOf="@+id/dateBackground"
+            app:layout_constraintStart_toStartOf="@+id/dateBackground"
+            app:layout_constraintTop_toTopOf="@+id/monthEditTextView" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/buttonSpace"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextButton"
+            app:layout_constraintTop_toBottomOf="@id/dateBackground" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/yearEditTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/sult_semibold"
+            android:hint="YY"
+            android:includeFontPadding="false"
+            android:imeOptions="actionDone"
+            android:layout_marginStart="8dp"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateBackground"
+            app:layout_constraintStart_toEndOf="@+id/centerLine"
+            app:layout_constraintTop_toTopOf="@+id/dateBackground" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            style="@style/commonBottomToggleButton"
+            android:text="다음"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

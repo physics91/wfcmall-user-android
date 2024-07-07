@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_info_management"
+    app:startDestination="@id/myInfoManagementFragment">
+    <fragment
+        android:id="@+id/myInfoManagementFragment"
+        android:name="com.theone.busandbt.fragment.my_info.MyInfoManagementFragment"
+        android:label="fragment_my_info_management"
+        tools:layout="@layout/fragment_my_info_management">
+        <action
+            android:id="@+id/action_myInfoManagementFragment_to_editMyInfoFragment"
+            app:destination="@id/editMyInfoFragment" />
+        <action
+            android:id="@+id/action_myInfoManagementFragment_to_homeFragment"
+            app:destination="@id/nav_graph" />
+        <action
+            android:id="@+id/action_myInfoManagementFragment_to_myInfoFragment"
+            app:destination="@id/myinfo" />
+    </fragment>
+</navigation>

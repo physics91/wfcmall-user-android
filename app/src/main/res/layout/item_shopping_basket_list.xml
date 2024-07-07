@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shop"
+            type="com.theone.busandbt.item.basket.BasketShop" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_16dp_stork_basket_layout">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/allMenuBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="foodAllMenuRadioButton,mallAllMenuCheckbox" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/foodAllMenuRadioButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14.5dp"
+            android:background="@drawable/bg_shopping_basket_checkbox"
+            android:button="@null"
+            android:checked="@{shop.selected}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/mallAllMenuCheckbox"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14.5dp"
+            android:background="@drawable/bg_square_check_selector"
+            android:button="@null"
+            android:checked="@{shop.selected}"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="11dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:text="@{shop.shopName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/allMenuBarrier"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/basketLine"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topLine" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/footerForm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:constraint_referenced_ids="bottomLine,deliveryCostTextView,goShopDetailButton" />
+
+        <View
+            android:id="@+id/bottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="26dp"
+            android:background="@color/basketFooterLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itemListRecyclerView" />
+
+        <View
+            android:id="@+id/bottomForm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_round_16dp_basket_footer_layout_bottom_right_left_stork_basket_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomLine" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/centerGuideline"
+            app:layout_constraintTop_toTopOf="@+id/bottomForm"
+            tools:text="배달비 3,000원" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goShopDetailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:drawableEnd="@drawable/ic_basket_right_arrow"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="상품 추가하기"
+            android:textColor="@color/mainColor"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/deliveryCostTextView"
+            app:layout_constraintStart_toStartOf="@+id/centerGuideline"
+            app:layout_constraintTop_toTopOf="@+id/deliveryCostTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

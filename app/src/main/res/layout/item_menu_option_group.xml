@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menuOptionGroup"
+            type="com.theone.busandbt.dto.menu.MenuOptionGroup" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        tools:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuOptionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/sult_medium"
+            android:textColor="@color/mainTextColor"
+            android:textFontWeight="800"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/menuOptionEssMark"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="사이즈" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menuOptionEssMark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_medium"
+            android:lineSpacingExtra="-2dp"
+            android:text="*필수"
+            android:textColor="@color/mainColor"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/menuOptionName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/menuOptionName"
+            app:visibleOrGone="@{menuOptionGroup.requiredChoice}" />
+
+        <RelativeLayout
+            android:id="@+id/menuOptionGroupForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:descendantFocusability="blocksDescendants"
+            app:layout_constraintTop_toBottomOf="@id/menuOptionName">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuOptionRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="38dp"
+            android:background="@color/mainLine"
+            app:layout_constraintTop_toBottomOf="@id/menuOptionGroupForm" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

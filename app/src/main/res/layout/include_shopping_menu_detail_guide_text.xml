@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/paymentTypeTitleTextView"
+            style="@style/shoppingGuideTitleText"
+            android:text="결제 방법"
+            app:layout_constraintEnd_toStartOf="@+id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/paymentTypeTextView"
+            style="@style/shoppingGuideSubText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="동백전결제, 카드결제" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTitleTextView"
+            style="@style/shoppingGuideTitleText"
+            android:layout_marginTop="8dp"
+            android:text="배송비"
+            app:layout_constraintEnd_toStartOf="@+id/startGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paymentTypeTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTextView"
+            style="@style/shoppingGuideSubText"
+            tools:text="3,000원\n(40,000원 이상 무료배송)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+            app:layout_constraintTop_toTopOf="@+id/deliveryCostTitleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

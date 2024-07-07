@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="popularShop"
+            type="com.theone.busandbt.dto.shop.PopularShopListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/popularImageView"
+            android:layout_width="143dp"
+            android:layout_height="143dp"
+            android:background="@drawable/bg_popular_gradient"
+            android:foreground="@drawable/bg_popular_gradient"
+            android:scaleType="centerCrop"
+            app:glideImageUrl="@{popularShop.imageUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:replacementImage="@{@drawable/img_not_shop_common}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/popularTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:text="@{popularShop.name}"
+            android:textColor="#222222"
+            android:textSize="16dp"
+            app:layout_constraintTop_toBottomOf="@id/popularImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="마왕족발 수영점" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/popularTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="3.5dp"
+            android:layout_marginTop="5.1dp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:background="@drawable/bg_popular_shop_item"
+            android:backgroundTint="#fff3e1"
+            android:drawableStart="@drawable/ic_popular_clock"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:drawablePadding="2dp"
+            android:textColor="@color/mainTextColor"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/popularTitleTextView"
+            app:orderDoneMinutes="@{popularShop.orderDoneMinutes}"
+            tools:text="20~30분" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rankingImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/ic_ranking_border"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/popularRankingTextView"
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:fontFamily="@font/arialce"
+            android:layout_marginStart="7dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/rankingImageView"
+            app:layout_constraintTop_toTopOf="@+id/rankingImageView"
+            tools:text="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

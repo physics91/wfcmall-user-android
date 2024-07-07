@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/serviceAgreeFragment"
+    android:id="@+id/service_agree_graph">
+
+    <fragment
+        android:id="@+id/serviceAgreeFragment"
+        android:name="com.theone.busandbt.fragment.ServiceAgreeFragment"
+        android:label="serviceAgreeFragment">
+        <action
+            android:id="@+id/action_serviceAgreeFragment_to_addressSetFragment"
+            app:destination="@id/delivery_address_list_graph" />
+    </fragment>
+</navigation>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.busandbt.code.ServiceType" />
+
+        <variable
+            name="shop"
+            type="com.theone.busandbt.item.basket.BasketShop" />
+
+        <variable
+            name="serviceType"
+            type="ServiceType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopNameView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_8dp_add_order_title_text_form"
+            android:paddingVertical="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:maxLines="1"
+            android:text="@{shop.shopName}"
+            android:textColor="@color/mainTextColor"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/shopNameView"
+            app:layout_constraintEnd_toStartOf="@+id/deliveryTitleText"
+            app:layout_constraintStart_toStartOf="@+id/shopNameView"
+            app:layout_constraintTop_toTopOf="@+id/shopNameView"
+            tools:text="반짝상회" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/deliveryTextGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="deliveryCostTextView,deliveryTitleText"
+            app:visibleOrGone="@{serviceType == ServiceType.SHOPPING_MALL}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:text="배송비 "
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/deliveryCostTextView"
+            app:layout_constraintEnd_toStartOf="@+id/deliveryCostTextView"
+            app:layout_constraintTop_toTopOf="@+id/deliveryCostTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryCostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.04"
+            android:textColor="@color/mainTextColor"
+            android:textSize="16dp"
+            app:commonCost="@{shop.deliveryCost}"
+            app:layout_constraintBottom_toBottomOf="@+id/downArrowImageView"
+            app:layout_constraintEnd_toStartOf="@+id/downArrowImageView"
+            app:layout_constraintTop_toTopOf="@+id/downArrowImageView"
+            tools:text="2,500원" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/downArrowImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/bg_delivery_btn_img_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="center"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintBottom_toBottomOf="@id/shopNameView"
+            app:layout_constraintEnd_toEndOf="@+id/shopNameView"
+            app:layout_constraintTop_toTopOf="@+id/shopNameView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="-8dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/shopNameView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

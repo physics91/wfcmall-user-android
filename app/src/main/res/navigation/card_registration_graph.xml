@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_registration_graph"
+    app:startDestination="@id/cardRegistrationFragment">
+
+    <fragment
+        android:id="@+id/cardRegistrationFragment"
+        android:name="com.theone.busandbt.fragment.card.CardRegistrationFragment"
+        android:label="CardRegistrationFragment" />
+</navigation>

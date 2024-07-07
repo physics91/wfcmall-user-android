@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/mainColor"
+            app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="10dp"
+            android:src="@drawable/img_left_triangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="10dp"
+            android:src="@drawable/img_right_triangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7.7dp"
+            android:src="@drawable/ic_main_map"
+            app:layout_constraintBottom_toBottomOf="@id/addressTitleTextView"
+            app:layout_constraintEnd_toStartOf="@id/addressTitleTextView"
+            app:layout_constraintTop_toTopOf="@id/addressTitleTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:fontFamily="@font/sult_semibold"
+            android:gravity="center"
+            android:letterSpacing="-0.05"
+            android:text="주소 등록하기"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@id/nestedScrollView"
+            app:layout_constraintEnd_toEndOf="@id/topView"
+            app:layout_constraintStart_toStartOf="@id/topView"
+            app:layout_constraintTop_toTopOf="@id/topView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/downArrowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:src="@drawable/ic_white_down_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/addressTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/addressTitleTextView"
+            app:layout_constraintTop_toTopOf="@id/addressTitleTextView" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_main_scrollview_back"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressTitleTextView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_main_scrollview_back">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="14dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="14dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/searchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_round_26dp_withe_stork_1dp_main_color"
+                    android:fontFamily="@font/sult_semibold"
+                    android:gravity="start|center"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.05"
+                    android:paddingStart="18dp"
+                    android:text="메뉴 또는 매장명으로 검색하세요!"
+                    android:textColor="@color/mainHintText"
+                    android:textSize="16dp"
+                    app:autoSizeMinTextSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginEnd="1.5dp"
+                    android:elevation="4dp"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_main_search"
+                    app:layout_constraintBottom_toBottomOf="@id/searchEditText"
+                    app:layout_constraintEnd_toEndOf="@id/searchEditText"
+                    app:layout_constraintTop_toTopOf="@id/searchEditText" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/goToInstantButton"
+                    style="@style/goToOrderImageView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="6dp"
+                    app:srcCompat="@drawable/img_go_instant"
+                    app:layout_constraintDimensionRatio="H,0.6:1"
+                    app:layout_constraintEnd_toStartOf="@id/goToPackingImageView"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/goToPackingImageView"
+                    style="@style/goToOrderImageView"
+                    android:layout_marginStart="6dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_go_packaging"
+                    app:layout_constraintBottom_toTopOf="@id/goToShoppingImageView"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toEndOf="@id/goToInstantButton"
+                    app:layout_constraintTop_toTopOf="@+id/goToInstantButton"
+                    app:layout_constraintVertical_weight="1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/goToShoppingImageView"
+                    style="@style/goToOrderImageView"
+                    android:layout_marginTop="14dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_go_parcel"
+                    app:layout_constraintBottom_toBottomOf="@id/goToInstantButton"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@+id/goToPackingImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/goToPackingImageView"
+                    app:layout_constraintVertical_weight="1" />
+
+                <include
+                    android:id="@+id/bottomMenuInclude"
+                    layout="@layout/include_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="74dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toBottomOf="@+id/goToInstantButton" />
+
+                <View
+                    android:id="@+id/goToShopRegistView"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@color/mainBackLayout"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottomMenuInclude" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@id/registImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_main_regist_img"
+                    app:layout_constraintBottom_toBottomOf="@+id/goToShopRegistView"
+                    app:layout_constraintStart_toStartOf="@+id/goToShopRegistView"
+                    app:layout_constraintTop_toTopOf="@+id/goToShopRegistView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/registText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:text="입점 신청하기"
+                    android:textColor="@color/mainButtonText"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/registImageView"
+                    app:layout_constraintTop_toTopOf="@+id/goToShopRegistView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.03"
+                    android:text="온라인으로 간편하게 입점하세요!"
+                    android:textColor="@color/mainSubText"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/registText"
+                    app:layout_constraintTop_toBottomOf="@+id/registText" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="11dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="8.5dp"
+                    android:src="@drawable/ic_main_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/goToShopRegistView"
+                    app:layout_constraintEnd_toEndOf="@+id/goToShopRegistView"
+                    app:layout_constraintTop_toTopOf="@+id/goToShopRegistView" />
+
+                <View
+                    android:id="@+id/goToFixedNoticeView"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/bg_main_btn_shadow"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toBottomOf="@id/goToShopRegistView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fixedNoticeTitleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.03"
+                    android:text="동백전 결제 방법 알아보기"
+                    android:textColor="@color/mainButtonText"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/fixedNoticeImageView"
+                    app:layout_constraintEnd_toEndOf="@+id/goToFixedNoticeView"
+                    app:layout_constraintStart_toStartOf="@+id/fixedNoticeImageView"
+                    app:layout_constraintTop_toTopOf="@+id/fixedNoticeImageView" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fixedNoticeImageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/ic_indigo_speaker"
+                    app:layout_constraintBottom_toBottomOf="@+id/goToFixedNoticeView"
+                    app:layout_constraintStart_toStartOf="@+id/goToFixedNoticeView"
+                    app:layout_constraintTop_toTopOf="@+id/goToFixedNoticeView"
+                    tools:visibility="visible" />
+
+                <!--뷰페이저를 그리드라인에 걸어줄려면 width 를 0dp 로 잡아주어야 하는데
+                    0dp 로 잡을 시 viewpager 뷰가 안 보이면서 위치가 상단으로 올라감
+                    처리방법 : width match_parent 로 걸고 그리드라인이 아닌 부모에 걸어서
+                    마진을 양쪽으로 14dp 씩 띄워서 처리-->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bannerViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_category_selection_item"
+                    android:descendantFocusability="blocksDescendants"
+                    app:layout_constraintDimensionRatio="H,2.5:1"
+                    app:layout_constraintTop_toBottomOf="@+id/goToFixedNoticeView" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bannerCard"
+                    android:layout_width="63dp"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginBottom="-10dp"
+                    android:background="@drawable/bg_shadow_cardview"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="11.5dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bannerViewPager"
+                    app:layout_constraintEnd_toEndOf="@id/bannerViewPager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pageNumberTextView"
+                    style="@style/mainBannerPageTextView"
+                    android:layout_marginEnd="2.5dp"
+                    android:text="1"
+                    android:textColor="@color/mainColor"
+                    app:layout_constraintBottom_toBottomOf="@id/bannerCard"
+                    app:layout_constraintEnd_toStartOf="@id/pageAllTextView"
+                    app:layout_constraintTop_toTopOf="@id/bannerCard" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pageAllTextView"
+                    style="@style/mainBannerPageTextView"
+                    android:layout_marginStart="21dp"
+                    android:textColor="@color/mainBannerViewPagerCountText"
+                    app:layout_constraintBottom_toBottomOf="@id/bannerCard"
+                    app:layout_constraintStart_toStartOf="@id/bannerCard"
+                    app:layout_constraintTop_toTopOf="@id/bannerCard"
+                    tools:text="/ 1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/bannerAllImageView"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="0.5dp"
+                    android:elevation="11dp"
+                    android:src="@drawable/ic_indicator_box"
+                    app:layout_constraintBottom_toBottomOf="@id/bannerCard"
+                    app:layout_constraintStart_toStartOf="@id/bannerCard"
+                    app:layout_constraintTop_toTopOf="@id/bannerCard" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/businessInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:text="사업자정보확인"
+                    android:textColor="#595959"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/firstVertical"
+                    app:layout_constraintTop_toBottomOf="@id/bannerViewPager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/firstVertical"
+                    android:layout_width="1dp"
+                    android:layout_height="9.5dp"
+                    android:background="#595959"
+                    app:layout_constraintBottom_toBottomOf="@id/businessInfo"
+                    app:layout_constraintStart_toEndOf="@id/businessInfo"
+                    app:layout_constraintEnd_toStartOf="@id/terms"
+                    app:layout_constraintTop_toTopOf="@id/businessInfo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/terms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:text="이용약관"
+                    android:textColor="#595959"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/firstVertical"
+                    app:layout_constraintEnd_toStartOf="@id/secondVertical"
+                    app:layout_constraintTop_toBottomOf="@id/bannerViewPager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/secondVertical"
+                    android:layout_width="1dp"
+                    android:layout_height="9.5dp"
+                    android:background="#595959"
+                    app:layout_constraintBottom_toBottomOf="@id/businessInfo"
+                    app:layout_constraintStart_toEndOf="@id/terms"
+                    app:layout_constraintEnd_toStartOf="@id/infoPolicy"
+                    app:layout_constraintTop_toTopOf="@id/businessInfo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/infoPolicy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:text="개인정보처리방침"
+                    android:textColor="#595959"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/secondVertical"
+                    app:layout_constraintEnd_toStartOf="@id/thirdVertical"
+                    app:layout_constraintTop_toBottomOf="@id/bannerViewPager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/thirdVertical"
+                    android:layout_width="1dp"
+                    android:layout_height="9.5dp"
+                    android:background="#595959"
+                    app:layout_constraintBottom_toBottomOf="@id/businessInfo"
+                    app:layout_constraintStart_toEndOf="@id/infoPolicy"
+                    app:layout_constraintEnd_toEndOf="@id/openSourceLicenses"
+                    app:layout_constraintTop_toTopOf="@id/businessInfo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/openSourceLicenses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:text="오픈소스 라이센스"
+                    android:textColor="#595959"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/thirdVertical"
+                    app:layout_constraintTop_toBottomOf="@id/bannerViewPager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginBottom="47dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.05"
+                    android:paddingBottom="47dp"
+                    android:text="@string/mainFooterText"
+                    android:textColor="@color/mainBottomText"
+                    android:textSize="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                    app:layout_constraintTop_toBottomOf="@+id/bannerViewPager" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

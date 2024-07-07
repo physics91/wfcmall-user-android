@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/rixgom"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.05"
+        android:lineSpacingExtra="6dp"
+        android:textColor="@color/onboardingTitleText"
+        android:textSize="28dp"
+        android:translationY="-3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="부산의 필수앱\n내 손안에 부산" />
+
+    <!--  android:lineSpacingExtra 피그마에는 -5로 되어 있지만
+          똑같이 할 시 글자 디자인이 딱 붙어서 피그마와 안 맞아 2sp 로 설정
+          (피그마버그)-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/contentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/sult_semibold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.04"
+        android:lineSpacingExtra="2dp"
+        android:textColor="@color/onboardingContentText"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:text="앱 하나로 편리하게!\n모든 플랫폼을 담아내다" />
+</androidx.constraintlayout.widget.ConstraintLayout>

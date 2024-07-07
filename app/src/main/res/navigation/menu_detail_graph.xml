@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_detail_graph"
+    app:startDestination="@id/menuDetailsFragment">
+    <fragment
+        android:id="@+id/menuDetailsFragment"
+        android:name="com.theone.busandbt.fragment.menu.MallMenuDetailsFragment"
+        android:label="MenuDetailsFragment">
+
+        <argument
+            android:name="menuId"
+            app:argType="integer" />
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <argument
+            android:name="shopName"
+            app:argType="string" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="minOrderCost"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_menuDetailsFragment_to_seeMenuReviewFragment"
+            app:destination="@id/menu_review_list_graph">
+            <argument
+                android:name="menuId"
+                app:argType="integer" />
+            <argument
+                android:name="menuName"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_menuDetailsFragment_to_shopBasketMainFragment"
+            app:destination="@id/basket_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

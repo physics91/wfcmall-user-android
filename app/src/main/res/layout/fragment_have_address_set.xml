@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressSearchButton"
+                style="@style/addressSearchEditText"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressSearchText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginEnd="12.5dp"
+                android:fontFamily="@font/sult_medium"
+                android:hint="@string/addressSearchEditText"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:singleLine="true"
+                android:textColorHint="@color/hintText"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/addressSearchButton"
+                app:layout_constraintEnd_toStartOf="@+id/searchImageView"
+                app:layout_constraintStart_toStartOf="@id/addressSearchButton"
+                app:layout_constraintTop_toTopOf="@id/addressSearchButton" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/searchImageView"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_main_search"
+                app:layout_constraintBottom_toBottomOf="@id/addressSearchButton"
+                app:layout_constraintEnd_toEndOf="@id/addressSearchButton"
+                app:layout_constraintTop_toTopOf="@id/addressSearchButton" />
+
+            <View
+                android:id="@+id/addressFindButton"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_round_10dp_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressSearchButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressFindTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_address"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/sult_semibold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:text="현재 위치로 주소 찾기"
+                android:textColor="@color/mainColor"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/addressFindButton"
+                app:layout_constraintEnd_toEndOf="@id/addressFindButton"
+                app:layout_constraintStart_toStartOf="@id/addressFindButton"
+                app:layout_constraintTop_toTopOf="@id/addressFindButton" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/addressRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/addressFindButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/editAddressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:drawablePadding="9.5dp"
+                android:fontFamily="@font/sult_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:paddingVertical="2dp"
+                android:text="주소 편집하기"
+                android:textColor="@color/disableColor"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressRecyclerView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

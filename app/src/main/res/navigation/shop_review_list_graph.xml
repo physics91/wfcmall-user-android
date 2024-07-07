@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_review_list"
+    app:startDestination="@id/shopReviewListFragment">
+
+    <fragment
+        android:id="@+id/shopReviewListFragment"
+        android:name="com.theone.busandbt.fragment.review.ShopReviewListFragment"
+        android:label="fragment_shop_review_list"
+        tools:layout="@layout/fragment_shop_review_list">
+        <argument
+            android:name="shopId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fullReviewFragment_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>

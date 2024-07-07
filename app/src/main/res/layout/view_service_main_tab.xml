@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_service_main_tab">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tabImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/service_main_tab"
+        app:layout_constraintBottom_toBottomOf="@id/tabTextView"
+        app:layout_constraintEnd_toStartOf="@id/tabTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tabTextView"
+        app:tint="@color/service_main_tab" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tabTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/sult_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.03"
+        android:textColor="@color/service_main_tab"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tabImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableStart="@drawable/ic_delivery_tab"
+        tools:text="배달" />
+</androidx.constraintlayout.widget.ConstraintLayout>

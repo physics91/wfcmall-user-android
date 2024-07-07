@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="basketInformationText">#808080</color>
+    <color name="basketTabSelectedLayout">#DADADA</color>
+    <color name="basketTabLayout">#F6F6F6</color>
+    <color name="basketFooterLayout">#F6F6F6</color>
+    <color name="basketOptionText">#8A8A8A</color>
+    <color name="basketItemOptionText">#808080</color>
+    <color name="basketLine">#DADADA</color>
+    <color name="basketLayout">#DADADA</color>
+    <color name="basketForegroundImage">#0D111111</color>
+    <color name="basketNotExistText">#FFF2F2</color>
+</resources>

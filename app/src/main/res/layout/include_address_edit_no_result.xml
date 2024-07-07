@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/resultImg"
+        android:layout_width="106.89dp"
+        android:layout_height="130dp"
+        android:src="@drawable/img_no_result_bugi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주소를 등록해 주세요!"
+        android:textSize="16dp"
+        android:letterSpacing="-0.05"
+        android:textColor="@color/mainTextColor"
+        android:fontFamily="@font/sult_bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/resultImg"
+        app:layout_constraintTop_toBottomOf="@+id/resultImg"
+        app:layout_constraintStart_toStartOf="@+id/resultImg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

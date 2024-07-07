@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_coupon_graph"
+    app:startDestination="@id/my_coupon_fragment">
+
+    <fragment
+        android:id="@+id/my_coupon_fragment"
+        android:name="com.theone.busandbt.fragment.coupon.MyCouponFragment"
+        android:label="MyCouponFragment">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

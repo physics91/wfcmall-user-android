@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:id="@+id/cardNumberBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_address_edittext_selector"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/firstCardNumberEditTextView"
+        style="@style/cardEditTextView"
+        android:layout_marginStart="25dp"
+        android:nextFocusDown="@id/secondCardNumberEditTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/cardNumberBackGround"
+        app:layout_constraintStart_toStartOf="@+id/cardNumberBackGround"
+        app:layout_constraintTop_toTopOf="@+id/cardNumberBackGround" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_semibold"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/cardHorizontalLine"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/firstCardNumberEditTextView"
+        app:layout_constraintEnd_toStartOf="@+id/secondCardNumberEditTextView"
+        app:layout_constraintStart_toEndOf="@+id/firstCardNumberEditTextView"
+        app:layout_constraintTop_toTopOf="@+id/firstCardNumberEditTextView" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/secondCardNumberEditTextView"
+        style="@style/cardEditTextView"
+        android:nextFocusDown="@id/thirdCardNumberEditTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/cardNumberBackGround"
+        app:layout_constraintEnd_toStartOf="@id/thirdCardNumberEditTextView"
+        app:layout_constraintStart_toEndOf="@+id/firstCardNumberEditTextView"
+        app:layout_constraintTop_toTopOf="@+id/cardNumberBackGround" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_semibold"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/cardHorizontalLine"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/firstCardNumberEditTextView"
+        app:layout_constraintEnd_toStartOf="@+id/thirdCardNumberEditTextView"
+        app:layout_constraintStart_toEndOf="@+id/secondCardNumberEditTextView"
+        app:layout_constraintTop_toTopOf="@+id/firstCardNumberEditTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/thirdCardNumberEditTextView"
+        style="@style/cardEditTextView"
+        android:inputType="numberPassword"
+        android:nextFocusDown="@id/fourCardNumberEditTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/cardNumberBackGround"
+        app:layout_constraintEnd_toStartOf="@+id/fourCardNumberEditTextView"
+        app:layout_constraintStart_toEndOf="@+id/secondCardNumberEditTextView"
+        app:layout_constraintTop_toTopOf="@+id/cardNumberBackGround" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_semibold"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/cardHorizontalLine"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/firstCardNumberEditTextView"
+        app:layout_constraintEnd_toStartOf="@+id/fourCardNumberEditTextView"
+        app:layout_constraintStart_toEndOf="@+id/thirdCardNumberEditTextView"
+        app:layout_constraintTop_toTopOf="@+id/firstCardNumberEditTextView" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/fourCardNumberEditTextView"
+        style="@style/cardEditTextView"
+        android:inputType="numberPassword"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardNumberBackGround"
+        app:layout_constraintEnd_toEndOf="@+id/cardNumberBackGround"
+        app:layout_constraintTop_toTopOf="@+id/cardNumberBackGround" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

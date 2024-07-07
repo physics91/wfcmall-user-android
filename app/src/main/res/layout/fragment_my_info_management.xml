@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginInfo"
+            type="com.theone.busandbt.item.LoginInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_myinfo_profile_background"
+            android:src="@drawable/ic_myinfo_profile_img"
+            app:glideImageUrl="@{loginInfo.profileImageUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pencil"
+            app:layout_constraintBottom_toBottomOf="@id/profileImageView"
+            app:layout_constraintEnd_toEndOf="@id/profileImageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/profileImageView"
+            app:layout_constraintTop_toTopOf="@id/profileImageView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sult_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:greeting="@{loginInfo.nickname}"
+            app:layout_constraintEnd_toEndOf="@id/profileImageView"
+            app:layout_constraintStart_toStartOf="@id/profileImageView"
+            app:layout_constraintTop_toBottomOf="@id/profileImageView"
+            tools:text="한우성님, 반가워요!" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:text="@{loginInfo.email}"
+            android:textColor="@color/myInfoEmailText"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@id/name"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="qkdrkqkdrk@naver.com" />
+
+        <View
+            android:id="@+id/editLine"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="22dp"
+            android:background="@color/myInfoHorizontalStarveLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goEditMyInfoTextView"
+            style="@style/myInfoOptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="18dp"
+            android:paddingVertical="18.5dp"
+            android:text="회원 정보 수정"
+            app:layout_constraintTop_toBottomOf="@id/editLine" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="18dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_my_info_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/goEditMyInfoTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/goEditMyInfoTextView" />
+
+        <View
+            android:id="@+id/LogoutLine"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/myInfoHorizontalStarveLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goEditMyInfoTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/logoutTextView"
+            style="@style/myInfoOptionText"
+            android:text="로그아웃"
+            app:layout_constraintEnd_toEndOf="@+id/goEditMyInfoTextView"
+            app:layout_constraintStart_toStartOf="@+id/goEditMyInfoTextView"
+            app:layout_constraintTop_toBottomOf="@id/LogoutLine" />
+
+        <View
+            android:id="@+id/footerLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/myInfoHorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoutTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/withdrawalTextView"
+            style="@style/myInfoTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20.5dp"
+            android:text="회원탈퇴"
+            app:layout_constraintEnd_toEndOf="@+id/logoutTextView"
+            app:layout_constraintStart_toStartOf="@+id/logoutTextView"
+            app:layout_constraintTop_toBottomOf="@id/footerLine" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

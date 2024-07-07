@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/address_find_graph"
+    app:startDestination="@id/addressFineFragment">
+
+    <fragment
+        android:id="@+id/addressFineFragment"
+        android:name="com.theone.busandbt.fragment.address.AddressFineFragment"
+        android:label="fragment_address_fine"
+        tools:layout="@layout/fragment_address_fine_by_current_location">
+        <action
+            android:id="@+id/action_addressFineFragment_to_addressDetailFragment"
+            app:destination="@id/addressDetailFragment">
+            <argument
+                android:name="address"
+                android:defaultValue="@null"
+                app:argType="com.theone.busandbt.dto.address.AddressSearchResultItem"
+                app:nullable="true" />
+            <argument
+                android:name="item"
+                android:defaultValue="@null"
+                app:argType="com.theone.busandbt.dto.address.DeliveryAddress"
+                app:nullable="true" />
+            <argument
+                android:name="addressName"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+</navigation>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shopDetail"
+            type="com.theone.busandbt.dto.shop.ShopDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="28dp"
+        tools:background="@color/white">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/shopDetailTabContentMarginHorizontal" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/shopDetailTabContentMarginHorizontal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/packagingDiscountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentMarginTop"
+            android:drawableStart="@drawable/ic_packaging_discount"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/sult_semibold"
+            android:gravity="center_vertical"
+            android:textColor="@color/mainColor"
+            android:textSize="17dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/mapImg"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="포장 주문 시 1,000원 할인!"
+            tools:visibility="visible" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mapImg"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="18dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/packagingDiscountTextView">
+
+            <com.naver.maps.map.MapView
+                android:id="@+id/map"
+                android:name="com.naver.maps.map.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="5dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fullAddress"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_full_address"
+                app:layout_constraintEnd_toEndOf="@id/mapImg"
+                app:layout_constraintTop_toTopOf="@id/mapImg" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-7dp"
+            android:text="매장 주소"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/mapImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="0dp"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            android:translationY="-0.02dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@id/address"
+            app:layout_constraintTop_toTopOf="@id/address"
+            tools:text="@string/address" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentInterval"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:text="픽업 소요 시간"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/address"
+            app:layout_constraintTop_toBottomOf="@id/addressText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/addressText"
+            app:layout_constraintTop_toTopOf="@id/time"
+            app:orderDoneMinutes="@{shopDetail.packagingDoneMinutes}"
+            tools:text="18-28분 예상" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shopDetailTabContentInterval"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.04"
+            android:text="결제 방법"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/time"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/paymentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:letterSpacing="-0.04"
+            android:textColor="#111111"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/addressText"
+            app:layout_constraintTop_toTopOf="@id/payment"
+            tools:text="" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

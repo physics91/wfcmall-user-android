@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "98799965169",
+    "project_id": "test-order-channel",
+    "storage_bucket": "test-order-channel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98799965169:android:627eb954d7d756914cea50",
+        "android_client_info": {
+          "package_name": "com.theone.busandbt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWkYGRlyubXW5p0dYgIPkpdZgyhEUDr_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

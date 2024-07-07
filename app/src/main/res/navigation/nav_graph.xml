@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_graph">
+
+    <fragment
+        android:id="@+id/foodListItemFragment"
+        android:name="com.theone.busandbt.fragment.shop.FoodListItemFragment"
+        android:label="FoodListItemFragment">
+        <argument
+            android:name="categoryId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressSetEditFragment"
+        android:name="com.theone.busandbt.fragment.address.AddressEditFragment"
+        android:label="AddressSetEditFragment">
+        <action
+            android:id="@+id/action_addressSetEditFragment_to_addressDetailFragment"
+            app:destination="@id/addressDetailFragment">
+            <argument
+                android:name="address"
+                android:defaultValue="@null"
+                app:argType="com.theone.busandbt.dto.address.AddressSearchResultItem"
+                app:nullable="true" />
+            <argument
+                android:name="item"
+                android:defaultValue="@null"
+                app:argType="com.theone.busandbt.dto.address.DeliveryAddress"
+                app:nullable="true" />
+            <argument
+                android:name="addressName"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addressDetailFragment"
+        android:name="com.theone.busandbt.fragment.address.AddressDetailInputFragment"
+        android:label="AddressDetailFragment">
+        <argument
+            android:name="address"
+            android:defaultValue="@null"
+            app:argType="com.theone.busandbt.dto.address.AddressSearchResultItem"
+            app:nullable="true" />
+        <argument
+            android:name="item"
+            android:defaultValue="@null"
+            app:argType="com.theone.busandbt.dto.address.DeliveryAddress"
+            app:nullable="true" />
+        <argument
+            android:name="addressName"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addressDetailFragment_to_mainFragment"
+            app:destination="@id/main_graph" />
+        <action
+            android:id="@+id/action_addressDetailFragment_to_addressLocationFragment"
+            app:destination="@id/address_location_graph">
+            <argument
+                android:name="location"
+                app:argType="com.theone.busandbt.dto.address.Location" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/discountShopListFragment"
+        android:name="com.theone.busandbt.fragment.shop.DiscountShopListFragment"
+        android:label="fragment_discount_shop_list"
+        tools:layout="@layout/fragment_discount_shop_list">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_discountShopListFragment_to_restaurantMainFragment"
+            app:destination="@id/service_main_graph" />
+        <action
+            android:id="@+id/action_discountShopListFragment_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/myinfoAccountSettingFragment"
+        android:name="com.theone.busandbt.fragment.my_info.MyinfoAccountSettingFragment"
+        android:label="MyinfoAccountSettingFragment">
+        <action
+            android:id="@+id/action_myinfoAccountSettingFragment_to_myInfoFragment"
+            app:destination="@id/myinfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/myinfoNotificationSettingFragment"
+        android:name="com.theone.busandbt.fragment.my_info.MyinfoNotificationSettingFragment"
+        android:label="MyinfoNotificationSettingFragment">
+        <action
+            android:id="@+id/action_myinfoNotificationSettingFragment_to_myInfoFragment"
+            app:destination="@id/myinfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderPhoneChangeFragment"
+        android:name="com.theone.busandbt.fragment.order.OrderPhoneChangeFragment"
+        android:label="fragment_order_phone_change"
+        tools:layout="@layout/fragment_order_phone_change" />
+
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.theone.busandbt.fragment.my_info.ContactUsFragment"
+        android:label="ContactUsFragment">
+        <action
+            android:id="@+id/action_contactUsFragment_to_myInfoFragment"
+            app:destination="@id/myinfo" />
+    </fragment>
+    <action
+        android:id="@+id/action_traditionMarketDirectDeliveryFragment_to_shopBasketMainFragment"
+        app:destination="@id/basket_graph">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+    </action>
+
+    <fragment
+        android:id="@+id/promotionListFragment"
+        android:name="com.theone.busandbt.fragment.promotion.PromotionListFragment"
+        android:label="PromotionListFragment">
+        <action
+            android:id="@+id/action_promotionListFragment_to_promotionDetailFragment"
+            app:destination="@id/promotionDetailFragment">
+            <argument
+                android:name="promotionId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newShopListFragment"
+        android:name="com.theone.busandbt.fragment.shop.NewShopListFragment"
+        android:label="NewShopListFragment">
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_newShopListFragment_to_restaurantMainFragment"
+            app:destination="@id/service_main_graph" />
+        <action
+            android:id="@+id/action_newShopListFragment_to_shopDetailsFragment"
+            app:destination="@id/shop_detail_graph">
+            <argument
+                android:name="shopId"
+                app:argType="integer" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/editMyInfoFragment"
+        android:name="com.theone.busandbt.fragment.my_info.EditMyInfoFragment"
+        android:label="EditMyInfoFragment">
+        <action
+            android:id="@+id/action_editMyInfoFragment_to_editMyInfoPasswordFragment"
+            app:destination="@id/editMyInfoPasswordFragment" />
+        <action
+            android:id="@+id/action_editMyInfoFragment_to_myInfoManagementFragment"
+            app:destination="@id/my_info_management" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMyInfoPasswordFragment"
+        android:name="com.theone.busandbt.fragment.my_info.EditMyInfoPasswordFragment"
+        android:label="EditMyInfoPasswordFragment">
+        <action
+            android:id="@+id/action_editMyInfoPasswordFragment_to_editMyInfoFragment"
+            app:destination="@id/editMyInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.theone.busandbt.fragment.forgetpassword.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment" />
+
+    <fragment
+        android:id="@+id/promotionDetailFragment"
+        android:name="com.theone.busandbt.fragment.promotion.PromotionDetailFragment"
+        android:label="promotionDetailFragment">
+        <argument
+            android:name="promotionId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="landingUrl"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/joinServiceAgreeFragment"
+        android:name="com.theone.busandbt.fragment.join.JoinServiceAgreeFragment"
+        android:label="fragment_join_service_agree"
+        tools:layout="@layout/fragment_join_service_agree">
+        <action
+            android:id="@+id/action_joinServiceAgreeFragment_to_nice24Fragment"
+            app:destination="@id/nice24Fragment">
+            <argument
+                android:name="actionTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_joinServiceAgreeFragment_to_joinPhoneNoCheckFragment"
+            app:destination="@id/loginIdCheckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginIdCheckFragment"
+        android:name="com.theone.busandbt.fragment.join.LoginIdCheckFragment"
+        android:label="fragment_join"
+        tools:layout="@layout/fragment_join_phone_no_check">
+        <action
+            android:id="@+id/action_loginIdCheckFragment_to_joinNameFragment"
+            app:destination="@id/joinNameFragment" />
+        <action
+            android:id="@+id/action_loginIdCheckFragment_to_nice24Fragment"
+            app:destination="@id/nice24Fragment">
+            <argument
+                android:name="actionTypeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nice24Fragment"
+        android:name="com.theone.busandbt.fragment.join.Nice24Fragment"
+        android:label="fragment_nice24"
+        tools:layout="@layout/fragment_nice24">
+        <argument
+            android:name="actionTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_nice24Fragment_to_joinNameFragment"
+            app:destination="@id/joinNameFragment"
+            app:popUpTo="@id/loginIdCheckFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nice24Fragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment"
+            app:popUpTo="@id/login_graph"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nice24Fragment_to_mainFragment"
+            app:destination="@id/main_graph"
+            app:popUpTo="@id/main_graph"
+            app:popUpToInclusive="false">
+            <argument
+                android:name="joined"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/joinNameFragment"
+        android:name="com.theone.busandbt.fragment.join.JoinNameFragment"
+        android:label="fragment_join_name"
+        tools:layout="@layout/fragment_join_name">
+        <action
+            android:id="@+id/action_joinNameFragment_to_joinPasswordFragment"
+            app:destination="@id/joinPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinPasswordFragment"
+        android:name="com.theone.busandbt.fragment.join.JoinPasswordFragment"
+        android:label="JoinPasswordFragment">
+        <action
+            android:id="@+id/action_joinPasswordFragment_to_mainFragment"
+            app:destination="@id/main_graph"
+            app:popUpTo="@id/main_graph"
+            app:popUpToInclusive="false">
+            <argument
+                android:name="joined"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/my_coupon_list_graph" />
+    <include app:graph="@navigation/service_agree_graph" />
+    <include app:graph="@navigation/permission_agree_graph" />
+    <include app:graph="@navigation/main_graph" />
+    <include app:graph="@navigation/address_find_graph" />
+    <include app:graph="@navigation/address_location_graph" />
+    <include app:graph="@navigation/login_graph" />
+    <include app:graph="@navigation/coupon_list_graph" />
+    <include app:graph="@navigation/my_coupon_graph" />
+    <include app:graph="@navigation/restaurantmain_graph" />
+    <include app:graph="@navigation/shop_detail_graph" />
+    <include app:graph="@navigation/myinfo_graph" />
+    <include app:graph="@navigation/mall_menu_list_graph" />
+    <include app:graph="@navigation/basket_graph" />
+    <include app:graph="@navigation/review_write_graph" />
+    <include app:graph="@navigation/order_list_graph" />
+    <include app:graph="@navigation/like_list_graph" />
+    <include app:graph="@navigation/order_detail_graph" />
+    <include app:graph="@navigation/menu_review_list_graph" />
+    <include app:graph="@navigation/search_result_graph" />
+    <include app:graph="@navigation/restaurant_list_graph" />
+    <include app:graph="@navigation/search_main_graph" />
+    <include app:graph="@navigation/shop_review_list_graph" />
+    <include app:graph="@navigation/add_order_graph" />
+    <include app:graph="@navigation/set_review_graph" />
+    <include app:graph="@navigation/delivery_address_list_graph" />
+    <include app:graph="@navigation/my_info_management_graph" />
+    <include app:graph="@navigation/notice_list_graph" />
+    <include app:graph="@navigation/notice_content_graph" />
+    <include app:graph="@navigation/menu_detail_graph" />
+    <include app:graph="@navigation/shop_info_graph" />
+    <include app:graph="@navigation/order_status_graph" />
+    <include app:graph="@navigation/my_review_graph" />
+    <include app:graph="@navigation/shop_location_graph" />
+    <include app:graph="@navigation/onboarding_graph" />
+    <include app:graph="@navigation/shoppingdetails_graph" />
+    <include app:graph="@navigation/shopping_order_detail_graph" />
+    <include app:graph="@navigation/shopping_new_shop_list_graph" />
+    <include app:graph="@navigation/search_shop_detail_graph" />
+    <include app:graph="@navigation/search_shop_detail_result_graph" />
+    <include app:graph="@navigation/discount_mall_graph" />
+    <include app:graph="@navigation/payment_graph" />
+    <include app:graph="@navigation/payment_fail_graph" />
+    <include app:graph="@navigation/food_menu_detail_graph" />
+    <include app:graph="@navigation/card_registration_graph" />
+    <include app:graph="@navigation/payment_simple_password_graph" />
+    <include app:graph="@navigation/issue_coupon_graph" />
+    <include app:graph="@navigation/privacy_main_graph" />
+    <include app:graph="@navigation/privacy_detail_graph" />
+    <include app:graph="@navigation/privacy_shop_list_graph" />
+    <include app:graph="@navigation/privacy_delivery_company_list_graph" />
+    <include app:graph="@navigation/privacy_delivery_link_company_list_graph" />
+    <include app:graph="@navigation/business_info_graph" />
+    <include app:graph="@navigation/card_agree_graph" />
+    <include app:graph="@navigation/card_agree_web_graph" />
+</navigation>

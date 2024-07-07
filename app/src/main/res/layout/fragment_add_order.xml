@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.order.AddOrderFragment">
+
+    <data>
+
+        <import type="com.busandbt.code.DeliveryType" />
+
+        <variable
+            name="deliveryType"
+            type="DeliveryType" />
+
+        <variable
+            name="deliveryAddress"
+            type="com.theone.busandbt.dto.address.DeliveryAddress" />
+
+        <variable
+            name="customerTel"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="14dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="14dp" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/deliveryTypeGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:constraint_referenced_ids="deliveryTypeBackgroundView, deliveryTypeImageView, deliveryTypeTextView, deliveryTypeDescTextView"
+                    tools:visibility="visible" />
+
+                <View
+                    android:id="@+id/deliveryTypeBackgroundView"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/deliveryTypeImageView"
+                    android:layout_width="44.72dp"
+                    android:layout_height="47.56dp"
+                    android:layout_marginStart="22dp"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_airplane_main"
+                    app:layout_constraintBottom_toBottomOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toTopOf="@id/deliveryTypeBackgroundView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryTypeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/sult_extrabold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:textColor="@color/mainColor"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toEndOf="@id/deliveryTypeImageView"
+                    app:layout_constraintTop_toTopOf="@id/deliveryTypeBackgroundView"
+                    tools:text="배달" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryTypeDescTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:letterSpacing="-0.03"
+                    android:text="입력하신 주소지로 메뉴가 배달됩니다"
+                    android:textColor="@color/mainColor"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@id/deliveryTypeImageView"
+                    app:layout_constraintStart_toStartOf="@+id/deliveryTypeTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveryTypeTextView" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/menuListRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveryTypeBackgroundView"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_add_order_out_menu_list" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopSeeAddressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableEnd="@drawable/ic_add_order_right_arrow"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:text="매장 주소보기"
+                    android:textColor="@color/mainColor"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/menuListRecyclerView"
+                    app:visibleOrGone="@{deliveryType == DeliveryType.PACKAGING}" />
+
+                <View
+                    android:id="@+id/optionLine"
+                    style="@style/addOrderHorizontalLine"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopSeeAddressTextView" />
+
+                <include
+                    android:id="@+id/deliveryAddressFormInclude"
+                    layout="@layout/include_add_order_delivery_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:customerTel="@{customerTel}"
+                    app:deliveryAddress="@{deliveryAddress}"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/optionLine" />
+
+                <View
+                    android:id="@+id/requestLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="25dp"
+                    android:background="#E3E3E3"
+                    app:layout_constraintTop_toBottomOf="@id/deliveryAddressFormInclude"
+                    app:visibleOrGone="@{deliveryType != DeliveryType.PACKAGING}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/memoTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:lineSpacingExtra="0dp"
+                    android:text="주문 요청사항"
+                    android:textColor="@color/addOrderAddressInformationText"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@id/requestLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopMemoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.03"
+                    android:lineSpacingExtra="0dp"
+                    android:text="매장 사장님에게"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@id/memoTitleTextView" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/shopMemoInputTextView"
+                    style="@style/addOrderEditText"
+                    fontDifference="@{true}"
+                    android:layout_marginTop="10dp"
+                    android:hint="요청사항을 입력해 주세요."
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopMemoTitle" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/exceptDisposableCheckBox"
+                    style="@style/addOrderCheckBox"
+                    android:layout_marginTop="16dp"
+                    android:checked="true"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/shopMemoInputTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/exceptDisposableTextView"
+                    style="@style/addOrderSubOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="일회용 수저/포크 빼주세요"
+                    app:layout_constraintBottom_toBottomOf="@id/exceptDisposableCheckBox"
+                    app:layout_constraintStart_toEndOf="@id/exceptDisposableCheckBox"
+                    app:layout_constraintTop_toTopOf="@id/exceptDisposableCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/shopMemoNextUseCheckBox"
+                    style="@style/addOrderCheckBox"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/exceptDisposableCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/addOrderSubOptionTextView"
+                    android:layout_marginStart="12dp"
+                    android:text="다음에도 사용"
+                    app:layout_constraintBottom_toBottomOf="@id/shopMemoNextUseCheckBox"
+                    app:layout_constraintStart_toEndOf="@id/shopMemoNextUseCheckBox"
+                    app:layout_constraintTop_toTopOf="@id/shopMemoNextUseCheckBox" />
+
+                <include
+                    android:id="@+id/riderMemoFormInclude"
+                    layout="@layout/include_add_order_rider_memo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@+id/shopMemoNextUseCheckBox" />
+
+                <View
+                    android:id="@+id/couponLine"
+                    style="@style/addOrderHorizontalLine"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/riderMemoFormInclude" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/couponTextView"
+                    style="@style/addOrderCouponTitleTextView"
+                    android:layout_marginTop="24dp"
+                    android:text="매장 쿠폰"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@id/couponLine" />
+
+            <!--    <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopCouponCountTextView"
+                    style="@style/addOrderCouponCostTextView"
+                    android:layout_marginStart="10dp"
+                    android:text="0개 보유"
+                    app:layout_constraintBottom_toBottomOf="@id/couponTextView"
+                    app:layout_constraintStart_toEndOf="@id/couponTextView"
+                    app:layout_constraintTop_toTopOf="@+id/couponTextView"
+                    tools:text="3개 보유" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/addOrderCouponUseTextView"
+                    android:text="사용"
+                    app:layout_constraintBottom_toBottomOf="@id/shopCouponTextView"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/shopCouponTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopCouponDiscountCostTextView"
+                    style="@style/addOrderCouponUseTextView"
+                    android:layout_marginEnd="53dp"
+                    android:text="0원"
+                    app:layout_constraintBottom_toBottomOf="@id/shopCouponTextView"
+                    app:layout_constraintEnd_toStartOf="@id/shopCouponTextView"
+                    app:layout_constraintTop_toTopOf="@id/shopCouponTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopCouponTextView"
+                    style="@style/addOrderCouponTextView"
+                    android:layout_marginTop="10dp"
+                    android:text="쿠폰 할인"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintTop_toBottomOf="@+id/couponTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/eventCouponTitleTextView"
+                    style="@style/addOrderCouponTitleTextView"
+                    android:layout_marginTop="24dp"
+                    android:text="이벤트 쿠폰"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@id/shopCouponTextView" />
+
+              <!--  <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/eventCouponCountTextView"
+                    style="@style/addOrderCouponCostTextView"
+                    android:layout_marginStart="10dp"
+                    android:text="0개 보유"
+                    app:layout_constraintBottom_toBottomOf="@id/eventCouponTitleTextView"
+                    app:layout_constraintStart_toEndOf="@id/eventCouponTitleTextView"
+                    app:layout_constraintTop_toTopOf="@id/eventCouponTitleTextView"
+                    tools:text="2개 보유" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/addOrderCouponUseTextView"
+                    android:text="사용"
+                    app:layout_constraintBottom_toBottomOf="@id/eventCoupon"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toTopOf="@id/eventCoupon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/eventCouponDiscountCostTextView"
+                    style="@style/addOrderCouponUseTextView"
+                    android:layout_marginEnd="53dp"
+                    android:text="0원"
+                    app:layout_constraintBottom_toBottomOf="@id/eventCoupon"
+                    app:layout_constraintEnd_toStartOf="@id/eventCoupon"
+                    app:layout_constraintTop_toTopOf="@id/eventCoupon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/eventCoupon"
+                    style="@style/addOrderCouponTextView"
+                    android:layout_marginTop="10dp"
+                    android:text="쿠폰 할인"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/eventCouponTitleTextView" />
+
+                <View
+                    android:id="@+id/paymentLine"
+                    style="@style/addOrderHorizontalLine"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/eventCoupon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/paymentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:text="결제 수단"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@id/deliveryTypeBackgroundView"
+                    app:layout_constraintTop_toBottomOf="@id/paymentLine" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/dongbaekgeonGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="dongbaektongCardToggleButton,dongbaekgeonBenefitsBadge" />
+
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/dongbaektongCardToggleButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="6.5dp"
+                    android:background="@drawable/bg_direct_delivery_tab_selector"
+                    android:fontFamily="@font/sult_bold"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="0dp"
+                    android:paddingVertical="17dp"
+                    android:text="동백전 결제"
+                    android:textColor="@drawable/bg_order_text_color_selector"
+                    android:textOff="동백전 결제"
+                    android:textOn="동백전 결제"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/cardPayToggleButton"
+                    app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/paymentText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dongbaekgeonBenefitsBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-13dp"
+                    android:layout_marginEnd="-13dp"
+                    android:background="@drawable/bg_oval_34dp_main_color"
+                    android:fontFamily="@font/sult_extrabold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.04"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="9.5dp"
+                    android:text="혜택"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/dongbaektongCardToggleButton"
+                    app:layout_constraintTop_toTopOf="@id/dongbaektongCardToggleButton" />
+
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/cardPayToggleButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_direct_delivery_tab_selector"
+                    android:fontFamily="@font/sult_bold"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="0dp"
+                    android:paddingVertical="17dp"
+                    android:text="카드 결제"
+                    android:textColor="@drawable/bg_order_text_color_selector"
+                    android:textOff="카드 결제"
+                    android:textOn="카드 결제"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/sitePayToggleButton"
+                    app:layout_constraintStart_toEndOf="@+id/dongbaektongCardToggleButton"
+                    app:layout_constraintTop_toBottomOf="@id/paymentText" />
+
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/sitePayToggleButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_direct_delivery_tab_selector"
+                    android:fontFamily="@font/sult_bold"
+                    android:gravity="center"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="0dp"
+                    android:paddingVertical="17dp"
+                    android:text="현장 결제"
+                    android:textColor="@drawable/bg_order_text_color_selector"
+                    android:textOff="현장 결제"
+                    android:textOn="현장 결제"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/cardPayToggleButton"
+                    app:layout_constraintTop_toBottomOf="@id/paymentText" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/footerBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="sitePaymentInclude,dongbaektongPaymentInclude,cardPaymentInclude" />
+
+                <include
+                    android:id="@+id/sitePaymentInclude"
+                    layout="@layout/include_site_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/sitePayToggleButton"
+                    tools:visibility="visible" />
+
+                <include
+                    android:id="@+id/dongbaektongPaymentInclude"
+                    layout="@layout/include_dongbaektong_card_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/dongbaektongCardToggleButton" />
+
+                <include
+                    android:id="@+id/cardPaymentInclude"
+                    layout="@layout/include_card_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/cardPayToggleButton"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/paymentTypeNextUseCheckBox"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_checkbox_selector"
+                    android:button="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/footerBarrier" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="0dp"
+                    android:text="이 결제수단을 다음에도 사용"
+                    android:textColor="#111111"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/paymentTypeNextUseCheckBox"
+                    app:layout_constraintStart_toEndOf="@id/paymentTypeNextUseCheckBox"
+                    app:layout_constraintTop_toTopOf="@id/paymentTypeNextUseCheckBox" />
+
+                <View
+                    android:id="@+id/footerLine"
+                    style="@style/addOrderHorizontalLine"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@id/paymentTypeNextUseCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/paymentTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="33dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="1dp"
+                    android:text="결제 금액"
+                    android:textColor="@color/mainColor"
+                    android:textSize="18dp"
+                    android:translationY="-0.27dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/footerLine" />
+
+                <include
+                    android:id="@+id/paymentFormInclude"
+                    layout="@layout/include_order_detail_payment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:deliveryType="@{deliveryType}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+                    app:layout_constraintStart_toEndOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/paymentTitleTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:text="총 결제금액"
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/paymentFormInclude" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/paymentCostTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="13dp"
+                    android:fontFamily="@font/sult_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.03"
+                    android:text="0원"
+                    android:textColor="@color/mainColor"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/paymentFormInclude"
+                    tools:text="41,300원" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/agreeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.04"
+                    android:text="주문 내용을 확인하였으며, 결제에 동의합니다."
+                    android:textColor="@color/addOrderAgreeText"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/paymentCostTextView" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/privacyAgreeCheckBox"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="13dp"
+                    android:background="@drawable/bg_checkbox_selector"
+                    android:button="@null"
+                    app:layout_constraintEnd_toStartOf="@id/privacyAgreeTextView"
+                    app:layout_constraintTop_toBottomOf="@id/agreeTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/privacyAgreeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="0dp"
+                    android:text="개인정보 제 3자 제공 동의(필수)"
+                    android:textColor="@color/addOrderAgreeText"
+                    android:textSize="14dp"
+                    app:layout_constraintHorizontal_bias="0.47"
+                    app:layout_constraintBottom_toBottomOf="@id/privacyAgreeCheckBox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/privacyAgreeCheckBox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/privacyAgreeDetailButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:drawableEnd="@drawable/ic_right_arrow_more_view"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:text="자세히"
+                    android:textColor="@color/addOrderAgreeText"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@id/privacyAgreeTextView"
+                    app:layout_constraintStart_toEndOf="@id/privacyAgreeTextView"
+                    app:layout_constraintTop_toTopOf="@id/privacyAgreeTextView" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addOrderButton"
+                    style="@style/mainButton"
+                    android:background="@drawable/bg_common_button_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:enabled="false"
+                    android:text="총 0원 결제하기"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/privacyAgreeCheckBox"
+                    tools:text="총 41,000원 결제하기" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

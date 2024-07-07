@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notice_list"
+    app:startDestination="@id/noticeListFragment">
+    <fragment
+        android:id="@+id/noticeListFragment"
+        android:name="com.theone.busandbt.fragment.notice.NoticeListFragment"
+        android:label="NoticeListFragment">
+        <action
+            android:id="@+id/action_noticeListFragment_to_noticeContentFragment"
+            app:destination="@id/notice_content_graph">
+            <argument
+                android:name="noticeId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+</navigation>

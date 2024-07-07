@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/join_title_margin_top"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="입력하신 정보가 맞나요?"
+            android:textColor="@color/mainTextColor"
+            android:textSize="26dp"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:fontFamily="@font/sult_bold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingStart="8dp"
+            android:text="휴대전화 번호"
+            android:textColor="@color/joinInformationTextColor"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:fontFamily="@font/sult_medium"
+            android:hint=" 휴대폰 번호(-없이)"
+            android:inputType="number"
+            android:lineSpacingExtra="-1dp"
+            android:maxLines="1"
+            android:paddingStart="11dp"
+            android:paddingBottom="14dp"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textSize="18dp"
+            android:theme="@style/basicEditText"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/phoneTitleTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/sult_bold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingStart="8dp"
+            android:text="닉네임"
+            android:textColor="@color/joinInformationTextColor"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="@id/phoneNumberEditText"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sult_medium"
+            android:hint="닉네임"
+            android:letterSpacing="-0.05"
+            android:maxLines="1"
+            android:paddingStart="11dp"
+            android:paddingBottom="14dp"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textSize="18dp"
+            android:theme="@style/basicEditText"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/nameTitleTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingStart="8dp"
+            android:text="이메일"
+            android:textColor="#808080"
+            android:textSize="14dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/nameTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/emailEditTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sult_semibold"
+            android:hint=" 직접 입력(선택사항)"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:maxLines="1"
+            android:paddingStart="11dp"
+            android:paddingBottom="14dp"
+            android:textColor="#111111"
+            android:textColorHint="#DCDCDC"
+            android:textSize="18dp"
+            android:theme="@style/basicEditText"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/emailTitleTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingBottom="12dp"
+            android:text="완료"
+            android:textColor="#D42A2A"
+            android:textSize="12dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/emailTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/emailEditTextView" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bg_round_23dp_disabled"
+            android:enabled="false"
+            android:fontFamily="@font/sult_extrabold"
+            android:letterSpacing="-0.05"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

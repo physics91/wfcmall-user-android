@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_graph"
+    app:startDestination="@id/paymentFragment">
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.theone.busandbt.fragment.payment.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment">
+        <argument
+            android:name="addOrderRequest"
+            app:argType="com.theone.busandbt.dto.order.request.AddOrderRequest" />
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <argument
+            android:name="paymentUrl"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="paymentHtml"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="serviceTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="deliveryTypeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_paymentFragment_to_paymentFailFragment"
+            app:destination="@id/payment_fail_graph">
+            <argument
+                android:name="resultCode"
+                app:argType="string" />
+            <argument
+                android:name="resultMessage"
+                app:argType="string" />
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_paymentFragment_to_orderStatusFragment"
+            app:destination="@id/order_status_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+</navigation>

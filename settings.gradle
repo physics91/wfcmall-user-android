@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        //simpleratingbar사용하기 위해
+        maven { url 'https://jitpack.io' }
+        //카카오톡 로그인
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/'}
+        //네이버 지도
+        maven {
+            url 'https://naver.jfrog.io/artifactory/maven/'
+        }
+        maven {
+            url = "s3://ireal-library/releases"
+            credentials(AwsCredentials) {
+                accessKey = libraryAccessKey
+                secretKey = librarySecretKey
+            }
+        }
+    }
+}
+rootProject.name = "customer"
+include ':app'

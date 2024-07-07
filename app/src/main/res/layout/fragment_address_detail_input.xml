@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingHorizontal="14dp"
+            app:layout_constraintBottom_toTopOf="@id/addressLocation"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/roadTextView"
+                    style="@style/roadAddressSettingTextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="14dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="부산광역시 해운대구 센텀7로" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/buildingNameTextView"
+                    style="@style/roadAddressSettingTextView"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="14dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintStart_toStartOf="@id/roadTextView"
+                    app:layout_constraintTop_toBottomOf="@id/roadTextView"
+                    tools:text="부산영상후반작업시설" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/jibunTextView"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="14dp"
+                    android:fontFamily="@font/sult_medium"
+                    android:letterSpacing="-0.05"
+                    android:textColor="@color/exampleSubTitle"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@id/roadTextView"
+                    app:layout_constraintTop_toBottomOf="@id/buildingNameTextView"
+                    tools:text="(지번) 우동 1466" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/addressDetailEditText"
+                    style="@style/addressBaseEditText"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/sult_semibold"
+                    android:hint="@string/detailAddressExample"
+                    android:inputType="text"
+                    android:letterSpacing="-0.05"
+                    android:singleLine="true"
+                    android:textColorHint="@color/hintText"
+                    app:fontDifference="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/jibunTextView" />
+
+                <include
+                    android:id="@+id/addressSortInclude"
+                    layout="@layout/include_address_detail_input_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressDetailEditText" />
+
+                <include
+                    android:id="@+id/newPlaceInclude"
+                    layout="@layout/include_address_detail_input_optional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:top="28dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/addressSortInclude"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/addressLocation"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_address_search_button"
+            android:fontFamily="@font/sult_semibold"
+            android:gravity="left|center"
+            app:layout_constraintBottom_toTopOf="@+id/addOrSetButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mapTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_address_location_ping"
+            android:drawablePadding="7dp"
+            android:fontFamily="@font/sult_semibold"
+            android:letterSpacing="-0.05"
+            android:text="지도에서 위치보기"
+            android:textColor="@color/mainColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/addressLocation"
+            app:layout_constraintEnd_toEndOf="@id/addressLocation"
+            app:layout_constraintStart_toStartOf="@id/addressLocation"
+            app:layout_constraintTop_toTopOf="@id/addressLocation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addOrSetButton"
+            style="@style/commonBottomButton"
+            android:layout_width="match_parent"
+            android:text="입력 완료"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

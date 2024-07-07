@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_main"
+    app:startDestination="@id/searchMainFragment">
+    <fragment
+        android:id="@+id/searchMainFragment"
+        android:name="com.theone.busandbt.fragment.search.SearchMainFragment"
+        android:label="SearchMainFragment">
+        <action
+            android:id="@+id/action_searchMainFragment_to_searchResultFragment"
+            app:destination="@id/search_result">
+            <argument
+                android:name="keyword"
+                app:argType="string" />
+            <argument
+                android:name="serviceTypeId"
+                android:defaultValue="1"
+                app:argType="integer" />
+            <argument
+                android:name="deliveryTypeId"
+                android:defaultValue="1"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_searchMainFragment_to_restaurantMainFragment"
+            app:destination="@id/service_main_graph" />
+        <action
+            android:id="@+id/action_searchMainFragment_to_homeFragment"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>

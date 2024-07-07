@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <HorizontalScrollView
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="18dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/resetImageView"
+                    android:layout_width="56dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/img_reset"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/distanceOrderTextView"
+                    style="@style/foodListSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="4.5dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="13.5dp"
+                    android:paddingBottom="4dp"
+                    android:text="가까운 순"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@id/resetImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/minOrderCostTextView"
+                    style="@style/foodListSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="13.5dp"
+                    android:paddingBottom="4dp"
+                    android:text="최소주문금액"
+                    app:layout_constraintStart_toEndOf="@id/distanceOrderTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/couponBadgeTextView"
+                    style="@style/foodListSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
+                    android:text="쿠폰/할인"
+                    app:layout_constraintStart_toEndOf="@id/minOrderCostTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/packagingBadgeTextView"
+                    style="@style/foodListSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
+                    android:text="포장"
+                    app:layout_constraintStart_toEndOf="@id/couponBadgeTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+
+        <include
+            android:id="@+id/notExistShopForm"
+            layout="@layout/include_not_exist_shop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.theone.busandbt.view.NestedScrollableHost
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topView">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/restaurantListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.theone.busandbt.view.NestedScrollableHost>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

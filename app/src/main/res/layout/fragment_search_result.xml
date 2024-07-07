@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="14dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/goBackButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:paddingHorizontal="18dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toStartOf="@id/mainSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mainSearch"
+            app:srcCompat="@drawable/ic_left_arrow" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/mainSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_address_edittext_selector"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:letterSpacing="-0.05"
+            android:paddingVertical="12dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textCursorDrawable="@drawable/bg_edittext_curosr"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@id/goBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="김밥" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainSearchShadow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sult_medium"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:letterSpacing="-0.05"
+            android:paddingVertical="12dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/hintText"
+            android:textCursorDrawable="@drawable/bg_edittext_curosr"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/goBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="김밥" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resultShopCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="0개"
+            android:textColor="#949494"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/keywordSearchButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_main_search"
+            app:layout_constraintBottom_toBottomOf="@id/mainSearch"
+            app:layout_constraintEnd_toEndOf="@id/mainSearch"
+            app:layout_constraintTop_toTopOf="@id/mainSearch" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:letterSpacing="-0.03"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainSearch"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:tabGravity="fill"
+            app:tabIndicator="@drawable/bg_shop_detail_indicator"
+            app:tabIndicatorColor="@color/mainColor"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="3dp"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/mainColor"
+            app:tabTextAppearance="@style/tabUnselectedTextAppearance"
+            app:tabTextColor="@color/disableColor" />
+
+        <HorizontalScrollView
+            android:id="@+id/filterForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="18dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/resetImageView"
+                    android:layout_width="56dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/img_reset"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/sortTypeBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="shopSortTypeTextView, menuSortTypeTextView"
+                    app:barrierDirection="end"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shopSortTypeTextView"
+                    style="@style/commonSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="4.5dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="13.5dp"
+                    android:paddingBottom="4dp"
+                    android:text="가까운 순"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/resetImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/menuSortTypeTextView"
+                    style="@style/commonSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="4.5dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="13.5dp"
+                    android:paddingBottom="4dp"
+                    android:text="주문 많은 순"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/resetImageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/minOrderCostTextView"
+                    style="@style/commonSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="13.5dp"
+                    android:paddingBottom="4dp"
+                    android:text="최소주문금액"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/sortTypeBarrier"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/couponBadgeTextView"
+                    style="@style/commonSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
+                    android:text="쿠폰/할인"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/minOrderCostTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/packagingBadgeTextView"
+                    style="@style/commonSortTextView"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
+                    android:text="포장"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/couponBadgeTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                <androidx.constraintlayout.widget.Group-->
+                <!--                    android:id="@+id/shoppingGroup"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    tools:visibility="visible"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:constraint_referenced_ids="shoppingSortTextView,shoppingCouponTextView" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/shoppingSortTextView"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="0dp"-->
+                <!--                    android:layout_marginStart="5dp"-->
+                <!--                    android:background="@drawable/bg_round_14dp_d5d5d5"-->
+                <!--                    android:drawableEnd="@drawable/ic_down_arrow"-->
+                <!--                    android:drawablePadding="4dp"-->
+                <!--                    android:fontFamily="@font/sult_medium"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:includeFontPadding="false"-->
+                <!--                    android:letterSpacing="-0.04"-->
+                <!--                    android:paddingHorizontal="9dp"-->
+                <!--                    android:paddingVertical="4dp"-->
+                <!--                    android:text="최신 등록 순"-->
+                <!--                    android:textColor="@color/mainTextColor"-->
+                <!--                    android:textSize="14dp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintStart_toEndOf="@id/resetImageView"-->
+                <!--                    app:layout_constraintTop_toTopOf="@+id/shoppingCouponTextView" />-->
+
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/shoppingCouponTextView"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="15dp"-->
+                <!--                    android:background="@drawable/bg_round_14dp_d5d5d5"-->
+                <!--                    android:fontFamily="@font/sult_medium"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:includeFontPadding="false"-->
+                <!--                    android:letterSpacing="-0.04"-->
+                <!--                    android:paddingHorizontal="9dp"-->
+                <!--                    android:paddingVertical="5.5dp"-->
+                <!--                    android:text="쿠폰할인"-->
+                <!--                    android:textColor="@color/mainTextColor"-->
+                <!--                    android:textSize="14dp"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/shoppingSortTextView"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/searchListViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filterForm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

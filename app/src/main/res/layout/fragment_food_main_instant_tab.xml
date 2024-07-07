@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/rootScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="33dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="14dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="14dp" />
+
+            <RelativeLayout
+                android:id="@+id/categoryForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19.8dp"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="4" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/categoryBottomLineInclude"
+                layout="@layout/include_service_main_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                app:layout_constraintTop_toBottomOf="@+id/categoryForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/popularTitleTextView"
+                style="@style/foodMainTitleTextView"
+                android:layout_marginTop="29dp"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/categoryBottomLineInclude"
+                tools:text="뭐 먹을지 고민이라면?! #인기맛집" />
+
+            <include
+                android:id="@+id/notExistPopularShopImageView"
+                layout="@layout/view_not_exist_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popularTitleTextView"
+                tools:visibility="visible" />
+
+            <com.theone.busandbt.view.NestedScrollableHost
+                android:id="@+id/popularShopListForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notExistPopularShopImageView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popularListRecyclerView"
+                    style="@style/foodMainRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingStart="14dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.theone.busandbt.view.NestedScrollableHost>
+
+            <include
+                android:id="@+id/popularShopListBottomLineInclude"
+                layout="@layout/include_service_main_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                app:layout_constraintTop_toBottomOf="@+id/popularShopListForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/couponTextView"
+                style="@style/foodMainTitleTextView"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/popularShopListBottomLineInclude"
+                tools:text="할인받고 야무지게 주문하자!" />
+
+            <include
+                android:id="@+id/notExistDiscountShopImageView"
+                layout="@layout/view_not_exist_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/couponTextView"
+                tools:visibility="visible" />
+
+            <com.theone.busandbt.view.NestedScrollableHost
+                android:id="@+id/discountShopListForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notExistDiscountShopImageView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discountShopListRecyclerView"
+                    style="@style/foodMainRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="14dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.theone.busandbt.view.NestedScrollableHost>
+
+            <include
+                android:id="@+id/discountShopListBottomLineInclude"
+                layout="@layout/include_service_main_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                app:layout_constraintTop_toBottomOf="@+id/discountShopListForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/newOpenTextView"
+                style="@style/foodMainTitleTextView"
+                android:layout_marginTop="27dp"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/discountShopListBottomLineInclude"
+                tools:text="신규 #오픈 가게에서 골라봐!" />
+
+            <include
+                android:id="@+id/notExistNewShopImageView"
+                layout="@layout/view_not_exist_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="13dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/newOpenTextView"
+                tools:visibility="visible" />
+
+            <com.theone.busandbt.view.NestedScrollableHost
+                android:id="@+id/newShopListForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notExistNewShopImageView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newShopRecyclerView"
+                    style="@style/foodMainRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="14dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.theone.busandbt.view.NestedScrollableHost>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

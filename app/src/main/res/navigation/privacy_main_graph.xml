@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/privacy_main_graph"
+    app:startDestination="@id/privacyMainFragment">
+
+    <fragment
+        android:id="@+id/privacyMainFragment"
+        android:name="com.theone.busandbt.fragment.privacy.PrivacyMainFragment"
+        android:label="fragment_privacy_main"
+        tools:layout="@layout/fragment_privacy_main"/>
+</navigation>

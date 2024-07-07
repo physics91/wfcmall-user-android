@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_status_graph"
+    app:startDestination="@id/orderStatusFragment">
+    <fragment
+        android:id="@+id/orderStatusFragment"
+        android:name="com.theone.busandbt.fragment.order.OrderStatusFragment"
+        android:label="orderStatusFragment"
+        tools:layout="@layout/fragment_order_status">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_orderStatusFragment_to_orderListFragment"
+            app:destination="@id/order_list_graph">
+            <argument
+                android:name="serviceTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+            <argument
+                android:name="deliveryTypeId"
+                app:argType="integer"
+                android:defaultValue="1"/>
+        </action>
+        <action
+            android:id="@+id/action_orderStatusDirectDeliveryFragment_to_orderDirectDeliveryDetail"
+            app:destination="@id/order_detail_graph">
+            <argument
+                android:name="orderId"
+                app:argType="string" />
+        </action>
+    </fragment>
+</navigation>

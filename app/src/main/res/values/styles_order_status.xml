@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="orderStatusCheck">
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:background">@drawable/bg_order_status_checkbox_selector</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="orderStatusHorizontalLine">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:background">@color/orderStatusHorizontalLine</item>
+        <item name="android:backgroundTint">@drawable/bg_order_status_line_selector</item>
+    </style>
+
+    <style name="orderStatusProceedingTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_bold</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@drawable/bg_order_status_text_selector</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="orderStatusTimeTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="orderStatusFooterTitleTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sult_semibold</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/orderStatusFooterTitleText</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="orderStatusFooterSubTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+
+</resources>

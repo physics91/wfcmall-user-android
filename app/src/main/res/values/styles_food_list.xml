@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="foodListSortTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_round_14dp_d5d5d5</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="foodListItemTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_round_9dp_food_list_item_new_shop_layout</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:fontFamily">@font/sult_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:paddingTop">1.5dp</item>
+        <item name="android:paddingBottom">1.5dp</item>
+    </style>
+
+    <style name="foodListItemSubTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/mainTextColor</item>
+    </style>
+
+    <style name="foodListItemTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">13dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:fontFamily">@font/sult_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/foodListItemTitleText</item>
+    </style>
+</resources>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/white">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="14dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="14dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/sult_regular"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="-2dp"
+                android:textColor="@color/mainTextColor"
+                android:textSize="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/loginTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/idEditTextView"
+                style="@style/basicEditText"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="36dp"
+                android:hint="휴대폰번호"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingStart="11dp"
+                app:fontDifference="@{true}"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passwordEditTextView"
+                style="@style/basicEditText"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingStart="11dp"
+                app:fontDifference="@{true}"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/idEditTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/loginErrorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sult_medium"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="-1dp"
+                android:text="아이디 혹은 비밀번호가 틀렸습니다."
+                android:textColor="@color/loginErrorText"
+                android:textSize="13dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/passwordEditTextView"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/toggleImg"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="11dp"
+                android:background="@drawable/ic_password_visibility_toggle"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/passwordEditTextView"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintTop_toTopOf="@+id/passwordEditTextView" />
+
+            <View
+                android:id="@+id/toggleButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/passwordEditTextView"
+                app:layout_constraintEnd_toEndOf="@+id/toggleImg"
+                app:layout_constraintStart_toStartOf="@+id/toggleImg"
+                app:layout_constraintTop_toTopOf="@+id/passwordEditTextView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginButton"
+                style="@style/mainButton"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="25dp"
+                android:text="로그인"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/loginErrorTextView" />
+
+            <View
+                android:id="@+id/snsTextStartLine"
+                style="@style/loginSnsHorizontalLine"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/loginTitleTextView"
+                app:layout_constraintEnd_toStartOf="@id/loginTitleTextView"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@id/loginTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/loginTitleTextView"
+                android:layout_width="145dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/sult_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="-1dp"
+                android:text="SNS 계정으로 로그인"
+                android:textColor="@color/loginSnsTitleText"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+            <View
+                android:id="@+id/snsTextEndLine"
+                style="@style/loginSnsHorizontalLine"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/loginTitleTextView"
+                app:layout_constraintEnd_toStartOf="@id/endGuideline"
+                app:layout_constraintStart_toEndOf="@id/loginTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/loginTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kakaoLoginButton"
+                style="@style/loginSnsButton"
+                android:layout_marginEnd="13dp"
+                android:src="@drawable/img_kakao_login"
+                app:layout_constraintEnd_toStartOf="@id/naverLoginButton"
+                app:layout_constraintTop_toTopOf="@+id/naverLoginButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/loginSnsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="카카오톡"
+                app:layout_constraintEnd_toEndOf="@+id/kakaoLoginButton"
+                app:layout_constraintStart_toStartOf="@+id/kakaoLoginButton"
+                app:layout_constraintTop_toTopOf="@+id/naverTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/naverLoginButton"
+                style="@style/loginSnsButton"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/img_naver_login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginTitleTextView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/naverTitleTextView"
+                style="@style/loginSnsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14.87dp"
+                android:text="네이버"
+                app:layout_constraintEnd_toEndOf="@+id/naverLoginButton"
+                app:layout_constraintStart_toStartOf="@+id/naverLoginButton"
+                app:layout_constraintTop_toBottomOf="@id/naverLoginButton" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/googleLoginButton"
+                style="@style/loginSnsButton"
+                android:layout_marginStart="12.87dp"
+                android:src="@drawable/img_google_login"
+                app:layout_constraintStart_toEndOf="@id/naverLoginButton"
+                app:layout_constraintTop_toTopOf="@+id/naverLoginButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/loginSnsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="구글"
+                app:layout_constraintEnd_toEndOf="@+id/googleLoginButton"
+                app:layout_constraintStart_toStartOf="@+id/googleLoginButton"
+                app:layout_constraintTop_toTopOf="@+id/naverTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/goToJoinTextView"
+                style="@style/loginBottomTextView"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="16dp"
+                android:text="회원가입"
+                app:layout_constraintEnd_toStartOf="@id/middleVerticalLine"
+                app:layout_constraintTop_toBottomOf="@id/naverTitleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/passwordFindTextView"
+                style="@style/loginBottomTextView"
+                android:layout_marginStart="16dp"
+                android:text="비밀번호 찾기"
+                app:layout_constraintStart_toEndOf="@id/middleVerticalLine"
+                app:layout_constraintTop_toTopOf="@id/goToJoinTextView" />
+
+            <View
+                android:id="@+id/middleVerticalLine"
+                android:layout_width="0.5dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/loginLine"
+                app:layout_constraintBottom_toBottomOf="@id/goToJoinTextView"
+                app:layout_constraintStart_toStartOf="@+id/naverTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/goToJoinTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/plusIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_plus" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/optionalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sult_medium"
+        android:letterSpacing="-0.05"
+        android:text="주소 별칭 (선택사항)"
+        android:textColor="@color/popupSubText"
+        android:textSize="16dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintTop_toTopOf="@+id/plusIcon"
+        app:layout_constraintStart_toEndOf="@+id/plusIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/plusIcon"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/placeNameEditText"
+        android:layout_marginTop="12dp"
+        style="@style/addressBaseEditText"
+        android:hint="@string/optionalExample"
+        android:inputType="text"
+        android:letterSpacing="-0.05"
+        android:singleLine="true"
+        android:textColorHint="@color/hintText"
+        app:layout_constraintTop_toBottomOf="@id/optionalText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

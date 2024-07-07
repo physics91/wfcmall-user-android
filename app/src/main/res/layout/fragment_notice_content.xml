@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noticeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="14dp"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:maxLines="1"
+            android:textColor="@color/mainTextColor"
+            android:textSize="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="동백통 가맹점주용 개정안내" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noticeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:textColor="@color/noticeDateText"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@+id/noticeTitle"
+            app:layout_constraintTop_toBottomOf="@id/noticeTitle"
+            tools:text="2022.11.25" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noticeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="4dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/mainTextColor"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/noticeTitle"
+            app:layout_constraintTop_toBottomOf="@id/noticeDate"
+            tools:text="ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

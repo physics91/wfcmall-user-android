@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--TODO: 자세히보기 background join브랜치 머지되면  수정진행 해야 함-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".fragment.login.LoginFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/sult_semibold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="서비스 이용을 위한\n약관에 동의해주세요."
+            android:textColor="@color/mainTextColor"
+            android:textSize="26dp"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/underLineView"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="19dp"
+            android:background="@color/mainTextColor"
+            app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/allCheckBox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/bg_checkbox_selector"
+            android:button="@null"
+            app:layout_constraintStart_toStartOf="@id/underLineView"
+            app:layout_constraintTop_toBottomOf="@id/underLineView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allCheckTextView"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:layout_marginStart="14dp"
+            android:text="전체 동의"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/allCheckBox"
+            app:layout_constraintEnd_toStartOf="@+id/endGuideLine"
+            app:layout_constraintStart_toEndOf="@+id/allCheckBox"
+            app:layout_constraintTop_toTopOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/locationCheckbox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20.5dp"
+            android:background="@drawable/bg_check_selector"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allCheckBox"
+            app:layout_constraintTop_toBottomOf="@id/allCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:layout_marginStart="10dp"
+            android:text="위치기반 서비스 이용약관 (필수)"
+            android:textColor="@color/agreeDisableColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/locationCheckbox"
+            app:layout_constraintStart_toEndOf="@+id/locationCheckbox"
+            app:layout_constraintTop_toTopOf="@id/locationCheckbox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationDetailTextView"
+            android:layout_width="38dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_gray_btn"
+            android:fontFamily="@font/sult_semibold"
+            android:gravity="center"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:text="자세히"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/locationTextView"
+            app:layout_constraintStart_toEndOf="@id/locationTextView"
+            app:layout_constraintTop_toTopOf="@id/locationTextView" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/eventCheckbox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="22.5dp"
+            android:background="@drawable/bg_check_selector"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="@id/allCheckBox"
+            app:layout_constraintStart_toStartOf="@id/allCheckBox"
+            app:layout_constraintTop_toBottomOf="@id/locationTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eventTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sult_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:layout_marginStart="10dp"
+            android:text="혜택 및 이벤트 광고 수신 동의 (선택)"
+            android:textColor="@color/agreeDisableColor"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/eventCheckbox"
+            app:layout_constraintStart_toEndOf="@+id/eventCheckbox"
+            app:layout_constraintTop_toTopOf="@id/eventCheckbox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appNotificationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18.5dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingStart="34dp"
+            android:text="앱 알림"
+            android:textColor="@color/agreeDisableColor"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/eventCheckbox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/messageNotificationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/sult_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="-1dp"
+            android:paddingStart="34dp"
+            android:text="문자 메세지"
+            android:textColor="@color/agreeDisableColor"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/endGuideLine"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/appNotificationTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nextButton"
+            style="@style/commonBottomToggleButton"
+            android:text="시작하기"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
